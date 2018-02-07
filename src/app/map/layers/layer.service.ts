@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { layer } from './cont_mmi';
-var layers = [layer];
+import { mmiLayer } from './cont_mmi';
+var layers = [mmiLayer];
 
 @Injectable()
 export class LayerService {
