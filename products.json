@@ -4,112 +4,112 @@
             {
                 "contents": {
                     "download/pga_mean.flt": {
-                        "url": "shakemaps/nc72282711/products/pga_mean.flt"
+                        "url": "shakemaps/nc72282711/products/PGA_mean.flt"
                     }, 
                     "download/cont_psa0p3.json": {
-                        "url": "shakemaps/nc72282711/products/cont_psa0p3.json"
+                        "url": "shakemaps/nc72282711/products/cont_PSA0p3.json"
                     }, 
                     "download/rupture.json": {
                         "url": "shakemaps/nc72282711/products/rupture.json"
                     }, 
                     "download/pgv_std.flt": {
-                        "url": "shakemaps/nc72282711/products/pgv_std.flt"
+                        "url": "shakemaps/nc72282711/products/PGV_std.flt"
                     }, 
                     "download/cont_mmi.json": {
-                        "url": "shakemaps/nc72282711/products/cont_mmi.json"
+                        "url": "shakemaps/nc72282711/products/cont_MMI.json"
                     }, 
                     "download/psa1p0_std.flt": {
-                        "url": "shakemaps/nc72282711/products/psa1p0_std.flt"
+                        "url": "shakemaps/nc72282711/products/PSA1p0_std.flt"
                     }, 
                     "download/shake_result.hdf": {
                         "url": "shakemaps/nc72282711/products/shake_result.hdf"
                     }, 
                     "download/pgv_std.hdr": {
-                        "url": "shakemaps/nc72282711/products/pgv_std.hdr"
+                        "url": "shakemaps/nc72282711/products/PGV_std.hdr"
                     }, 
                     "download/psa1p0_std.hdr": {
-                        "url": "shakemaps/nc72282711/products/psa1p0_std.hdr"
+                        "url": "shakemaps/nc72282711/products/PSA1p0_std.hdr"
                     }, 
                     "download/psa0p3_mean.hdr": {
-                        "url": "shakemaps/nc72282711/products/psa0p3_mean.hdr"
+                        "url": "shakemaps/nc72282711/products/PSA0p3_mean.hdr"
                     }, 
                     "download/psa0p3_std.flt": {
-                        "url": "shakemaps/nc72282711/products/psa0p3_std.flt"
+                        "url": "shakemaps/nc72282711/products/PSA0p3_std.flt"
                     }, 
                     "download/cont_psa3p0.json": {
-                        "url": "shakemaps/nc72282711/products/cont_psa3p0.json"
+                        "url": "shakemaps/nc72282711/products/cont_PSA3p0.json"
                     }, 
                     "download/psa3p0_mean.flt": {
-                        "url": "shakemaps/nc72282711/products/psa3p0_mean.flt"
+                        "url": "shakemaps/nc72282711/products/PSA3p0_mean.flt"
                     }, 
                     "download/mmi_std.hdr": {
-                        "url": "shakemaps/nc72282711/products/mmi_std.hdr"
+                        "url": "shakemaps/nc72282711/products/MMI_std.hdr"
                     }, 
                     "download/info.json": {
                         "url": "shakemaps/nc72282711/products/info.json"
                     }, 
                     "download/cont_pgv.json": {
-                        "url": "shakemaps/nc72282711/products/cont_pgv.json"
+                        "url": "shakemaps/nc72282711/products/cont_PGV.json"
                     }, 
                     "download/pga_mean.hdr": {
-                        "url": "shakemaps/nc72282711/products/pga_mean.hdr"
+                        "url": "shakemaps/nc72282711/products/PGA_mean.hdr"
                     }, 
                     "download/grid.xml": {
                         "url": "shakemaps/nc72282711/products/grid.xml"
                     }, 
                     "download/pgv_mean.flt": {
-                        "url": "shakemaps/nc72282711/products/pgv_mean.flt"
+                        "url": "shakemaps/nc72282711/products/PGV_mean.flt"
                     }, 
                     "download/psa1p0_mean.flt": {
-                        "url": "shakemaps/nc72282711/products/psa1p0_mean.flt"
+                        "url": "shakemaps/nc72282711/products/PSA1p0_mean.flt"
                     }, 
                     "download/mmi_std.flt": {
-                        "url": "shakemaps/nc72282711/products/mmi_std.flt"
+                        "url": "shakemaps/nc72282711/products/MMI_std.flt"
                     }, 
                     "download/mmi_mean.hdr": {
-                        "url": "shakemaps/nc72282711/products/mmi_mean.hdr"
+                        "url": "shakemaps/nc72282711/products/MMI_mean.hdr"
                     }, 
                     "download/psa0p3_mean.flt": {
-                        "url": "shakemaps/nc72282711/products/psa0p3_mean.flt"
+                        "url": "shakemaps/nc72282711/products/PSA0p3_mean.flt"
                     }, 
                     "download/pga_std.hdr": {
-                        "url": "shakemaps/nc72282711/products/pga_std.hdr"
+                        "url": "shakemaps/nc72282711/products/PGA_std.hdr"
                     }, 
                     "download/psa3p0_std.hdr": {
-                        "url": "shakemaps/nc72282711/products/psa3p0_std.hdr"
+                        "url": "shakemaps/nc72282711/products/PSA3p0_std.hdr"
                     }, 
                     "download/psa1p0_mean.hdr": {
-                        "url": "shakemaps/nc72282711/products/psa1p0_mean.hdr"
+                        "url": "shakemaps/nc72282711/products/PSA1p0_mean.hdr"
                     }, 
                     "download/uncertainty.xml": {
                         "url": "shakemaps/nc72282711/products/uncertainty.xml"
                     }, 
                     "download/pgv_mean.hdr": {
-                        "url": "shakemaps/nc72282711/products/pgv_mean.hdr"
+                        "url": "shakemaps/nc72282711/products/PGV_mean.hdr"
                     }, 
                     "download/cont_pga.json": {
-                        "url": "shakemaps/nc72282711/products/cont_pga.json"
+                        "url": "shakemaps/nc72282711/products/cont_PGA.json"
                     }, 
                     "download/psa3p0_std.flt": {
-                        "url": "shakemaps/nc72282711/products/psa3p0_std.flt"
+                        "url": "shakemaps/nc72282711/products/PSA3p0_std.flt"
                     }, 
                     "download/cont_psa1p0.json": {
-                        "url": "shakemaps/nc72282711/products/cont_psa1p0.json"
+                        "url": "shakemaps/nc72282711/products/cont_PSA1p0.json"
                     }, 
                     "download/stationlist.json": {
                         "url": "shakemaps/nc72282711/products/stationlist.json"
                     }, 
                     "download/psa0p3_std.hdr": {
-                        "url": "shakemaps/nc72282711/products/psa0p3_std.hdr"
+                        "url": "shakemaps/nc72282711/products/PSA0p3_std.hdr"
                     }, 
                     "download/pga_std.flt": {
-                        "url": "shakemaps/nc72282711/products/pga_std.flt"
+                        "url": "shakemaps/nc72282711/products/PGA_std.flt"
                     }, 
                     "download/psa3p0_mean.hdr": {
-                        "url": "shakemaps/nc72282711/products/psa3p0_mean.hdr"
+                        "url": "shakemaps/nc72282711/products/PSA3p0_mean.hdr"
                     }, 
                     "download/mmi_mean.flt": {
-                        "url": "shakemaps/nc72282711/products/mmi_mean.flt"
+                        "url": "shakemaps/nc72282711/products/MMI_mean.flt"
                     }
                 }
             }
@@ -121,112 +121,112 @@
             {
                 "contents": {
                     "download/pga_mean.flt": {
-                        "url": "shakemaps/northridge/products/pga_mean.flt"
+                        "url": "shakemaps/northridge/products/PGA_mean.flt"
                     }, 
                     "download/cont_psa0p3.json": {
-                        "url": "shakemaps/northridge/products/cont_psa0p3.json"
+                        "url": "shakemaps/northridge/products/cont_PSA0p3.json"
                     }, 
                     "download/rupture.json": {
                         "url": "shakemaps/northridge/products/rupture.json"
                     }, 
                     "download/pgv_std.flt": {
-                        "url": "shakemaps/northridge/products/pgv_std.flt"
+                        "url": "shakemaps/northridge/products/PGV_std.flt"
                     }, 
                     "download/cont_mmi.json": {
-                        "url": "shakemaps/northridge/products/cont_mmi.json"
+                        "url": "shakemaps/northridge/products/cont_MMI.json"
                     }, 
                     "download/psa1p0_std.flt": {
-                        "url": "shakemaps/northridge/products/psa1p0_std.flt"
+                        "url": "shakemaps/northridge/products/PSA1p0_std.flt"
                     }, 
                     "download/shake_result.hdf": {
                         "url": "shakemaps/northridge/products/shake_result.hdf"
                     }, 
                     "download/pgv_std.hdr": {
-                        "url": "shakemaps/northridge/products/pgv_std.hdr"
+                        "url": "shakemaps/northridge/products/PGV_std.hdr"
                     }, 
                     "download/psa1p0_std.hdr": {
-                        "url": "shakemaps/northridge/products/psa1p0_std.hdr"
+                        "url": "shakemaps/northridge/products/PSA1p0_std.hdr"
                     }, 
                     "download/psa0p3_mean.hdr": {
-                        "url": "shakemaps/northridge/products/psa0p3_mean.hdr"
+                        "url": "shakemaps/northridge/products/PSA0p3_mean.hdr"
                     }, 
                     "download/psa0p3_std.flt": {
-                        "url": "shakemaps/northridge/products/psa0p3_std.flt"
+                        "url": "shakemaps/northridge/products/PSA0p3_std.flt"
                     }, 
                     "download/cont_psa3p0.json": {
-                        "url": "shakemaps/northridge/products/cont_psa3p0.json"
+                        "url": "shakemaps/northridge/products/cont_PSA3p0.json"
                     }, 
                     "download/psa3p0_mean.flt": {
-                        "url": "shakemaps/northridge/products/psa3p0_mean.flt"
+                        "url": "shakemaps/northridge/products/PSA3p0_mean.flt"
                     }, 
                     "download/mmi_std.hdr": {
-                        "url": "shakemaps/northridge/products/mmi_std.hdr"
+                        "url": "shakemaps/northridge/products/MMI_std.hdr"
                     }, 
                     "download/info.json": {
                         "url": "shakemaps/northridge/products/info.json"
                     }, 
                     "download/cont_pgv.json": {
-                        "url": "shakemaps/northridge/products/cont_pgv.json"
+                        "url": "shakemaps/northridge/products/cont_PGV.json"
                     }, 
                     "download/pga_mean.hdr": {
-                        "url": "shakemaps/northridge/products/pga_mean.hdr"
+                        "url": "shakemaps/northridge/products/PGA_mean.hdr"
                     }, 
                     "download/grid.xml": {
                         "url": "shakemaps/northridge/products/grid.xml"
                     }, 
                     "download/pgv_mean.flt": {
-                        "url": "shakemaps/northridge/products/pgv_mean.flt"
+                        "url": "shakemaps/northridge/products/PGV_mean.flt"
                     }, 
                     "download/psa1p0_mean.flt": {
-                        "url": "shakemaps/northridge/products/psa1p0_mean.flt"
+                        "url": "shakemaps/northridge/products/PSA1p0_mean.flt"
                     }, 
                     "download/mmi_std.flt": {
-                        "url": "shakemaps/northridge/products/mmi_std.flt"
+                        "url": "shakemaps/northridge/products/MMI_std.flt"
                     }, 
                     "download/mmi_mean.hdr": {
-                        "url": "shakemaps/northridge/products/mmi_mean.hdr"
+                        "url": "shakemaps/northridge/products/MMI_mean.hdr"
                     }, 
                     "download/psa0p3_mean.flt": {
-                        "url": "shakemaps/northridge/products/psa0p3_mean.flt"
+                        "url": "shakemaps/northridge/products/PSA0p3_mean.flt"
                     }, 
                     "download/pga_std.hdr": {
-                        "url": "shakemaps/northridge/products/pga_std.hdr"
+                        "url": "shakemaps/northridge/products/PGA_std.hdr"
                     }, 
                     "download/psa3p0_std.hdr": {
-                        "url": "shakemaps/northridge/products/psa3p0_std.hdr"
+                        "url": "shakemaps/northridge/products/PSA3p0_std.hdr"
                     }, 
                     "download/psa1p0_mean.hdr": {
-                        "url": "shakemaps/northridge/products/psa1p0_mean.hdr"
+                        "url": "shakemaps/northridge/products/PSA1p0_mean.hdr"
                     }, 
                     "download/uncertainty.xml": {
                         "url": "shakemaps/northridge/products/uncertainty.xml"
                     }, 
                     "download/pgv_mean.hdr": {
-                        "url": "shakemaps/northridge/products/pgv_mean.hdr"
+                        "url": "shakemaps/northridge/products/PGV_mean.hdr"
                     }, 
                     "download/cont_pga.json": {
-                        "url": "shakemaps/northridge/products/cont_pga.json"
+                        "url": "shakemaps/northridge/products/cont_PGA.json"
                     }, 
                     "download/psa3p0_std.flt": {
-                        "url": "shakemaps/northridge/products/psa3p0_std.flt"
+                        "url": "shakemaps/northridge/products/PSA3p0_std.flt"
                     }, 
                     "download/cont_psa1p0.json": {
-                        "url": "shakemaps/northridge/products/cont_psa1p0.json"
+                        "url": "shakemaps/northridge/products/cont_PSA1p0.json"
                     }, 
                     "download/stationlist.json": {
                         "url": "shakemaps/northridge/products/stationlist.json"
                     }, 
                     "download/psa0p3_std.hdr": {
-                        "url": "shakemaps/northridge/products/psa0p3_std.hdr"
+                        "url": "shakemaps/northridge/products/PSA0p3_std.hdr"
                     }, 
                     "download/pga_std.flt": {
-                        "url": "shakemaps/northridge/products/pga_std.flt"
+                        "url": "shakemaps/northridge/products/PGA_std.flt"
                     }, 
                     "download/psa3p0_mean.hdr": {
-                        "url": "shakemaps/northridge/products/psa3p0_mean.hdr"
+                        "url": "shakemaps/northridge/products/PSA3p0_mean.hdr"
                     }, 
                     "download/mmi_mean.flt": {
-                        "url": "shakemaps/northridge/products/mmi_mean.flt"
+                        "url": "shakemaps/northridge/products/MMI_mean.flt"
                     }
                 }
             }
