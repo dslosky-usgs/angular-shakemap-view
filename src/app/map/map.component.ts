@@ -4,6 +4,7 @@ import * as L from 'leaflet';
 
 import { MapService } from './map.service';
 import { LayerService } from './layers/layer.service';
+import { ConfService } from '../conf.service';
 
 @Component({
   selector: 'shakemap-view-map',
@@ -17,7 +18,8 @@ export class MapComponent implements OnInit, OnDestroy {
   private layers: any[] = [];
 
   constructor(private mapService: MapService,
-              private layerService: LayerService) { }
+              private layerService: LayerService,
+              private c: ConfService) { }
 
   ngOnInit() {
     this.subs.push(this.mapService.plotEvent.subscribe(event => {
@@ -51,6 +53,10 @@ export class MapComponent implements OnInit, OnDestroy {
     this.layers.push(layer.layer);
     let group = L.featureGroup(this.layers);
     this.map.fitBounds(group.getBounds().pad(0.5));
+
+    if (this.c.conf['defaultLayers'].includes(layer.name)) {
+      layer.layer.addTo(this.map);
+    }
   }
 
   genBasemap() {
