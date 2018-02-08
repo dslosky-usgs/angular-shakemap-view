@@ -480,7 +480,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "#map {\n  height: 100vw; }\n", ""]);
+exports.push([module.i, "#map {\n  height: 100%; }\n", ""]);
 
 // exports
 
