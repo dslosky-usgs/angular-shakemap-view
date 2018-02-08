@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
 import * as L from 'leaflet';
+
+import { MapService } from './map.service';
 import { LayerService } from './layers/layer.service';
 
 @Component({
@@ -7,31 +10,47 @@ import { LayerService } from './layers/layer.service';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
-export class MapComponent implements OnInit {
+export class MapComponent implements OnInit, OnDestroy {
+  private subs: Subscription[] = [];
+  private map: any = null;
+  private layersControl: any = null;
+  private layers: any[] = [];
 
-  constructor(private layerService: LayerService) { }
+  constructor(private mapService: MapService,
+              private layerService: LayerService) { }
 
   ngOnInit() {
-    var mymap = L.map('map').setView([51.505, -0.09], 13);
+    this.subs.push(this.mapService.plotEvent.subscribe(event => {
+      this.clearMap();
+      this.plotEvent(event);
+    }));
 
-    this.genBasemap().addTo(mymap);
+    this.subs.push(this.layerService.nextLayer.subscribe(layer => {
+      this.addLayer(layer);
+    }));
 
-    L.marker([51.5, -0.09]).addTo(mymap)
-      .bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+    this.map = L.map('map').setView([51.505, -0.09], 13);
+    let basemap = this.genBasemap()
+    basemap.addTo(this.map);
+    this.layersControl = L.control.layers({'Basemap': basemap});
+  }
 
+  plotEvent(event) {
+    let basemap = this.genBasemap();
+    basemap.addTo(this.map);
+    this.layersControl = L.control.layers({'Basemap': basemap});
+    this.layersControl.addTo(this.map);
     
+    this.layerService.genLayers(event);
+  }
 
-    L.polygon([
-      [51.509, -0.08],
-      [51.503, -0.06],
-      [51.51, -0.047]
-    ]).addTo(mymap).bindPopup("I am a polygon.");
-    var popup = L.popup();
+  addLayer(layer) {
+    this.layersControl.addOverlay(layer.layer, layer.name);
 
-    var layers = this.layerService.getLayers();
-    for (let layer in layers) {
-      layers[layer].addTo(mymap);
-    }
+    // Set bounds based on the new control group
+    this.layers.push(layer.layer);
+    let group = L.featureGroup(this.layers);
+    this.map.fitBounds(group.getBounds().pad(0.5));
   }
 
   genBasemap() {
@@ -42,5 +61,22 @@ export class MapComponent implements OnInit {
                 'Imagery � <a href="http://mapbox.com">Mapbox</a>',
             id: 'mapbox.streets'
         });
+  }
+
+  clearMap() {
+    if (this.layersControl) {
+      this.layersControl.remove();
+    }
+    this.map.eachLayer(layer => {
+      this.map.removeLayer(layer);
+    });
+
+    this.layers = [];
+  }
+
+  ngOnDestroy() {
+    for (let sub of this.subs) {
+      sub.unsubscribe();
+    }
   }
 }
