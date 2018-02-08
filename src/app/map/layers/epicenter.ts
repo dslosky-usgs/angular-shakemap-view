@@ -3,8 +3,8 @@ import * as L from 'leaflet';
 var epiIcon = L.icon({
     iconUrl: 'assets/images/star.png',
     iconSize:     [32, 32], // size of the icon
-    iconAnchor:   [17.5, 17.5], // point of the icon which will correspond to marker's location
-    popupAnchor:  [0, -10] // point from which the popup should open relative to the iconAnchor
+    iconAnchor:   [16, 16], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, 0] // point from which the popup should open relative to the iconAnchor
 });
 
 export var epicenterLayer = {
