@@ -117,7 +117,7 @@ var generatePopup = function (props) {
                     <table>
                         <tr>
                             <th>
-                                ` + makeNumber(props.pga / 100) + ` %g
+                                ` + makeNumber(props.pga) + ` %g
                             </th>
                         </tr>
                         <tr>
