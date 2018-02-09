@@ -6,8 +6,9 @@ import { map } from 'rxjs/operators';
 import { mmiLayer } from './cont_mmi';
 import { pgaLayer } from './cont_pga';
 import { epicenterLayer } from './epicenter';
+import { stationLayer } from './stationlist';
 
-var layers = [epicenterLayer, mmiLayer, pgaLayer];
+var layers = [epicenterLayer, mmiLayer, pgaLayer, stationLayer];
 
 @Injectable()
 export class LayerService {

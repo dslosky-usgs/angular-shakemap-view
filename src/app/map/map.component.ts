@@ -1,3 +1,5 @@
+declare function require(string): string;
+
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import * as L from 'leaflet';
@@ -30,6 +32,16 @@ export class MapComponent implements OnInit, OnDestroy {
     this.subs.push(this.layerService.nextLayer.subscribe(layer => {
       this.addLayer(layer);
     }));
+
+
+    // eslint-disable-next-line  
+    delete L.Icon.Default.prototype._getIconUrl
+    // eslint-disable-next-line  
+    L.Icon.Default.mergeOptions({  
+      iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),  
+      iconUrl: require('leaflet/dist/images/marker-icon.png'),  
+      shadowUrl: require('leaflet/dist/images/marker-shadow.png')  
+    })
 
     this.map = L.map('map').setView([51.505, -0.09], 13);
     let basemap = this.genBasemap()
