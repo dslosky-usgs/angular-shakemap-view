@@ -19,6 +19,10 @@ export class EventsComponent implements OnInit {
   ngOnInit() {
     this.subs.push(this.eventService.getEventFeed().subscribe(data => {
       this.eventData = data;
+
+      if (data) {
+        this.plot(data[0])
+      }
     }));
   }
 
