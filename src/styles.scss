@@ -1,4 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    height: 100%;
+    width: 100%;
+}
 body {
-    margin:0
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.shakemap-view-root {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.shakemap-view-map {
+    display: block;
+    height: 100%;
+    width: 100%;
 }
