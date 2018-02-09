@@ -400,6 +400,7 @@ var epicenterLayer = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cont_mmi__ = __webpack_require__("../../../../../src/app/map/layers/cont_mmi.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__cont_pga__ = __webpack_require__("../../../../../src/app/map/layers/cont_pga.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__epicenter__ = __webpack_require__("../../../../../src/app/map/layers/epicenter.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__stationlist__ = __webpack_require__("../../../../../src/app/map/layers/stationlist.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -416,7 +417,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var layers = [__WEBPACK_IMPORTED_MODULE_6__epicenter__["a" /* epicenterLayer */], __WEBPACK_IMPORTED_MODULE_4__cont_mmi__["a" /* mmiLayer */], __WEBPACK_IMPORTED_MODULE_5__cont_pga__["a" /* pgaLayer */]];
+
+var layers = [__WEBPACK_IMPORTED_MODULE_6__epicenter__["a" /* epicenterLayer */], __WEBPACK_IMPORTED_MODULE_4__cont_mmi__["a" /* mmiLayer */], __WEBPACK_IMPORTED_MODULE_5__cont_pga__["a" /* pgaLayer */], __WEBPACK_IMPORTED_MODULE_7__stationlist__["a" /* stationLayer */]];
 var LayerService = /** @class */ (function () {
     function LayerService(http) {
         this.http = http;
@@ -461,6 +463,121 @@ var LayerService = /** @class */ (function () {
     return LayerService;
 }());
 
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/map/layers/stationlist.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return stationLayer; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet__ = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_leaflet__);
+
+var geojsonMarkerOptions = {
+    radius: 6,
+    fillColor: "rgb(0, 255, 255)",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.4
+};
+function onEachFeature(feature, layer) {
+    // does this feature have a property named popupContent?
+    if (feature.properties) {
+        layer.bindPopup(generatePopup(feature.properties));
+    }
+}
+var generatePopup = function (props) {
+    var mmi;
+    var color;
+    switch (Math.round(Number(props.intensity))) {
+        case 1: {
+            mmi = 'I';
+            color = '#EFEFF0';
+            break;
+        }
+        case 2: {
+            mmi = 'II';
+            color = '#EFEFF0';
+            break;
+        }
+        case 3: {
+            mmi = 'III';
+            color = '#67ACF0';
+            break;
+        }
+        case 4: {
+            mmi = 'IV';
+            color = '#67F0BC';
+            break;
+        }
+        case 5: {
+            mmi = 'V';
+            color = '#FCFC48';
+            break;
+        }
+        case 6: {
+            mmi = 'VI';
+            color = '#FCE648';
+            break;
+        }
+        case 7: {
+            mmi = 'VII';
+            color = '#FABC15';
+            break;
+        }
+        case 8: {
+            mmi = 'VIII';
+            color = '#FA7E45';
+            break;
+        }
+        case 9: {
+            mmi = 'IX';
+            color = '#FB1109';
+            break;
+        }
+        case 10: {
+            mmi = 'X';
+            color = '#FF0800';
+            break;
+        }
+        case 11: {
+            mmi = 'XI';
+            color = '#FF0000';
+            break;
+        }
+        case 12: {
+            mmi = 'XII';
+            color = '#FF0000';
+            break;
+        }
+        default: {
+            mmi = '0';
+            color = '#FFFFFF';
+        }
+    }
+    return "\n    <div>\n        <h3 style=\"border-bottom:2px solid black\">" +
+        props.network + ': ' + props.name +
+        "</h3>\n        <table style=\"width:100%;text-align:center\">\n            <tr>\n                <td>\n                    <table style=\"background-color:" + color + ";\n                            border:2px solid black;\n                            border-radius:3px\">\n                        <tr>\n                            <th>\n                                <h1 style=\"margin:0;\">\n                                    " + mmi + "\n                                </h1>\n                            </th>\n                        </tr>\n                        <tr>\n                            <td>\n                                mmi\n                            </td>\n                        </tr>\n                    </table>\n                </td>\n                <td>\n                    <table>\n                        <tr>\n                            <th>\n                                " + makeNumber(props.pga) + " %g\n                            </th>\n                        </tr>\n                        <tr>\n                            <td>\n                                pga\n                            </td>\n                        </tr>\n                    </table>\n                </td>\n                <td>\n                    <table>\n                        <tr>\n                            <th>\n                                " + makeNumber(props.pgv) + " cm/s\n                            </th>\n                        </tr>\n                        <tr>\n                            <td>\n                                pgv\n                            </td>\n                        </tr>\n                    </table>\n                </td>\n                <td>\n                    <table>\n                        <tr>\n                            <th>\n                                " + makeNumber(props.distance) + " km\n                            </th>\n                        </tr>\n                        <tr>\n                            <td>\n                                distance\n                            </td>\n                        </tr>\n                    </table>\n                </td>\n            </tr>\n        </table>\n    </div>\n    ";
+};
+var makeNumber = function (num) {
+    return Number(Number(num).toPrecision(3));
+};
+var stationLayer = {
+    name: 'Stations',
+    productId: 'download/stationlist.json',
+    type: 'json',
+    generateLayer: function (json) {
+        return __WEBPACK_IMPORTED_MODULE_0_leaflet__["geoJson"](json, {
+            pointToLayer: function (feature, latlng) {
+                return __WEBPACK_IMPORTED_MODULE_0_leaflet__["circleMarker"](latlng, geojsonMarkerOptions);
+            },
+            onEachFeature: onEachFeature
+        });
+    }
+};
 
 
 /***/ }),
@@ -534,6 +651,14 @@ var MapComponent = /** @class */ (function () {
         this.subs.push(this.layerService.nextLayer.subscribe(function (layer) {
             _this.addLayer(layer);
         }));
+        // eslint-disable-next-line  
+        delete __WEBPACK_IMPORTED_MODULE_1_leaflet__["Icon"].Default.prototype._getIconUrl;
+        // eslint-disable-next-line  
+        __WEBPACK_IMPORTED_MODULE_1_leaflet__["Icon"].Default.mergeOptions({
+            iconRetinaUrl: __webpack_require__("../../../../leaflet/dist/images/marker-icon-2x.png"),
+            iconUrl: __webpack_require__("../../../../leaflet/dist/images/marker-icon.png"),
+            shadowUrl: __webpack_require__("../../../../leaflet/dist/images/marker-shadow.png")
+        });
         this.map = __WEBPACK_IMPORTED_MODULE_1_leaflet__["map"]('map').setView([51.505, -0.09], 13);
         var basemap = this.genBasemap();
         basemap.addTo(this.map);
@@ -548,12 +673,12 @@ var MapComponent = /** @class */ (function () {
     };
     MapComponent.prototype.addLayer = function (layer) {
         this.layersControl.addOverlay(layer.layer, layer.name);
-        // Set bounds based on the new control group
-        this.layers.push(layer.layer);
-        var group = __WEBPACK_IMPORTED_MODULE_1_leaflet__["featureGroup"](this.layers);
-        this.map.fitBounds(group.getBounds().pad(0.5));
         if (this.c.conf['defaultLayers'].includes(layer.name)) {
             layer.layer.addTo(this.map);
+            // Set bounds based on new default layers
+            this.layers.push(layer.layer);
+            var group = __WEBPACK_IMPORTED_MODULE_1_leaflet__["featureGroup"](this.layers);
+            this.map.fitBounds(group.getBounds().pad(0.1));
         }
     };
     MapComponent.prototype.genBasemap = function () {
