@@ -61,13 +61,13 @@ export class MapComponent implements OnInit, OnDestroy {
   addLayer(layer) {
     this.layersControl.addOverlay(layer.layer, layer.name);
 
-    // Set bounds based on the new control group
-    this.layers.push(layer.layer);
-    let group = L.featureGroup(this.layers);
-    this.map.fitBounds(group.getBounds().pad(0.5));
-
     if (this.c.conf['defaultLayers'].includes(layer.name)) {
       layer.layer.addTo(this.map);
+
+      // Set bounds based on new default layers
+      this.layers.push(layer.layer);
+      let group = L.featureGroup(this.layers);
+      this.map.fitBounds(group.getBounds().pad(0.1));
     }
   }
 
