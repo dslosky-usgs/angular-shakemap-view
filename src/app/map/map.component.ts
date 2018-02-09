@@ -62,7 +62,7 @@ export class MapComponent implements OnInit, OnDestroy {
   addLayer(layer) {
     this.layersControl.addOverlay(layer.layer, layer.name);
 
-    if (this.c.conf['defaultLayers'].includes(layer.name)) {
+    if (this.c.conf['defaultLayers'].includes(layer.id)) {
       layer.layer.addTo(this.map);
 
       // Set bounds based on new default layers

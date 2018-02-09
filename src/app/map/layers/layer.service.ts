@@ -3,12 +3,15 @@ import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { Http, Response } from '@angular/http';
 import { map } from 'rxjs/operators';
 import { Subscription } from 'rxjs/subscription';
+
 import { mmiLayer } from './cont_mmi';
+import { miLayer } from './cont_mi';
 import { pgaLayer } from './cont_pga';
+import { pgvLayer } from './cont_pgv';
 import { epicenterLayer } from './epicenter';
 import { stationLayer } from './stations';
 
-var layers = [epicenterLayer, mmiLayer, pgaLayer, stationLayer];
+var layers = [epicenterLayer, mmiLayer, miLayer, pgaLayer, pgvLayer, stationLayer];
 
 @Injectable()
 export class LayerService {
@@ -40,12 +43,10 @@ export class LayerService {
             )
             .subscribe(product => {
               // generate the layer
-              let l = {}
-              l['layer'] = layer.generateLayer(product);
-              l['name'] = layer.name;
+              layer['layer'] = layer.generateLayer(product);
 
               // let the map know it's ready
-              this.nextLayer.next(l);
+              this.nextLayer.next(layer);
 
               // record data for later usage
               this.data[layer['id']] = product;
