@@ -6,13 +6,14 @@ import { map } from 'rxjs/operators';
 import { mmiLayer } from './cont_mmi';
 import { pgaLayer } from './cont_pga';
 import { epicenterLayer } from './epicenter';
-import { stationLayer } from './stationlist';
+import { stationLayer } from './stations';
 
 var layers = [epicenterLayer, mmiLayer, pgaLayer, stationLayer];
 
 @Injectable()
 export class LayerService {
   public nextLayer = new ReplaySubject(1);
+  public data: any = {};
 
   constructor(private http: Http) {}
 
@@ -41,6 +42,9 @@ export class LayerService {
 
             // let the map know it's ready
             this.nextLayer.next(l);
+
+            // record data for later usage
+            this.data[layer['id']] = product;
           });
       }
     }

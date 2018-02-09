@@ -167,6 +167,7 @@ var makeNumber = function (num) {
 
 export var stationLayer = {
     name: 'Stations',
+    id: 'stations',
     productId: 'download/stationlist.json',
     type: 'json',
     generateLayer: function (json) {
