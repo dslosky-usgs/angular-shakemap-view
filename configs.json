@@ -1,3 +1,3 @@
 {
-    "defaultLayers": ["Epicenter", "MMI Contours", "PGA Contours"]
+    "defaultLayers": ["epicenter", "mmi_cont", "mi_cont"]
 }

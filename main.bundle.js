@@ -302,6 +302,27 @@ var EventsComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/map/layers/cont_mi.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return miLayer; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet__ = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_leaflet__);
+
+var miLayer = {
+    name: 'MMI Contours',
+    id: 'mmi_cont',
+    productId: 'download/cont_mi.json',
+    type: 'json',
+    generateLayer: function (json) {
+        return __WEBPACK_IMPORTED_MODULE_0_leaflet__["geoJson"](json);
+    }
+};
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/map/layers/cont_mmi.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -335,6 +356,27 @@ var pgaLayer = {
     name: 'PGA Contours',
     id: 'pga_cont',
     productId: 'download/cont_pga.json',
+    type: 'json',
+    generateLayer: function (json) {
+        return __WEBPACK_IMPORTED_MODULE_0_leaflet__["geoJson"](json);
+    }
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/map/layers/cont_pgv.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return pgvLayer; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet__ = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_leaflet__);
+
+var pgvLayer = {
+    name: 'PGV Contours',
+    id: 'pgv_cont',
+    productId: 'download/cont_pgv.json',
     type: 'json',
     generateLayer: function (json) {
         return __WEBPACK_IMPORTED_MODULE_0_leaflet__["geoJson"](json);
@@ -404,9 +446,11 @@ var epicenterLayer = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__("../../../../rxjs/_esm5/operators.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cont_mmi__ = __webpack_require__("../../../../../src/app/map/layers/cont_mmi.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__cont_pga__ = __webpack_require__("../../../../../src/app/map/layers/cont_pga.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__epicenter__ = __webpack_require__("../../../../../src/app/map/layers/epicenter.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__stations__ = __webpack_require__("../../../../../src/app/map/layers/stations.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__cont_mi__ = __webpack_require__("../../../../../src/app/map/layers/cont_mi.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__cont_pga__ = __webpack_require__("../../../../../src/app/map/layers/cont_pga.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__cont_pgv__ = __webpack_require__("../../../../../src/app/map/layers/cont_pgv.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__epicenter__ = __webpack_require__("../../../../../src/app/map/layers/epicenter.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__stations__ = __webpack_require__("../../../../../src/app/map/layers/stations.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -424,7 +468,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var layers = [__WEBPACK_IMPORTED_MODULE_6__epicenter__["a" /* epicenterLayer */], __WEBPACK_IMPORTED_MODULE_4__cont_mmi__["a" /* mmiLayer */], __WEBPACK_IMPORTED_MODULE_5__cont_pga__["a" /* pgaLayer */], __WEBPACK_IMPORTED_MODULE_7__stations__["a" /* stationLayer */]];
+
+
+var layers = [__WEBPACK_IMPORTED_MODULE_8__epicenter__["a" /* epicenterLayer */], __WEBPACK_IMPORTED_MODULE_4__cont_mmi__["a" /* mmiLayer */], __WEBPACK_IMPORTED_MODULE_5__cont_mi__["a" /* miLayer */], __WEBPACK_IMPORTED_MODULE_6__cont_pga__["a" /* pgaLayer */], __WEBPACK_IMPORTED_MODULE_7__cont_pgv__["a" /* pgvLayer */], __WEBPACK_IMPORTED_MODULE_9__stations__["a" /* stationLayer */]];
 var LayerService = /** @class */ (function () {
     function LayerService(http) {
         this.http = http;
@@ -452,11 +498,9 @@ var LayerService = /** @class */ (function () {
                 }))
                     .subscribe(function (product) {
                     // generate the layer
-                    var l = {};
-                    l['layer'] = layer.generateLayer(product);
-                    l['name'] = layer.name;
+                    layer['layer'] = layer.generateLayer(product);
                     // let the map know it's ready
-                    _this.nextLayer.next(l);
+                    _this.nextLayer.next(layer);
                     // record data for later usage
                     _this.data[layer['id']] = product;
                 }));
@@ -696,7 +740,7 @@ var MapComponent = /** @class */ (function () {
     };
     MapComponent.prototype.addLayer = function (layer) {
         this.layersControl.addOverlay(layer.layer, layer.name);
-        if (this.c.conf['defaultLayers'].includes(layer.name)) {
+        if (this.c.conf['defaultLayers'].includes(layer.id)) {
             layer.layer.addTo(this.map);
             // Set bounds based on new default layers
             this.defLayers.push(layer.layer);
