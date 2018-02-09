@@ -309,6 +309,7 @@ var EventsComponent = /** @class */ (function () {
 
 var mmiLayer = {
     name: 'MMI Contours',
+    id: 'mmi_cont',
     productId: 'download/cont_mmi.json',
     type: 'json',
     generateLayer: function (json) {
@@ -329,6 +330,7 @@ var mmiLayer = {
 
 var pgaLayer = {
     name: 'PGA Contours',
+    id: 'pga_cont',
     productId: 'download/cont_pga.json',
     type: 'json',
     generateLayer: function (json) {
@@ -355,6 +357,7 @@ var epiIcon = __WEBPACK_IMPORTED_MODULE_0_leaflet__["icon"]({
 });
 var epicenterLayer = {
     name: 'Epicenter',
+    id: 'epicenter',
     productId: 'download/grid.xml',
     type: 'text',
     generateLayer: function (xml) {
@@ -400,7 +403,7 @@ var epicenterLayer = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cont_mmi__ = __webpack_require__("../../../../../src/app/map/layers/cont_mmi.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__cont_pga__ = __webpack_require__("../../../../../src/app/map/layers/cont_pga.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__epicenter__ = __webpack_require__("../../../../../src/app/map/layers/epicenter.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__stationlist__ = __webpack_require__("../../../../../src/app/map/layers/stationlist.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__stations__ = __webpack_require__("../../../../../src/app/map/layers/stations.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -418,11 +421,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var layers = [__WEBPACK_IMPORTED_MODULE_6__epicenter__["a" /* epicenterLayer */], __WEBPACK_IMPORTED_MODULE_4__cont_mmi__["a" /* mmiLayer */], __WEBPACK_IMPORTED_MODULE_5__cont_pga__["a" /* pgaLayer */], __WEBPACK_IMPORTED_MODULE_7__stationlist__["a" /* stationLayer */]];
+var layers = [__WEBPACK_IMPORTED_MODULE_6__epicenter__["a" /* epicenterLayer */], __WEBPACK_IMPORTED_MODULE_4__cont_mmi__["a" /* mmiLayer */], __WEBPACK_IMPORTED_MODULE_5__cont_pga__["a" /* pgaLayer */], __WEBPACK_IMPORTED_MODULE_7__stations__["a" /* stationLayer */]];
 var LayerService = /** @class */ (function () {
     function LayerService(http) {
         this.http = http;
         this.nextLayer = new __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__["a" /* ReplaySubject */](1);
+        this.data = {};
     }
     LayerService.prototype.genLayers = function (event) {
         var _this = this;
@@ -447,6 +451,8 @@ var LayerService = /** @class */ (function () {
                     l['name'] = layer.name;
                     // let the map know it's ready
                     _this.nextLayer.next(l);
+                    // record data for later usage
+                    _this.data[layer['id']] = product;
                 });
             }
         };
@@ -467,7 +473,7 @@ var LayerService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/map/layers/stationlist.ts":
+/***/ "../../../../../src/app/map/layers/stations.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -567,6 +573,7 @@ var makeNumber = function (num) {
 };
 var stationLayer = {
     name: 'Stations',
+    id: 'stations',
     productId: 'download/stationlist.json',
     type: 'json',
     generateLayer: function (json) {
