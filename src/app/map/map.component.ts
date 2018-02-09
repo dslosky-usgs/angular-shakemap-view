@@ -1,9 +1,12 @@
+declare function require(string): string;
+
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import * as L from 'leaflet';
 
 import { MapService } from './map.service';
 import { LayerService } from './layers/layer.service';
+import { ConfService } from '../conf.service';
 
 @Component({
   selector: 'shakemap-view-map',
@@ -17,7 +20,8 @@ export class MapComponent implements OnInit, OnDestroy {
   private layers: any[] = [];
 
   constructor(private mapService: MapService,
-              private layerService: LayerService) { }
+              private layerService: LayerService,
+              private c: ConfService) { }
 
   ngOnInit() {
     this.subs.push(this.mapService.plotEvent.subscribe(event => {
@@ -28,6 +32,16 @@ export class MapComponent implements OnInit, OnDestroy {
     this.subs.push(this.layerService.nextLayer.subscribe(layer => {
       this.addLayer(layer);
     }));
+
+
+    // eslint-disable-next-line  
+    delete L.Icon.Default.prototype._getIconUrl
+    // eslint-disable-next-line  
+    L.Icon.Default.mergeOptions({  
+      iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),  
+      iconUrl: require('leaflet/dist/images/marker-icon.png'),  
+      shadowUrl: require('leaflet/dist/images/marker-shadow.png')  
+    })
 
     this.map = L.map('map').setView([51.505, -0.09], 13);
     let basemap = this.genBasemap()
@@ -47,10 +61,14 @@ export class MapComponent implements OnInit, OnDestroy {
   addLayer(layer) {
     this.layersControl.addOverlay(layer.layer, layer.name);
 
-    // Set bounds based on the new control group
-    this.layers.push(layer.layer);
-    let group = L.featureGroup(this.layers);
-    this.map.fitBounds(group.getBounds().pad(0.5));
+    if (this.c.conf['defaultLayers'].includes(layer.name)) {
+      layer.layer.addTo(this.map);
+
+      // Set bounds based on new default layers
+      this.layers.push(layer.layer);
+      let group = L.featureGroup(this.layers);
+      this.map.fitBounds(group.getBounds().pad(0.1));
+    }
   }
 
   genBasemap() {

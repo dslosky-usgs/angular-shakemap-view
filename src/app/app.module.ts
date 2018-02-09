@@ -8,6 +8,7 @@ import { LayerService } from './map/layers/layer.service';
 import { EventsComponent } from './events/events.component';
 import { EventService } from './events/event.service';
 import { MapService } from './map/map.service';
+import { ConfService } from './conf.service';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { MapService } from './map/map.service';
     BrowserModule,
     HttpModule
   ],
-  providers: [LayerService, EventService, MapService],
+  providers: [LayerService, EventService, MapService, ConfService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

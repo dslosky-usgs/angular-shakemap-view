@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { ConfService } from './conf.service';
 @Component({
   selector: 'shakemap-view-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shakemap-view';
+
+  constructor(private c: ConfService) { }
+
+  ngOnInit() {
+    this.c.getConfigs();
+  }
 }
