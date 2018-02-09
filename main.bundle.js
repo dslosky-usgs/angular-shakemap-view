@@ -430,15 +430,18 @@ var LayerService = /** @class */ (function () {
         this.http = http;
         this.nextLayer = new __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__["a" /* ReplaySubject */](1);
         this.data = {};
+        this.waiting = [];
     }
     LayerService.prototype.genLayers = function (event) {
         var _this = this;
+        // stop waiting on old map layers
+        this.stopWaiting();
         var contents = event['shakemap'][0]['contents'];
         var _loop_1 = function (layer) {
             // check if this layers product is available
             if (layer['productId'] in contents) {
                 // get the product
-                this_1.http.get(contents[layer['productId']]['url'])
+                this_1.waiting.push(this_1.http.get(contents[layer['productId']]['url'])
                     .pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["a" /* map */])(function (res) {
                     if (layer.type === 'json') {
                         return res.json();
@@ -456,13 +459,22 @@ var LayerService = /** @class */ (function () {
                     _this.nextLayer.next(l);
                     // record data for later usage
                     _this.data[layer['id']] = product;
-                });
+                }));
             }
         };
         var this_1 = this;
         for (var _i = 0, layers_1 = layers; _i < layers_1.length; _i++) {
             var layer = layers_1[_i];
             _loop_1(layer);
+        }
+    };
+    LayerService.prototype.stopWaiting = function () {
+        // Stop existing request for layers
+        for (var _i = 0, _a = this.waiting; _i < _a.length; _i++) {
+            var sub = _a[_i];
+            if (sub) {
+                sub.unsubscribe();
+            }
         }
     };
     LayerService = __decorate([
