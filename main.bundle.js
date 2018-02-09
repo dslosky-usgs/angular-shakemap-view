@@ -278,6 +278,9 @@ var EventsComponent = /** @class */ (function () {
         var _this = this;
         this.subs.push(this.eventService.getEventFeed().subscribe(function (data) {
             _this.eventData = data;
+            if (data) {
+                _this.plot(data[0]);
+            }
         }));
     };
     EventsComponent.prototype.plot = function (event) {
@@ -646,8 +649,10 @@ var MapComponent = /** @class */ (function () {
         this.c = c;
         this.subs = [];
         this.map = null;
+        this.basemap = null;
         this.layersControl = null;
-        this.layers = [];
+        this.defLayers = [];
+        this.allLayers = [];
     }
     MapComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -666,15 +671,14 @@ var MapComponent = /** @class */ (function () {
             iconUrl: __webpack_require__("../../../../leaflet/dist/images/marker-icon.png"),
             shadowUrl: __webpack_require__("../../../../leaflet/dist/images/marker-shadow.png")
         });
+        this.genBasemap();
         this.map = __WEBPACK_IMPORTED_MODULE_1_leaflet__["map"]('map').setView([51.505, -0.09], 13);
-        var basemap = this.genBasemap();
-        basemap.addTo(this.map);
-        this.layersControl = __WEBPACK_IMPORTED_MODULE_1_leaflet__["control"].layers({ 'Basemap': basemap });
+        this.basemap.addTo(this.map);
+        this.layersControl = __WEBPACK_IMPORTED_MODULE_1_leaflet__["control"].layers({ 'Basemap': this.basemap });
     };
     MapComponent.prototype.plotEvent = function (event) {
-        var basemap = this.genBasemap();
-        basemap.addTo(this.map);
-        this.layersControl = __WEBPACK_IMPORTED_MODULE_1_leaflet__["control"].layers({ 'Basemap': basemap });
+        //this.basemap.addTo(this.map);
+        this.layersControl = __WEBPACK_IMPORTED_MODULE_1_leaflet__["control"].layers({ 'Basemap': this.basemap });
         this.layersControl.addTo(this.map);
         this.layerService.genLayers(event);
     };
@@ -683,13 +687,15 @@ var MapComponent = /** @class */ (function () {
         if (this.c.conf['defaultLayers'].includes(layer.name)) {
             layer.layer.addTo(this.map);
             // Set bounds based on new default layers
-            this.layers.push(layer.layer);
-            var group = __WEBPACK_IMPORTED_MODULE_1_leaflet__["featureGroup"](this.layers);
+            this.defLayers.push(layer.layer);
+            var group = __WEBPACK_IMPORTED_MODULE_1_leaflet__["featureGroup"](this.defLayers);
             this.map.fitBounds(group.getBounds().pad(0.1));
         }
+        // track current non-base layers for later removal
+        this.allLayers.push(layer.layer);
     };
     MapComponent.prototype.genBasemap = function () {
-        return __WEBPACK_IMPORTED_MODULE_1_leaflet__["tileLayer"]('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=' + 'pk.eyJ1IjoiZHNsb3NreSIsImEiOiJjaXR1aHJnY3EwMDFoMnRxZWVtcm9laWJmIn0.1C3GE0kHPGOpbVV9kTxBlQ', {
+        this.basemap = __WEBPACK_IMPORTED_MODULE_1_leaflet__["tileLayer"]('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=' + 'pk.eyJ1IjoiZHNsb3NreSIsImEiOiJjaXR1aHJnY3EwMDFoMnRxZWVtcm9laWJmIn0.1C3GE0kHPGOpbVV9kTxBlQ', {
             maxZoom: 18,
             attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
                 '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -698,14 +704,21 @@ var MapComponent = /** @class */ (function () {
         });
     };
     MapComponent.prototype.clearMap = function () {
-        var _this = this;
         if (this.layersControl) {
             this.layersControl.remove();
         }
-        this.map.eachLayer(function (layer) {
-            _this.map.removeLayer(layer);
+        /*
+        this.map.eachLayer(layer => {
+          this.map.removeLayer(layer);
         });
-        this.layers = [];
+        */
+        for (var _i = 0, _a = this.allLayers; _i < _a.length; _i++) {
+            var layer = _a[_i];
+            layer.removeFrom(this.map);
+        }
+        // clear the tracked layers
+        this.defLayers = [];
+        this.allLayers = [];
     };
     MapComponent.prototype.ngOnDestroy = function () {
         for (var _i = 0, _a = this.subs; _i < _a.length; _i++) {
