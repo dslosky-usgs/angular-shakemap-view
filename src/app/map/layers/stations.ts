@@ -96,7 +96,8 @@ var generatePopup = function (props) {
         <table style="width:100%;
                     text-align:center;">
             <tr>
-                <td style="min-width:4.3em">
+                <td style="width:60px;
+                        padding-right:10px;">
                     <table style="background-color:` + color + `;
                             border:2px solid black;
                             border-radius:3px;
@@ -115,7 +116,7 @@ var generatePopup = function (props) {
                         </tr>
                     </table>
                 </td>
-                <td style="white-space:nowrap;">
+                <td>
                     <table>
                         <tr>
                             <th>
@@ -129,7 +130,7 @@ var generatePopup = function (props) {
                         </tr>
                     </table>
                 </td>
-                <td style="white-space:nowrap;">
+                <td>
                     <table>
                         <tr>
                             <th>
@@ -143,7 +144,7 @@ var generatePopup = function (props) {
                         </tr>
                     </table>
                 </td>
-                <td style="white-space:nowrap;">
+                <td>
                     <table>
                         <tr>
                             <th>
