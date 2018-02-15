@@ -1,0 +1,10 @@
+.container {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(100%);
+    z-index: 500;
+}
+
+.container.show {
+    transform: translateY(0);
+}

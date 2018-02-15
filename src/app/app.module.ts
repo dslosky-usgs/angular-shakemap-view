@@ -9,13 +9,15 @@ import { EventsComponent } from './events/events.component';
 import { EventService } from './events/event.service';
 import { MapService } from './map/map.service';
 import { ConfService } from './conf.service';
+import { BottomPanelComponent } from './bottom-panel/bottom-panel.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
-    EventsComponent
+    EventsComponent,
+    BottomPanelComponent
   ],
   imports: [
     BrowserModule,
