@@ -112,5 +112,4 @@ export var miLayer = {
             onEachFeature: onEachFeature
         });
     }
-    }
 };
