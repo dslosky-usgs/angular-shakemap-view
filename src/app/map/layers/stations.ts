@@ -83,8 +83,7 @@ var generatePopup = function (props) {
         default: {
             mmi = '0'
             color = '#FFFFFF'
-        }
-        
+        }   
     }
     
 
