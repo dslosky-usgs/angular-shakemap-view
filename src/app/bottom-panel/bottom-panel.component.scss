@@ -3,8 +3,20 @@
     bottom: 0;
     transform: translateY(100%);
     z-index: 500;
+    width: 100%;
+    background-color: #ffffff
 }
 
 .container.show {
     transform: translateY(0);
+}
+
+.state-toggle {
+    position: absolute;
+    top: 0;
+    transform: translateY(-100%) translateX(-50%);
+    height: 45px;
+    width: 45px;
+    left: 50%;
+    background-color: #0000ff
 }

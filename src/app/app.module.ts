@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
@@ -21,6 +22,7 @@ import { BottomPanelComponent } from './bottom-panel/bottom-panel.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpModule
   ],
   providers: [LayerService, EventService, MapService, ConfService],
