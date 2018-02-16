@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
-import { Http, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Subscription } from 'rxjs/subscription';
 
@@ -19,7 +19,7 @@ export class LayerService {
   public data: any = {};
   public waiting: Subscription[] = [];
 
-  constructor(private http: Http) {}
+  constructor(private http: HttpClient) {}
 
   genLayers(event) {
     // stop waiting on old map layers
@@ -31,16 +31,8 @@ export class LayerService {
       if (layer['productId'] in contents) {
         // get the product
         this.waiting.push(
-          this.http.get(contents[layer['productId']]['url'])
-            .pipe(
-              map((res:Response) => {
-                if (layer.type === 'json') {
-                  return res.json();
-                } else {
-                  return res.text();
-                }
-              })
-            )
+          this.http.get(contents[layer['productId']]['url'], 
+                          {responseType: layer['productType']})
             .subscribe(product => {
               // generate the layer
               layer['layer'] = layer.generateLayer(product);

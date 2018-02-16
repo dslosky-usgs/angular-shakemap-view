@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
-
 import { EventService } from './event.service';
-import { MapService } from '../map/map.service';
 
 @Component({
   selector: 'shakemap-view-events',
@@ -13,20 +11,19 @@ export class EventsComponent implements OnInit {
   public eventData: any = [];
   private subs: Subscription[] = [];
 
-  constructor(public eventService: EventService,
-              private mapService: MapService) { }
+  constructor(public eventService: EventService) { }
 
   ngOnInit() {
-    this.subs.push(this.eventService.getEventFeed().subscribe(data => {
+    this.eventService.getEventFeed().subscribe(data => {
       this.eventData = data;
 
       if (data) {
         this.plot(data[0])
       }
-    }));
+    });
   }
 
   plot(event) {
-    this.mapService.plotEvent.next(event);
+    this.eventService.selectEvent(event);
   }
 }
