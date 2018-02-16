@@ -2,9 +2,11 @@
     position: absolute;
     bottom: 0;
     transform: translateY(100%);
-    z-index: 500;
+    z-index: 1000;
     width: 100%;
-    background-color: #ffffff
+    background-color: #ffffff;
+    text-align: center;
+    max-height: 500px;
 }
 
 .container.show {

@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="info-container" *ngIf="info">
+
+    <div class="output column" *ngIf="info.output">
+      <h2>Output</h2>
+
+      <div class="groundmotion">
+        <h3>Ground Motion/Intensity Information</h3>
+
+        <table>
+          <thead>
+            <th>Type</th>
+            <th>Max value in grid</th>
+            <th>Max value on land</th>
+            <th>Bias</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let name of name_order['ground_motions']">
+              <th *ngIf="info.output['ground_motions'][name]">{{ names['ground_motions'][name] }}</th>
+              <td *ngIf="info.output['ground_motions'][name]">
+                {{ info.output.ground_motions[name]['max_grid'] }}
+              </td>
+              <td *ngIf="info.output['ground_motions'][name]">
+                {{ info.output.ground_motions[name]['max'] }}
+              </td>
+              <td *ngIf="info.output['ground_motions'][name]">
+                {{ info.output.ground_motions[name]['bias'] }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="uncertainty">
+        <h3>Uncertainty</h3>
+
+        <table>
+          <tr *ngFor="let name of name_order['uncertainty']">
+            <th>{{ names['uncertainty'][name] }}</th>
+            <td *ngIf="info.output.uncertainty[name]">
+              {{ info.output.uncertainty[name] }}
+            </td>
+          </tr>
+        </table>
+
+      </div>
+    </div>
+
+  </div>
+</div>

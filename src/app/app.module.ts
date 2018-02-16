@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
@@ -11,6 +11,8 @@ import { EventService } from './events/event.service';
 import { MapService } from './map/map.service';
 import { ConfService } from './conf.service';
 import { BottomPanelComponent } from './bottom-panel/bottom-panel.component';
+import { InfoComponent } from './bottom-panel/info/info.component';
+import { InfoService } from './bottom-panel/info/info.service';
 
 
 @NgModule({
@@ -18,14 +20,15 @@ import { BottomPanelComponent } from './bottom-panel/bottom-panel.component';
     AppComponent,
     MapComponent,
     EventsComponent,
-    BottomPanelComponent
+    BottomPanelComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpModule
+    HttpClientModule
   ],
-  providers: [LayerService, EventService, MapService, ConfService],
+  providers: [LayerService, EventService, MapService, ConfService, InfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
