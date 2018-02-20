@@ -7,6 +7,8 @@ import {
   transition
 } from '@angular/animations';
 
+import { InfoService } from './info/info.service';
+
 @Component({
   selector: 'shakemap-view-bottom-panel',
   templateUrl: './bottom-panel.component.html',
@@ -25,12 +27,21 @@ import {
 ]
 })
 export class BottomPanelComponent implements OnInit {
-  public panelState = 'inactive';
+  public panelState: string = 'inactive';
+  public selected: string = null;
 
-  constructor() { }
+  constructor(public infoService: InfoService) { }
 
   ngOnInit() {
     this.panelState = 'active';
+  }
+
+  select(tab:string) {
+    if (tab === this.selected) {
+      this.selected = null;
+    } else {
+      this.selected = tab;
+    }
   }
 
   toggleState() {

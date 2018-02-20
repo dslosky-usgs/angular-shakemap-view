@@ -5,6 +5,8 @@ import { ReplaySubject } from 'rxjs/replaysubject';
 @Injectable()
 export class InfoService {
   public info = new ReplaySubject(1);
+  public hasInfo: boolean = false;
+
   constructor(private http: HttpClient) { }
 
   getInfo(event) {
@@ -13,9 +15,11 @@ export class InfoService {
       this.http.get(contents['download/info.json']['url'])
         .subscribe(info => {
           this.info.next(info);
+          this.hasInfo = true;
         })
     } else {
       this.info.next(null);
+      this.hasInfo = false;
     }
   }
 }
