@@ -46,7 +46,9 @@ export class MapComponent implements OnInit, OnDestroy {
     })
 
     this.genBasemap();
-    this.map = L.map('map').setView([51.505, -0.09], 13);
+    this.map = L.map('map', {
+        scrollWheelZoom: false                    
+      }).setView([51.505, -0.09], 13);
     this.basemap.addTo(this.map);
     this.layersControl = L.control.layers({'Basemap': this.basemap});
   }
