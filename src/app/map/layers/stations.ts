@@ -1,13 +1,15 @@
 import * as L from 'leaflet';
+import 'leaflet-svg-shape-markers';
+import { getMmiRgba } from './mmi_colors';
 
-var geojsonMarkerOptions = {
+var shapeMarkerOptions = {
+    shape: 'circle',
+    fillColor: '#ffffff',
+    fillOpacity: 1,
+    color: '#444444',
     radius: 6,
-    fillColor: "rgb(0, 255, 255)",
-    color: "#000",
     weight: 1,
-    opacity: 1,
-    fillOpacity: 0.4
-};
+}
 
 function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
@@ -175,7 +177,11 @@ export var stationLayer = {
     generateLayer: function (json) {
         return L.geoJson(json, {
             pointToLayer: function (feature, latlng) {
-                return L.circleMarker(latlng, geojsonMarkerOptions);
+                if (feature.properties.source.toLowerCase().includes('dyfi')) {
+                    shapeMarkerOptions.shape = 'triangle'
+                }
+                shapeMarkerOptions.fillColor = getMmiRgba(feature.properties.intensity)
+                return L.shapeMarker(latlng, shapeMarkerOptions)
             },
             onEachFeature: onEachFeature
         });
