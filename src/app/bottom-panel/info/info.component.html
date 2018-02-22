@@ -9,7 +9,7 @@
 
         <table>
           <tr *ngFor="let name of name_order['event_information']">
-            <th>{{ names['event_information'][name] }}</th>
+            <th *ngIf="info.input.event_information[name]">{{ names['event_information'][name] }}</th>
             <td *ngIf="info.input.event_information[name]">
               {{ name !== 'dyfi' ? info.input.event_information[name] : info.input.event_information['intensity']}}
             </td>
@@ -42,7 +42,7 @@
                 {{ info.output.ground_motions[name]['max'] | number }}
               </td>
               <td *ngIf="info.output['ground_motions'][name]">
-                {{ info.output.ground_motions[name]['bias'].replace('[[', '').replace(']]', '') | number }}
+                {{ info.output.ground_motions[name]['bias'].toString().replace('[[', '').replace(']]', '') | number }}
               </td>
             </tr>
           </tbody>
@@ -81,7 +81,7 @@
 
         <table>
           <tr *ngFor="let name of name_order['uncertainty']">
-            <th>{{ names['uncertainty'][name] }}</th>
+            <th *ngIf="info.output.uncertainty[name]">{{ names['uncertainty'][name] }}</th>
             <td *ngIf="info.output.uncertainty[name]">
               {{name === 'grade' ? (info.output.uncertainty[name]) : (info.output.uncertainty[name] | number)}}
             </td>
@@ -167,6 +167,7 @@
 
         <table>
           <thead>
+            <th>Type</th>
             <th>ROI</th>
             <th>Observation Decay</th>
           </thead>

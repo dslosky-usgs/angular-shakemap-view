@@ -164,9 +164,12 @@ export var stationLayer = {
     generateLayer: function (json) {
         return L.geoJson(json, {
             pointToLayer: function (feature, latlng) {
-                if (feature.properties.source.toLowerCase().includes('dyfi')) {
+                if (feature.id.toLowerCase().includes('dyfi')) {
+                    shapeMarkerOptions.shape = 'circle'
+                } else {
                     shapeMarkerOptions.shape = 'triangle'
                 }
+
                 shapeMarkerOptions.fillColor = getMmiRgba(feature.properties.intensity)
                 return L.shapeMarker(latlng, shapeMarkerOptions)
             },
