@@ -1,7 +1,7 @@
 import * as L from 'leaflet';
 var lineStyle = {
     "color": "#ffffff",
-    "weight": 5,
+    "weight": 2,
     "opacity": 1
 };
 
@@ -20,10 +20,10 @@ export var pgaLayer = {
     generateLayer: function (json) {
         return L.geoJson(json, {
             style: function (feature, latlng) {
-                if (lineStyle.weight == 5) {
+                if (lineStyle.weight == 4) {
                     lineStyle.weight = 2
                 } else {
-                    lineStyle.weight = 5
+                    lineStyle.weight = 4
                 }
 
                 return lineStyle;

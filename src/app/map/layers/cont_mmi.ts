@@ -3,8 +3,8 @@ import { getMmiRgba } from './mmi_colors';
 
 var lineStyle = {
     "color": "#EFEFF0",
-    "weight": 5,
-    "opacity": .8
+    "weight": 2,
+    "opacity": 1
 };
 
 function onEachFeature(feature, layer) {
@@ -104,10 +104,10 @@ export var mmiLayer = {
         return L.geoJson(json, {
             style: function (feature, latlng) {
                 lineStyle.color = getMmiRgba(feature.properties.value);
-                if (lineStyle.weight == 5) {
-                    lineStyle.weight = 3;
+                if (lineStyle.weight == 4) {
+                    lineStyle.weight = 2;
                 } else {
-                    lineStyle.weight = 5;
+                    lineStyle.weight = 4;
                 }
 
                 return lineStyle;
