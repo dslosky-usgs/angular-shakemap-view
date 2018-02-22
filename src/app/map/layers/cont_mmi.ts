@@ -1,4 +1,5 @@
 import * as L from 'leaflet';
+import { getMmiRgba } from './mmi_colors';
 
 var lineStyle = {
     "color": "#EFEFF0",
@@ -15,71 +16,58 @@ function onEachFeature(feature, layer) {
 
 function generatePopup(props) {
     let mmi;
-    let color;
+    let color = getMmiRgba(props.value);
     switch (Math.round(Number(props.value))) {
         case 1: {
             mmi = 'I'
-            color = '#EFEFF0'
             break;
         }
         case 2: {
             mmi = 'II'
-            color = '#EFEFF0'
             break;
         }
         case 3: {
             mmi = 'III'
-            color = '#67ACF0'
             break;
         }
         case 4: {
             mmi = 'IV'
-            color = '#67F0BC'
             break;
         }
         case 5: {
             mmi = 'V'
-            color = '#FCFC48'
             break;
         }
         case 6: {
             mmi = 'VI'
-            color = '#FCE648'
             break;
         }
         case 7: {
             mmi = 'VII'
-            color = '#FABC15'
             break;
         }
         case 8: {
             mmi = 'VIII'
-            color = '#FA7E45'
             break;
         }
         case 9: {
             mmi = 'IX'
-            color = '#FB1109'
             break;
         }
         case 10: {
             mmi = 'X'
-            color = '#FF0800'
             break;
         }
         case 11: {
             mmi = 'XI'
-            color = '#FF0000'
             break;
         }
         case 12: {
             mmi = 'XII'
-            color = '#FF0000'
             break;
         }
         default: {
             mmi = '0'
-            color = '#FFFFFF'
         }
     }
 
@@ -107,67 +95,6 @@ function generatePopup(props) {
     return popupContent;
 }
 
-function getLineStyle(feature) {
-    let mmi;
-    let color;
-    switch (Math.round(Number(feature.properties.value))) {
-        case 1: {
-            color = '#EFEFF0'
-            break;
-        }
-        case 2: {
-            color = '#EFEFF0'
-            break;
-        }
-        case 3: {
-            color = '#67ACF0'
-            break;
-        }
-        case 4: {
-            color = '#67F0BC'
-            break;
-        }
-        case 5: {
-            color = '#FCFC48'
-            break;
-        }
-        case 6: {
-            color = '#FCE648'
-            break;
-        }
-        case 7: {
-            color = '#FABC15'
-            break;
-        }
-        case 8: {
-            color = '#FA7E45'
-            break;
-        }
-        case 9: {
-            color = '#FB1109'
-            break;
-        }
-        case 10: {
-            color = '#FF0800'
-            break;
-        }
-        case 11: {
-            color = '#FF0000'
-            break;
-        }
-        case 12: {
-            color = '#FF0000'
-            break;
-        }
-        default: {
-            color = '#FFFFFF'
-        }
-    }
-
-    lineStyle.color = color;
-    return lineStyle
-}
-
 export var mmiLayer = {
     name: 'MMI Contours',
     id: 'mmi_cont',
@@ -176,7 +103,8 @@ export var mmiLayer = {
     generateLayer: function (json) {
         return L.geoJson(json, {
             style: function (feature, latlng) {
-                return getLineStyle(feature);
+                lineStyle.color = getMmiRgba(feature.properties.value);
+                return lineStyle
             },
             onEachFeature: onEachFeature
         });
