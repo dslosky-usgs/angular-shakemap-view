@@ -13,6 +13,8 @@ import { ConfService } from './conf.service';
 import { BottomPanelComponent } from './bottom-panel/bottom-panel.component';
 import { InfoComponent } from './bottom-panel/info/info.component';
 import { InfoService } from './bottom-panel/info/info.service';
+import { StationListComponent } from './bottom-panel/station-list/station-list.component';
+import { StationService } from './bottom-panel/station-list/station.service';
 
 
 @NgModule({
@@ -21,14 +23,16 @@ import { InfoService } from './bottom-panel/info/info.service';
     MapComponent,
     EventsComponent,
     BottomPanelComponent,
-    InfoComponent
+    InfoComponent,
+    StationListComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [LayerService, EventService, MapService, ConfService, InfoService],
-  bootstrap: [AppComponent]
+  providers: [LayerService, EventService, MapService, ConfService, InfoService, StationService],
+  bootstrap: [AppComponent],
+  exports: [AppComponent]
 })
 export class AppModule { }

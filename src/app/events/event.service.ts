@@ -7,13 +7,33 @@ import { InfoService } from '../bottom-panel/info/info.service';
 @Injectable()
 export class EventService {
   public selectedEvent = new ReplaySubject(1);
+  public events = new ReplaySubject(1)
+  public manualEntry: any = null;
 
   constructor(private http: HttpClient,
               private mapService: MapService,
               private infoService: InfoService) { }
 
   getEventFeed() {
-    return this.http.get('products.json')
+    this.http.get('products.json').subscribe(
+      data => {
+        this.events.next(data);
+      },
+      error => {
+        let events = []
+        if (this.manualEntry) {
+          events.push({
+            id: this.manualEntry['properties']['products']['shakemap'][0]['code'],
+            shakemap: this.manualEntry['properties']['products']['shakemap']
+          });
+        }
+        this.events.next(events);
+      }
+    );
+  }
+
+  parseFromEventJson(event) {
+
   }
 
   selectEvent(event) {
