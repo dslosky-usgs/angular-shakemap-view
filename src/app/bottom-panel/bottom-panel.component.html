@@ -2,10 +2,11 @@
     <div class="state-toggle" (click)="toggleState()">
     </div>
 
-    <div class="tabs">
-      <h3 class="tab" *ngIf="infoService.hasInfo" (click)="select('metadata')">Metadata</h3>
+    <div class="content-container">
+      <div class="tabs">
+        <h3 class="tab" *ngIf="infoService.hasInfo" (click)="select('metadata')">Metadata</h3>
+      </div>
+
+      <shakemap-view-info *ngIf="selected==='metadata'"></shakemap-view-info>
     </div>
-
-    <shakemap-view-info *ngIf="selected==='metadata'"></shakemap-view-info>
-
 </div>

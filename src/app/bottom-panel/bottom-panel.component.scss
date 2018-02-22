@@ -15,9 +15,15 @@
 .state-toggle {
     position: absolute;
     top: 0;
-    transform: translateY(-100%) translateX(-50%);
-    height: 45px;
-    width: 45px;
+    transform: translateY(-30%) translateX(-50%);
+    height: 75px;
+    width: 150px;
+    border-radius:40%;
     left: 50%;
-    background-color: #0000ff
+    background-color: #ffffff;
+}
+
+.content-container {
+    position: relative;
+    z-index: 1001
 }
