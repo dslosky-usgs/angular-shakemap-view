@@ -8,6 +8,7 @@ import {
 } from '@angular/animations';
 
 import { InfoService } from './info/info.service';
+import { StationService } from './station-list/station.service';
 
 @Component({
   selector: 'shakemap-view-bottom-panel',
@@ -30,7 +31,8 @@ export class BottomPanelComponent implements OnInit {
   public panelState: string = 'inactive';
   public selected: string = null;
 
-  constructor(public infoService: InfoService) { }
+  constructor(public infoService: InfoService,
+              public stationService: StationService) { }
 
   ngOnInit() {
     this.panelState = 'active';

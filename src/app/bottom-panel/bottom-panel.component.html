@@ -4,9 +4,13 @@
 
     <div class="content-container">
       <div class="tabs">
-        <h3 class="tab" *ngIf="infoService.hasInfo" (click)="select('metadata')">Metadata</h3>
+        <h3 class="tab" *ngIf="infoService.hasData" (click)="select('metadata')">Metadata</h3>
+      </div>
+      <div class="tabs">
+        <h3 class="tab" *ngIf="stationService.hasData" (click)="select('stations')">Station List</h3>
       </div>
 
       <shakemap-view-info *ngIf="selected==='metadata'"></shakemap-view-info>
+      <shakemap-view-station-list *ngIf="selected==='stations'"></shakemap-view-station-list>
     </div>
 </div>

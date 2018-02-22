@@ -105,7 +105,7 @@ export class InfoComponent implements OnInit, OnDestroy {
   constructor(public infoService: InfoService) { }
 
   ngOnInit() {
-    this.subs.push(this.infoService.info.subscribe(info => {
+    this.subs.push(this.infoService.data.subscribe(info => {
       this.info = info;
     }));
   }
