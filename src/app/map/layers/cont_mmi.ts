@@ -104,7 +104,13 @@ export var mmiLayer = {
         return L.geoJson(json, {
             style: function (feature, latlng) {
                 lineStyle.color = getMmiRgba(feature.properties.value);
-                return lineStyle
+                if (lineStyle.weight == 5) {
+                    lineStyle.weight = 3;
+                } else {
+                    lineStyle.weight = 5;
+                }
+
+                return lineStyle;
             },
             onEachFeature: onEachFeature
         });
