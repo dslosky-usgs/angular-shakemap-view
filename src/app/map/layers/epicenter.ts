@@ -9,8 +9,9 @@ var epiIcon = L.icon({
 
 export var epicenterLayer = {
     name: 'Epicenter',
+    id: 'epicenter',
     productId: 'download/grid.xml',
-    type: 'text',
+    productType: 'text',
     generateLayer: function (xml) {
         var parser = new DOMParser();
         var xmlDoc = parser.parseFromString(xml,'text/xml');

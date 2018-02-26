@@ -1,5 +1,4 @@
 import * as L from 'leaflet';
-import { getMmiRgba } from '../../util/mmi_colors';
 import { getRomanFromMmi } from '../../util/mmi_roman';
 
 var lineStyle = {
@@ -17,10 +16,9 @@ function onEachFeature(feature, layer) {
 
 function generatePopup(props) {
     let mmi = getRomanFromMmi(props.value);
-    let color = getMmiRgba(props.value);
 
     let popupContent = `
-        <table style="background-color:` + color + `;
+        <table style="background-color:` + props.color + `;
                         border:2px solid black;
                         border-radius:3px;
                         width:100%;
@@ -43,21 +41,25 @@ function generatePopup(props) {
     return popupContent;
 }
 
-export var mmiLayer = {
+function getLineStyle(feature) {
+    lineStyle.color = feature.properties.color;
+    return lineStyle
+}
+
+export var miLayer = {
     name: 'MMI Contours',
     id: 'mmi_cont',
-    productId: 'download/cont_mmi.json',
+    productId: 'download/cont_mi.json',
     type: 'json',
     generateLayer: function (json) {
         return L.geoJson(json, {
             style: function (feature, latlng) {
-                lineStyle.color = getMmiRgba(feature.properties.value);
                 if (lineStyle.weight == 4) {
                     lineStyle.weight = 2;
                 } else {
                     lineStyle.weight = 4;
                 }
-
+                lineStyle.color = feature.properties.color;
                 return lineStyle;
             },
             onEachFeature: onEachFeature

@@ -1,21 +1,21 @@
 import * as L from 'leaflet';
 var lineStyle = {
     "color": "#ffffff",
-    "weight": 2,
+    "weight": 4,
     "opacity": 1
 };
 
 function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties) {
-        layer.bindPopup('PGA: ' + feature.properties.value);
+        layer.bindPopup('PGV: ' + feature.properties.value);
     }
 }
 
-export var pgaLayer = {
-    name: 'PGA Contours',
-    id: 'pga_cont',
-    productId: 'download/cont_pga.json',
+export var pgvLayer = {
+    name: 'PGV Contours',
+    id: 'pgv_cont',
+    productId: 'download/cont_pgv.json',
     type: 'json',
     generateLayer: function (json) {
         return L.geoJson(json, {

@@ -1,19 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 @Injectable()
 export class ConfService {
   public conf = {};
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   
   getConfigs() {
     /* This is a description */
     this.http.get('configs.json')
-      .pipe(
-        map((res:Response) => res.json())
-      ).subscribe(conf => {
+      .subscribe(conf => {
         this.conf = conf;
       });
   }
