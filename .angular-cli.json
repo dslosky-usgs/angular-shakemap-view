@@ -20,7 +20,8 @@
       "prefix": "shakemap-view",
       "styles": [
         "styles.scss",
-        "../node_modules/leaflet/dist/leaflet.css"
+        "../node_modules/leaflet/dist/leaflet.css",
+        "../node_modules/font-awesome/css/font-awesome.min.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

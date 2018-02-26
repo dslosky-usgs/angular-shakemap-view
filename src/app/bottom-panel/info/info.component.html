@@ -83,7 +83,7 @@
           <tr *ngFor="let name of name_order['uncertainty']">
             <th *ngIf="info.output.uncertainty[name]">{{ names['uncertainty'][name] }}</th>
             <td *ngIf="info.output.uncertainty[name]">
-              {{name === 'grade' ? (info.output.uncertainty[name]) : (info.output.uncertainty[name] | number)}}
+              {{ isNaN(name) ? (info.output.uncertainty[name]) : (info.output.uncertainty[name] | number)}}
             </td>
           </tr>
         </table>

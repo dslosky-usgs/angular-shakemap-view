@@ -1,5 +1,6 @@
 import * as L from 'leaflet';
-import { getMmiRgba } from './mmi_colors';
+import { getMmiRgba } from '../../util/mmi_colors';
+import { getRomanFromMmi } from '../../util/mmi_roman';
 
 var lineStyle = {
     "color": "#EFEFF0",
@@ -15,61 +16,8 @@ function onEachFeature(feature, layer) {
 }
 
 function generatePopup(props) {
-    let mmi;
+    let mmi = getRomanFromMmi(props.value);
     let color = getMmiRgba(props.value);
-    switch (Math.round(Number(props.value))) {
-        case 1: {
-            mmi = 'I'
-            break;
-        }
-        case 2: {
-            mmi = 'II'
-            break;
-        }
-        case 3: {
-            mmi = 'III'
-            break;
-        }
-        case 4: {
-            mmi = 'IV'
-            break;
-        }
-        case 5: {
-            mmi = 'V'
-            break;
-        }
-        case 6: {
-            mmi = 'VI'
-            break;
-        }
-        case 7: {
-            mmi = 'VII'
-            break;
-        }
-        case 8: {
-            mmi = 'VIII'
-            break;
-        }
-        case 9: {
-            mmi = 'IX'
-            break;
-        }
-        case 10: {
-            mmi = 'X'
-            break;
-        }
-        case 11: {
-            mmi = 'XI'
-            break;
-        }
-        case 12: {
-            mmi = 'XII'
-            break;
-        }
-        default: {
-            mmi = '0'
-        }
-    }
 
     let popupContent = `
         <table style="background-color:` + color + `;

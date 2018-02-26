@@ -13,8 +13,8 @@ export class StationService {
     let contents = event['shakemap'][0]['contents'];
     if (contents['download/info.json']) {
       this.http.get(contents['download/stationlist.json']['url'])
-        .subscribe(data => {
-          this.data.next(data);
+        .subscribe((data: any) => {
+          this.data.next(data.features);
           this.hasData = true;
         })
     } else {

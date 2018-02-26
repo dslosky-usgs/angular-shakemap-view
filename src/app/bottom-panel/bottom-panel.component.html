@@ -1,12 +1,14 @@
 <div class="container" [@panelState]='panelState'>
     <div class="state-toggle" (click)="toggleState()">
+      <div class="arrow">
+        <i class="fa fa-angle-up" *ngIf="panelState === 'inactive'"></i>
+        <i class="fa fa-angle-down" *ngIf="panelState === 'active'"></i>
+      </div>
     </div>
 
     <div class="content-container">
       <div class="tabs">
         <h3 class="tab" *ngIf="infoService.hasData" (click)="select('metadata')">Metadata</h3>
-      </div>
-      <div class="tabs">
         <h3 class="tab" *ngIf="stationService.hasData" (click)="select('stations')">Station List</h3>
       </div>
 

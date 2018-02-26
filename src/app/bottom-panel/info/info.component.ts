@@ -11,6 +11,7 @@ export class InfoComponent implements OnInit, OnDestroy {
   private subs: Subscription[] = [];
   public info: any = null;
   public objKeys: any = Object.keys;
+  public isNaN: any = isNaN;
   
   public name_order = {
     'event_information': ['event_description', 'event_id', 'magnitude', 'depth', 'longitude', 'latitude', 'origin_time', 'src_mech', 'location', 'fault_ref', 'seismic_stations', 'intensity_observations'],

@@ -27,3 +27,15 @@
     position: relative;
     z-index: 1001
 }
+
+.arrow {
+    font-size: 32px;
+    transform: translateY(-20%);
+    cursor: pointer;
+}
+
+.tab {
+    display: inline-block;
+    width: max-content;
+    padding: 10px;
+}

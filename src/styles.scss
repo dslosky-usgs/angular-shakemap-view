@@ -22,3 +22,12 @@ body {
     height: 100%;
     width: 100%;
 }
+
+.link {
+    color: #0099FF;
+    cursor: pointer;
+}
+
+.link:hover {
+    text-decoration: underline; 
+}
