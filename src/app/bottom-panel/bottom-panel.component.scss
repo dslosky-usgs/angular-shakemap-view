@@ -38,4 +38,25 @@
     display: inline-block;
     width: max-content;
     padding: 10px;
+    border: 2px solid #0099FF;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.tab:hover {
+    background-color: #0099FF;
+}
+
+.exit {
+    text-align: right;
+    margin-right: 10px;
+    font-size: 34px;
+}
+
+.exit .fa {
+    cursor: pointer;
+}
+
+.exit .fa:hover {
+    color: #0099FF
 }

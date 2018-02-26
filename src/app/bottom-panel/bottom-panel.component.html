@@ -8,8 +8,12 @@
 
     <div class="content-container">
       <div class="tabs">
-        <h3 class="tab" *ngIf="infoService.hasData" (click)="select('metadata')">Metadata</h3>
-        <h3 class="tab" *ngIf="stationService.hasData" (click)="select('stations')">Station List</h3>
+        <h3 class="tab" *ngIf="infoService.hasData" (click)="selected='metadata'">Metadata</h3>
+        <h3 class="tab" *ngIf="stationService.hasData" (click)="selected='stations'">Station List</h3>
+      </div>
+
+      <div class="exit" *ngIf="selected" (click)="selected=null">
+        <i class="fa fa-times"></i>
       </div>
 
       <shakemap-view-info *ngIf="selected==='metadata'"></shakemap-view-info>
