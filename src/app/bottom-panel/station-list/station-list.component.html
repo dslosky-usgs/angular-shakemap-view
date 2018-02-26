@@ -125,9 +125,12 @@
                       </th>
                       <td>{{ getAmp('pga', channel.amplitudes).value | number }}</td>
                       <td>{{ getAmp('pgv', channel.amplitudes).value | number }}</td>
-                      <td>{{ getAmp('psa03', channel.amplitudes).value | number }}</td>
-                      <td>{{ getAmp('psa10', channel.amplitudes).value | number }}</td>
-                      <td>{{ getAmp('psa30', channel.amplitudes).value | number }}</td>
+                      <td *ngIf="getAmp('psa03', channel.amplitudes).value">{{ getAmp('psa03', channel.amplitudes).value | number }}</td>
+                      <td *ngIf="getAmp('psa10', channel.amplitudes).value">{{ getAmp('psa10', channel.amplitudes).value | number }}</td>
+                      <td *ngIf="getAmp('psa30', channel.amplitudes).value">{{ getAmp('psa30', channel.amplitudes).value | number }}</td>
+                      <td *ngIf="getAmp('sa(0.3)', channel.amplitudes).value">{{ getAmp('sa(0.3)', channel.amplitudes).value | number }}</td>
+                      <td *ngIf="getAmp('sa(1.0)', channel.amplitudes).value">{{ getAmp('sa(1.0)', channel.amplitudes).value | number }}</td>
+                      <td *ngIf="getAmp('sa(3.0)', channel.amplitudes).value">{{ getAmp('sa(3.0)', channel.amplitudes).value | number }}</td>
                     </tr>
                   </tbody>
                 </table>
