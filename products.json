@@ -248,22 +248,22 @@
                 "properties": {
                     "event-description": "69.7 miles ESE of Akutan", 
                     "eventtime": "2014-01-02T23:02:26.000Z", 
-                    "eventsourcecode": "10943992", 
+                    "map-status": "RELEASED", 
                     "overlayHeight": "277", 
                     "version": "5", 
                     "minimum-latitude": "53.042650", 
-                    "magnitude": "4.400000", 
                     "minimum-longitude": "-165.414700", 
-                    "longitude": "-164.164700", 
+                    "magnitude": "4.400000", 
                     "process-timestamp": "2014-01-03T21:57:39.000Z", 
                     "depth": "25.6271", 
                     "maxmmi": "4.17", 
                     "eventsource": "ak", 
+                    "longitude": "-164.164700", 
                     "event-type": "ACTUAL", 
                     "overlayWidth": "468", 
                     "maximum-latitude": "54.520150", 
                     "latitude": "53.781400", 
-                    "map-status": "RELEASED", 
+                    "eventsourcecode": "10943992", 
                     "maximum-longitude": "-162.914700"
                 }, 
                 "contents": {
@@ -271,12 +271,6 @@
                         "url": "https://earthquake.usgs.gov/archive/product/shakemap/ak10943992/ak/1388787079149/download/metadata.xml", 
                         "lastModified": 1388787044000, 
                         "length": 27060, 
-                        "contentType": "application/octet-stream"
-                    }, 
-                    "download/psa03.jpg": {
-                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/ak10943992/ak/1388787079149/download/psa03.jpg", 
-                        "lastModified": 1388787042000, 
-                        "length": 31010, 
                         "contentType": "application/octet-stream"
                     }, 
                     "about_formats.html": {
@@ -319,6 +313,12 @@
                         "url": "https://earthquake.usgs.gov/archive/product/shakemap/ak10943992/ak/1388787079149/download/metadata.html", 
                         "lastModified": 1388787044000, 
                         "length": 43597, 
+                        "contentType": "application/octet-stream"
+                    }, 
+                    "pga.html": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/ak10943992/ak/1388787079149/pga.html", 
+                        "lastModified": 1388787044000, 
+                        "length": 5270, 
                         "contentType": "application/octet-stream"
                     }, 
                     "download/urat_pga.jpg": {
@@ -495,16 +495,16 @@
                         "length": 133137, 
                         "contentType": "application/octet-stream"
                     }, 
-                    "pga.html": {
-                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/ak10943992/ak/1388787079149/pga.html", 
-                        "lastModified": 1388787044000, 
-                        "length": 5270, 
-                        "contentType": "application/octet-stream"
-                    }, 
                     "download/shape.zip": {
                         "url": "https://earthquake.usgs.gov/archive/product/shakemap/ak10943992/ak/1388787079149/download/shape.zip", 
                         "lastModified": 1388787044000, 
                         "length": 94152, 
+                        "contentType": "application/octet-stream"
+                    }, 
+                    "download/psa03.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/ak10943992/ak/1388787079149/download/psa03.jpg", 
+                        "lastModified": 1388787042000, 
+                        "length": 31010, 
                         "contentType": "application/octet-stream"
                     }, 
                     "psa03.html": {
@@ -581,22 +581,22 @@
                 "properties": {
                     "event-description": "OKLAHOMA", 
                     "eventtime": "2014-01-04T23:33:32.000Z", 
-                    "eventsourcecode": "c000lx1g", 
+                    "map-status": "RELEASED", 
                     "overlayHeight": "378", 
                     "version": "5", 
                     "minimum-latitude": "35.119000", 
-                    "magnitude": "3.7", 
                     "minimum-longitude": "-98.572000", 
-                    "longitude": "-97.322000", 
+                    "magnitude": "3.7", 
                     "process-timestamp": "2014-03-07T00:12:01.000Z", 
                     "depth": "5", 
                     "maxmmi": "4.14", 
                     "eventsource": "us", 
+                    "longitude": "-97.322000", 
                     "event-type": "ACTUAL", 
                     "overlayWidth": "468", 
                     "maximum-latitude": "37.139000", 
                     "latitude": "36.129000", 
-                    "map-status": "RELEASED", 
+                    "eventsourcecode": "c000lx1g", 
                     "maximum-longitude": "-96.072000"
                 }, 
                 "contents": {
@@ -616,6 +616,12 @@
                         "url": "https://earthquake.usgs.gov/archive/product/shakemap/usc000lx1g/us/1394151149532/download/grid.xml.zip", 
                         "lastModified": 1394151146000, 
                         "length": 100484, 
+                        "contentType": "application/octet-stream"
+                    }, 
+                    "download/pgv.ps.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/usc000lx1g/us/1394151149532/download/pgv.ps.zip", 
+                        "lastModified": 1394151146000, 
+                        "length": 242237, 
                         "contentType": "application/octet-stream"
                     }, 
                     "download/tvmap_bare.ps.zip": {
@@ -744,12 +750,6 @@
                         "length": 5428, 
                         "contentType": "application/octet-stream"
                     }, 
-                    "download/intensity.jpg": {
-                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/usc000lx1g/us/1394151149532/download/intensity.jpg", 
-                        "lastModified": 1394151146000, 
-                        "length": 115149, 
-                        "contentType": "application/octet-stream"
-                    }, 
                     "download/tvmap_bare.jpg": {
                         "url": "https://earthquake.usgs.gov/archive/product/shakemap/usc000lx1g/us/1394151149532/download/tvmap_bare.jpg", 
                         "lastModified": 1394151146000, 
@@ -786,10 +786,10 @@
                         "length": 1379026, 
                         "contentType": "application/octet-stream"
                     }, 
-                    "download/pgv.ps.zip": {
-                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/usc000lx1g/us/1394151149532/download/pgv.ps.zip", 
+                    "download/cont_mi.xyz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/usc000lx1g/us/1394151149532/download/cont_mi.xyz", 
                         "lastModified": 1394151146000, 
-                        "length": 242237, 
+                        "length": 27021, 
                         "contentType": "application/octet-stream"
                     }, 
                     "download/intensity.ps.zip": {
@@ -870,10 +870,10 @@
                         "length": 6611, 
                         "contentType": "application/octet-stream"
                     }, 
-                    "download/cont_mi.xyz": {
-                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/usc000lx1g/us/1394151149532/download/cont_mi.xyz", 
-                        "lastModified": 1394151146000, 
-                        "length": 27021, 
+                    "download/metadata.html": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/usc000lx1g/us/1394151149532/download/metadata.html", 
+                        "lastModified": 1394151147000, 
+                        "length": 43479, 
                         "contentType": "application/octet-stream"
                     }, 
                     "pgv.html": {
@@ -888,10 +888,10 @@
                         "length": 117, 
                         "contentType": "application/octet-stream"
                     }, 
-                    "download/metadata.txt": {
-                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/usc000lx1g/us/1394151149532/download/metadata.txt", 
-                        "lastModified": 1394151147000, 
-                        "length": 31322, 
+                    "download/intensity.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/usc000lx1g/us/1394151149532/download/intensity.jpg", 
+                        "lastModified": 1394151146000, 
+                        "length": 115149, 
                         "contentType": "application/octet-stream"
                     }, 
                     "download/stations.kmz": {
@@ -906,15 +906,892 @@
                         "length": 88842, 
                         "contentType": "application/octet-stream"
                     }, 
-                    "download/metadata.html": {
-                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/usc000lx1g/us/1394151149532/download/metadata.html", 
+                    "download/metadata.txt": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/usc000lx1g/us/1394151149532/download/metadata.txt", 
                         "lastModified": 1394151147000, 
-                        "length": 43479, 
+                        "length": 31322, 
                         "contentType": "application/octet-stream"
                     }
                 }
             }
         ], 
         "id": "usc000lx1g"
+    }, 
+    {
+        "shakemap": [
+            {
+                "status": "UPDATE", 
+                "updateTime": 1489789911664, 
+                "code": "nc71863625", 
+                "indexTime": 1489789984489, 
+                "preferredWeight": 231, 
+                "indexid": "137586002", 
+                "id": "urn:usgs-product:nc:shakemap:nc71863625:1489789911664", 
+                "source": "nc", 
+                "type": "shakemap", 
+                "properties": {
+                    "event-description": "20.2 km (12.6 mi) SW of New Idria, CA", 
+                    "eventtime": "2012-10-21T06:55:09.000Z", 
+                    "eventsourcecode": "71863625", 
+                    "overlayHeight": "312", 
+                    "version": "23", 
+                    "minimum-latitude": "35.476366", 
+                    "pdl-client-version": "Version 1.10.1 2016-04-07", 
+                    "magnitude": "5.3", 
+                    "minimum-longitude": "-122.106000", 
+                    "longitude": "-120.856000", 
+                    "process-timestamp": "2017-03-16T03:39:57Z", 
+                    "depth": "8.62", 
+                    "maxmmi": "6.96", 
+                    "eventsource": "nc", 
+                    "event-type": "ACTUAL", 
+                    "overlayWidth": "468", 
+                    "maximum-latitude": "37.143034", 
+                    "latitude": "36.309700", 
+                    "map-status": "RELEASED", 
+                    "maximum-longitude": "-119.606000"
+                }, 
+                "contents": {
+                    "download/metadata.xml": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/metadata.xml", 
+                        "lastModified": 1489635664000, 
+                        "length": 27132, 
+                        "contentType": "application/xml"
+                    }, 
+                    "contents.xml": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/contents.xml", 
+                        "lastModified": 1489789911000, 
+                        "length": 7596, 
+                        "contentType": "application/xml"
+                    }, 
+                    "download/cont_psa03.json": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/cont_psa03.json", 
+                        "lastModified": 1489635665000, 
+                        "length": 58768, 
+                        "contentType": "application/json"
+                    }, 
+                    "download/grid.xml.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/grid.xml.zip", 
+                        "lastModified": 1489635664000, 
+                        "length": 896198, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/tvmap_bare.ps.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/tvmap_bare.ps.zip", 
+                        "lastModified": 1489635662000, 
+                        "length": 1069894, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/ii_overlay.png": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/ii_overlay.png", 
+                        "lastModified": 1489635665000, 
+                        "length": 91060, 
+                        "contentType": "image/png"
+                    }, 
+                    "download/pga.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/pga.jpg", 
+                        "lastModified": 1489635662000, 
+                        "length": 73818, 
+                        "contentType": "image/jpeg"
+                    }, 
+                    "download/metadata.html": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/metadata.html", 
+                        "lastModified": 1489635664000, 
+                        "length": 43629, 
+                        "contentType": "text/html"
+                    }, 
+                    "download/cont_psa03.kmz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/cont_psa03.kmz", 
+                        "lastModified": 1489635665000, 
+                        "length": 12766, 
+                        "contentType": "application/vnd.google-earth.kmz"
+                    }, 
+                    "download/cont_pgv.kmz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/cont_pgv.kmz", 
+                        "lastModified": 1489635665000, 
+                        "length": 6463, 
+                        "contentType": "application/vnd.google-earth.kmz"
+                    }, 
+                    "download/urat_pga.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/urat_pga.jpg", 
+                        "lastModified": 1489635662000, 
+                        "length": 71432, 
+                        "contentType": "image/jpeg"
+                    }, 
+                    "products.html": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/products.html", 
+                        "lastModified": 1489635667000, 
+                        "length": 17386, 
+                        "contentType": "text/html"
+                    }, 
+                    "download/71863625.kml": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/71863625.kml", 
+                        "lastModified": 1489635664000, 
+                        "length": 996, 
+                        "contentType": "application/vnd.google-earth.kml+xml"
+                    }, 
+                    "download/cont_pga.kmz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/cont_pga.kmz", 
+                        "lastModified": 1489635665000, 
+                        "length": 10151, 
+                        "contentType": "application/vnd.google-earth.kmz"
+                    }, 
+                    "download/psa10.ps.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/psa10.ps.zip", 
+                        "lastModified": 1489635663000, 
+                        "length": 1376773, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/cont_pgv.json": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/cont_pgv.json", 
+                        "lastModified": 1489635665000, 
+                        "length": 28819, 
+                        "contentType": "application/json"
+                    }, 
+                    "download/cont_psa10.json": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/cont_psa10.json", 
+                        "lastModified": 1489635665000, 
+                        "length": 16110, 
+                        "contentType": "application/json"
+                    }, 
+                    "download/ii_thumbnail.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/ii_thumbnail.jpg", 
+                        "lastModified": 1489635662000, 
+                        "length": 3772, 
+                        "contentType": "image/jpeg"
+                    }, 
+                    "download/info.json": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/info.json", 
+                        "lastModified": 1489635662000, 
+                        "length": 2288, 
+                        "contentType": "application/json"
+                    }, 
+                    "download/71863625.kmz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/71863625.kmz", 
+                        "lastModified": 1489635665000, 
+                        "length": 274785, 
+                        "contentType": "application/vnd.google-earth.kmz"
+                    }, 
+                    "psa10.html": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/psa10.html", 
+                        "lastModified": 1489635667000, 
+                        "length": 12326, 
+                        "contentType": "text/html"
+                    }, 
+                    "download/grid.xml": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/grid.xml", 
+                        "lastModified": 1489635662000, 
+                        "length": 3785192, 
+                        "contentType": "application/xml"
+                    }, 
+                    "download/cont_mi.kmz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/cont_mi.kmz", 
+                        "lastModified": 1489635665000, 
+                        "length": 30355, 
+                        "contentType": "application/vnd.google-earth.kmz"
+                    }, 
+                    "download/tvguide.txt": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/tvguide.txt", 
+                        "lastModified": 1489635662000, 
+                        "length": 8785, 
+                        "contentType": "text/plain"
+                    }, 
+                    "download/rock_grid.xml.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/rock_grid.xml.zip", 
+                        "lastModified": 1489635664000, 
+                        "length": 477652, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/cont_psa30.json": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/cont_psa30.json", 
+                        "lastModified": 1489635665000, 
+                        "length": 23909, 
+                        "contentType": "application/json"
+                    }, 
+                    "download/epicenter.kmz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/epicenter.kmz", 
+                        "lastModified": 1489635664000, 
+                        "length": 1290, 
+                        "contentType": "application/vnd.google-earth.kmz"
+                    }, 
+                    "stationlist.html": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/stationlist.html", 
+                        "lastModified": 1489635667000, 
+                        "length": 90439, 
+                        "contentType": "text/html"
+                    }, 
+                    "download/psa03.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/psa03.jpg", 
+                        "lastModified": 1489635662000, 
+                        "length": 74012, 
+                        "contentType": "image/jpeg"
+                    }, 
+                    "download/stationlist.xml": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/stationlist.xml", 
+                        "lastModified": 1489635662000, 
+                        "length": 366992, 
+                        "contentType": "application/xml"
+                    }, 
+                    "intensity.html": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/intensity.html", 
+                        "lastModified": 1489635667000, 
+                        "length": 11368, 
+                        "contentType": "text/html"
+                    }, 
+                    "about_formats.html": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/about_formats.html", 
+                        "lastModified": 1489635667000, 
+                        "length": 28816, 
+                        "contentType": "text/html"
+                    }, 
+                    "download/tvmap_bare.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/tvmap_bare.jpg", 
+                        "lastModified": 1489635662000, 
+                        "length": 111348, 
+                        "contentType": "image/jpeg"
+                    }, 
+                    "download/cont_mi.json": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/cont_mi.json", 
+                        "lastModified": 1489635665000, 
+                        "length": 141746, 
+                        "contentType": "application/json"
+                    }, 
+                    "download/cont_psa10.kmz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/cont_psa10.kmz", 
+                        "lastModified": 1489635665000, 
+                        "length": 3758, 
+                        "contentType": "application/vnd.google-earth.kmz"
+                    }, 
+                    "download/hazus.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/hazus.zip", 
+                        "lastModified": 1489635665000, 
+                        "length": 400397, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/sd.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/sd.jpg", 
+                        "lastModified": 1489635662000, 
+                        "length": 71432, 
+                        "contentType": "image/jpeg"
+                    }, 
+                    "download/stationlist.txt": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/stationlist.txt", 
+                        "lastModified": 1489635667000, 
+                        "length": 86759, 
+                        "contentType": "text/plain"
+                    }, 
+                    "download/tvmap.ps.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/tvmap.ps.zip", 
+                        "lastModified": 1489635663000, 
+                        "length": 1077357, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/pgv.ps.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/pgv.ps.zip", 
+                        "lastModified": 1489635663000, 
+                        "length": 1377426, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/event.txt": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/event.txt", 
+                        "lastModified": 1489635662000, 
+                        "length": 123, 
+                        "contentType": "text/plain"
+                    }, 
+                    "download/raster.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/raster.zip", 
+                        "lastModified": 1489635667000, 
+                        "length": 1822417, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/pgv.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/pgv.jpg", 
+                        "lastModified": 1489635662000, 
+                        "length": 72913, 
+                        "contentType": "image/jpeg"
+                    }, 
+                    "download/pga.ps.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/pga.ps.zip", 
+                        "lastModified": 1489635663000, 
+                        "length": 1378214, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/tvmap.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/tvmap.jpg", 
+                        "lastModified": 1489635662000, 
+                        "length": 126552, 
+                        "contentType": "image/jpeg"
+                    }, 
+                    "download/overlay.kmz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/overlay.kmz", 
+                        "lastModified": 1489635665000, 
+                        "length": 91252, 
+                        "contentType": "application/vnd.google-earth.kmz"
+                    }, 
+                    "download/urat_pga.ps.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/urat_pga.ps.zip", 
+                        "lastModified": 1489635662000, 
+                        "length": 59922, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/polygons_mi.kmz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/polygons_mi.kmz", 
+                        "lastModified": 1489635665000, 
+                        "length": 69014, 
+                        "contentType": "application/vnd.google-earth.kmz"
+                    }, 
+                    "download/psa30.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/psa30.jpg", 
+                        "lastModified": 1489635662000, 
+                        "length": 71503, 
+                        "contentType": "image/jpeg"
+                    }, 
+                    "download/psa10.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/psa10.jpg", 
+                        "lastModified": 1489635662000, 
+                        "length": 71127, 
+                        "contentType": "image/jpeg"
+                    }, 
+                    "download/psa03.ps.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/psa03.ps.zip", 
+                        "lastModified": 1489635663000, 
+                        "length": 1378859, 
+                        "contentType": "application/zip"
+                    }, 
+                    "psa30.html": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/psa30.html", 
+                        "lastModified": 1489635667000, 
+                        "length": 12326, 
+                        "contentType": "text/html"
+                    }, 
+                    "download/cont_pga.json": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/cont_pga.json", 
+                        "lastModified": 1489635665000, 
+                        "length": 46487, 
+                        "contentType": "application/json"
+                    }, 
+                    "pga.html": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/pga.html", 
+                        "lastModified": 1489635667000, 
+                        "length": 11160, 
+                        "contentType": "text/html"
+                    }, 
+                    "download/shape.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/shape.zip", 
+                        "lastModified": 1489635665000, 
+                        "length": 1235207, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/stationlist.json": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/stationlist.json", 
+                        "lastModified": 1489635668000, 
+                        "length": 588932, 
+                        "contentType": "application/json"
+                    }, 
+                    "psa03.html": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/psa03.html", 
+                        "lastModified": 1489635667000, 
+                        "length": 12327, 
+                        "contentType": "text/html"
+                    }, 
+                    "download/uncertainty.xml.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/uncertainty.xml.zip", 
+                        "lastModified": 1489635664000, 
+                        "length": 334979, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/cont_psa30.kmz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/cont_psa30.kmz", 
+                        "lastModified": 1489635665000, 
+                        "length": 5367, 
+                        "contentType": "application/vnd.google-earth.kmz"
+                    }, 
+                    "download/psa30.ps.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/psa30.ps.zip", 
+                        "lastModified": 1489635663000, 
+                        "length": 1377140, 
+                        "contentType": "application/zip"
+                    }, 
+                    "pgv.html": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/pgv.html", 
+                        "lastModified": 1489635667000, 
+                        "length": 11160, 
+                        "contentType": "text/html"
+                    }, 
+                    "download/intensity.ps.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/intensity.ps.zip", 
+                        "lastModified": 1489635663000, 
+                        "length": 479498, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/intensity.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/intensity.jpg", 
+                        "lastModified": 1489635662000, 
+                        "length": 99425, 
+                        "contentType": "image/jpeg"
+                    }, 
+                    "download/stations.kmz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/stations.kmz", 
+                        "lastModified": 1489635665000, 
+                        "length": 31449, 
+                        "contentType": "application/vnd.google-earth.kmz"
+                    }, 
+                    "download/grid.xyz.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/grid.xyz.zip", 
+                        "lastModified": 1489635664000, 
+                        "length": 580275, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/metadata.txt": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc71863625/nc/1489789911664/download/metadata.txt", 
+                        "lastModified": 1489635664000, 
+                        "length": 31452, 
+                        "contentType": "text/plain"
+                    }
+                }
+            }
+        ], 
+        "id": "nc71863625"
+    }, 
+    {
+        "shakemap": [
+            {
+                "status": "UPDATE", 
+                "updateTime": 1516927794379, 
+                "code": "nc72948801", 
+                "indexTime": 1516927806085, 
+                "preferredWeight": 181, 
+                "indexid": "151034261", 
+                "properties": {
+                    "version": "9", 
+                    "process-timestamp": "2018-01-26T00:49:14Z", 
+                    "maxpga-grid": "12.53", 
+                    "eventsourcecode": "72948801", 
+                    "maximum-longitude": "-121.006800", 
+                    "maxpsa03-grid": "26.52", 
+                    "maxmmi-grid": "5.13", 
+                    "pdl-client-version": "Version 1.13.2 2017-07-06", 
+                    "minimum-longitude": "-123.506800", 
+                    "magnitude": "4.4", 
+                    "eventsource": "nc", 
+                    "maxpsa10": "2.03", 
+                    "event-type": "ACTUAL", 
+                    "latitude": "37.855200", 
+                    "maximum-latitude": "38.688534", 
+                    "maxpgv-grid": "4.26", 
+                    "maxpsa30": "0.15", 
+                    "maxpga": "12.53", 
+                    "eventtime": "2018-01-04T10:39:37.000Z", 
+                    "overlayHeight": "312", 
+                    "event-description": "2.4 km (1.5 mi) SE of Berkeley, CA", 
+                    "minimum-latitude": "37.021866", 
+                    "maxpsa30-grid": "0.15", 
+                    "longitude": "-122.256800", 
+                    "maxpsa03": "26.52", 
+                    "depth": "12.31", 
+                    "maxmmi": "5.11", 
+                    "maxpgv": "4.26", 
+                    "overlayWidth": "468", 
+                    "map-status": "RELEASED", 
+                    "maxpsa10-grid": "2.08"
+                }, 
+                "source": "nc", 
+                "type": "shakemap", 
+                "id": "urn:usgs-product:nc:shakemap:nc72948801:1516927794379", 
+                "contents": {
+                    "download/metadata.xml": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/metadata.xml", 
+                        "lastModified": 1516927790000, 
+                        "length": 26864, 
+                        "contentType": "application/xml"
+                    }, 
+                    "contents.xml": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/contents.xml", 
+                        "lastModified": 1516927794000, 
+                        "length": 7882, 
+                        "contentType": "application/xml"
+                    }, 
+                    "download/cont_psa03.json": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/cont_psa03.json", 
+                        "lastModified": 1516927791000, 
+                        "length": 33186, 
+                        "contentType": "application/json"
+                    }, 
+                    "download/grid.xml.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/grid.xml.zip", 
+                        "lastModified": 1516927789000, 
+                        "length": 781883, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/tvmap_bare.ps.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/tvmap_bare.ps.zip", 
+                        "lastModified": 1516927788000, 
+                        "length": 999460, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/ii_overlay.png": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/ii_overlay.png", 
+                        "lastModified": 1516927790000, 
+                        "length": 78324, 
+                        "contentType": "image/png"
+                    }, 
+                    "download/pga.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/pga.jpg", 
+                        "lastModified": 1516927787000, 
+                        "length": 87126, 
+                        "contentType": "image/jpeg"
+                    }, 
+                    "download/metadata.html": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/metadata.html", 
+                        "lastModified": 1516927789000, 
+                        "length": 43710, 
+                        "contentType": "text/html"
+                    }, 
+                    "download/stationlist.json": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/stationlist.json", 
+                        "lastModified": 1516927793000, 
+                        "length": 749041, 
+                        "contentType": "application/json"
+                    }, 
+                    "download/stationlist.xml": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/stationlist.xml", 
+                        "lastModified": 1516927788000, 
+                        "length": 457206, 
+                        "contentType": "application/xml"
+                    }, 
+                    "download/urat_pga.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/urat_pga.jpg", 
+                        "lastModified": 1516927787000, 
+                        "length": 83362, 
+                        "contentType": "image/jpeg"
+                    }, 
+                    "products.html": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/products.html", 
+                        "lastModified": 1516927792000, 
+                        "length": 17152, 
+                        "contentType": "text/html"
+                    }, 
+                    "download/cont_pga.kmz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/cont_pga.kmz", 
+                        "lastModified": 1516927790000, 
+                        "length": 8473, 
+                        "contentType": "application/vnd.google-earth.kmz"
+                    }, 
+                    "download/psa10.ps.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/psa10.ps.zip", 
+                        "lastModified": 1516927788000, 
+                        "length": 1159781, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/urat_pga.ps.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/urat_pga.ps.zip", 
+                        "lastModified": 1516927788000, 
+                        "length": 118340, 
+                        "contentType": "application/zip"
+                    }, 
+                    "stationlist.html": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/stationlist.html", 
+                        "lastModified": 1516927792000, 
+                        "length": 992201, 
+                        "contentType": "text/html"
+                    }, 
+                    "download/cont_psa10.json": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/cont_psa10.json", 
+                        "lastModified": 1516927791000, 
+                        "length": 64306, 
+                        "contentType": "application/json"
+                    }, 
+                    "psa03.html": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/psa03.html", 
+                        "lastModified": 1516927792000, 
+                        "length": 72635, 
+                        "contentType": "text/html"
+                    }, 
+                    "download/info.json": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/info.json", 
+                        "lastModified": 1516927787000, 
+                        "length": 2267, 
+                        "contentType": "application/json"
+                    }, 
+                    "download/cont_pgv.json": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/cont_pgv.json", 
+                        "lastModified": 1516927791000, 
+                        "length": 55993, 
+                        "contentType": "application/json"
+                    }, 
+                    "psa10.html": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/psa10.html", 
+                        "lastModified": 1516927792000, 
+                        "length": 72634, 
+                        "contentType": "text/html"
+                    }, 
+                    "download/grid.xml": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/grid.xml", 
+                        "lastModified": 1516927787000, 
+                        "length": 3793715, 
+                        "contentType": "application/xml"
+                    }, 
+                    "download/cont_mi.kmz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/cont_mi.kmz", 
+                        "lastModified": 1516927790000, 
+                        "length": 33777, 
+                        "contentType": "application/vnd.google-earth.kmz"
+                    }, 
+                    "download/tvguide.txt": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/tvguide.txt", 
+                        "lastModified": 1516927787000, 
+                        "length": 8782, 
+                        "contentType": "text/plain"
+                    }, 
+                    "download/rock_grid.xml.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/rock_grid.xml.zip", 
+                        "lastModified": 1516927789000, 
+                        "length": 438209, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/cont_psa30.json": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/cont_psa30.json", 
+                        "lastModified": 1516927791000, 
+                        "length": 119725, 
+                        "contentType": "application/json"
+                    }, 
+                    "download/epicenter.kmz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/epicenter.kmz", 
+                        "lastModified": 1516927790000, 
+                        "length": 1255, 
+                        "contentType": "application/vnd.google-earth.kmz"
+                    }, 
+                    "pga.html": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/pga.html", 
+                        "lastModified": 1516927792000, 
+                        "length": 71468, 
+                        "contentType": "text/html"
+                    }, 
+                    "download/cont_pgv.kmz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/cont_pgv.kmz", 
+                        "lastModified": 1516927790000, 
+                        "length": 11803, 
+                        "contentType": "application/vnd.google-earth.kmz"
+                    }, 
+                    "download/72948801.kml": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/72948801.kml", 
+                        "lastModified": 1516927790000, 
+                        "length": 996, 
+                        "contentType": "application/vnd.google-earth.kml+xml"
+                    }, 
+                    "intensity.html": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/intensity.html", 
+                        "lastModified": 1516927792000, 
+                        "length": 71676, 
+                        "contentType": "text/html"
+                    }, 
+                    "download/psa30.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/psa30.jpg", 
+                        "lastModified": 1516927787000, 
+                        "length": 92282, 
+                        "contentType": "image/jpeg"
+                    }, 
+                    "download/tvmap_bare.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/tvmap_bare.jpg", 
+                        "lastModified": 1516927787000, 
+                        "length": 113283, 
+                        "contentType": "image/jpeg"
+                    }, 
+                    "download/cont_mi.json": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/cont_mi.json", 
+                        "lastModified": 1516927791000, 
+                        "length": 160680, 
+                        "contentType": "application/json"
+                    }, 
+                    "download/cont_psa10.kmz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/cont_psa10.kmz", 
+                        "lastModified": 1516927790000, 
+                        "length": 13535, 
+                        "contentType": "application/vnd.google-earth.kmz"
+                    }, 
+                    "download/sd.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/sd.jpg", 
+                        "lastModified": 1516927787000, 
+                        "length": 83362, 
+                        "contentType": "image/jpeg"
+                    }, 
+                    "download/stationlist.txt": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/stationlist.txt", 
+                        "lastModified": 1516927792000, 
+                        "length": 105554, 
+                        "contentType": "text/plain"
+                    }, 
+                    "pgv.html": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/pgv.html", 
+                        "lastModified": 1516927792000, 
+                        "length": 71468, 
+                        "contentType": "text/html"
+                    }, 
+                    "psa30.html": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/psa30.html", 
+                        "lastModified": 1516927792000, 
+                        "length": 72634, 
+                        "contentType": "text/html"
+                    }, 
+                    "download/72948801.kmz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/72948801.kmz", 
+                        "lastModified": 1516927791000, 
+                        "length": 323102, 
+                        "contentType": "application/vnd.google-earth.kmz"
+                    }, 
+                    "download/intensity.ps.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/intensity.ps.zip", 
+                        "lastModified": 1516927788000, 
+                        "length": 465702, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/raster.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/raster.zip", 
+                        "lastModified": 1516927791000, 
+                        "length": 1935037, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/pgv.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/pgv.jpg", 
+                        "lastModified": 1516927787000, 
+                        "length": 87937, 
+                        "contentType": "image/jpeg"
+                    }, 
+                    "download/pga.ps.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/pga.ps.zip", 
+                        "lastModified": 1516927789000, 
+                        "length": 1158553, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/tvmap.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/tvmap.jpg", 
+                        "lastModified": 1516927787000, 
+                        "length": 126525, 
+                        "contentType": "image/jpeg"
+                    }, 
+                    "download/overlay.kmz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/overlay.kmz", 
+                        "lastModified": 1516927790000, 
+                        "length": 78913, 
+                        "contentType": "application/vnd.google-earth.kmz"
+                    }, 
+                    "download/uncertainty.xml.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/uncertainty.xml.zip", 
+                        "lastModified": 1516927789000, 
+                        "length": 435704, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/polygons_mi.kmz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/polygons_mi.kmz", 
+                        "lastModified": 1516927790000, 
+                        "length": 89605, 
+                        "contentType": "application/vnd.google-earth.kmz"
+                    }, 
+                    "about_formats.html": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/about_formats.html", 
+                        "lastModified": 1516927792000, 
+                        "length": 28816, 
+                        "contentType": "text/html"
+                    }, 
+                    "download/psa10.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/psa10.jpg", 
+                        "lastModified": 1516927787000, 
+                        "length": 88014, 
+                        "contentType": "image/jpeg"
+                    }, 
+                    "download/cont_pga.json": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/cont_pga.json", 
+                        "lastModified": 1516927791000, 
+                        "length": 38649, 
+                        "contentType": "application/json"
+                    }, 
+                    "download/psa03.ps.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/psa03.ps.zip", 
+                        "lastModified": 1516927789000, 
+                        "length": 1158275, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/shape.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/shape.zip", 
+                        "lastModified": 1516927791000, 
+                        "length": 1237771, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/psa03.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/psa03.jpg", 
+                        "lastModified": 1516927787000, 
+                        "length": 86326, 
+                        "contentType": "image/jpeg"
+                    }, 
+                    "download/cont_psa03.kmz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/cont_psa03.kmz", 
+                        "lastModified": 1516927790000, 
+                        "length": 7329, 
+                        "contentType": "application/vnd.google-earth.kmz"
+                    }, 
+                    "download/ii_thumbnail.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/ii_thumbnail.jpg", 
+                        "lastModified": 1516927787000, 
+                        "length": 2833, 
+                        "contentType": "image/jpeg"
+                    }, 
+                    "download/pgv.ps.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/pgv.ps.zip", 
+                        "lastModified": 1516927788000, 
+                        "length": 1159278, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/cont_psa30.kmz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/cont_psa30.kmz", 
+                        "lastModified": 1516927790000, 
+                        "length": 24688, 
+                        "contentType": "application/vnd.google-earth.kmz"
+                    }, 
+                    "download/psa30.ps.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/psa30.ps.zip", 
+                        "lastModified": 1516927788000, 
+                        "length": 1162455, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/tvmap.ps.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/tvmap.ps.zip", 
+                        "lastModified": 1516927788000, 
+                        "length": 1009726, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/event.txt": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/event.txt", 
+                        "lastModified": 1516927788000, 
+                        "length": 123, 
+                        "contentType": "text/plain"
+                    }, 
+                    "download/metadata.txt": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/metadata.txt", 
+                        "lastModified": 1516927790000, 
+                        "length": 31389, 
+                        "contentType": "text/plain"
+                    }, 
+                    "download/stations.kmz": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/stations.kmz", 
+                        "lastModified": 1516927790000, 
+                        "length": 40860, 
+                        "contentType": "application/vnd.google-earth.kmz"
+                    }, 
+                    "download/grid.xyz.zip": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/grid.xyz.zip", 
+                        "lastModified": 1516927789000, 
+                        "length": 474969, 
+                        "contentType": "application/zip"
+                    }, 
+                    "download/intensity.jpg": {
+                        "url": "https://earthquake.usgs.gov/archive/product/shakemap/nc72948801/nc/1516927794379/download/intensity.jpg", 
+                        "lastModified": 1516927787000, 
+                        "length": 105266, 
+                        "contentType": "image/jpeg"
+                    }
+                }
+            }
+        ], 
+        "id": "nc72948801"
     }
 ]

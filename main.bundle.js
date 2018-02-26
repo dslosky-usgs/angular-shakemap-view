@@ -174,7 +174,7 @@ var AppModule = /** @class */ (function () {
 /***/ "../../../../../src/app/bottom-panel/bottom-panel.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" [@panelState]='panelState'>\n    <div class=\"state-toggle\" (click)=\"toggleState()\">\n    </div>\n\n    <div class=\"content-container\">\n      <div class=\"tabs\">\n        <h3 class=\"tab\" *ngIf=\"infoService.hasInfo\" (click)=\"select('metadata')\">Metadata</h3>\n      </div>\n\n      <shakemap-view-info *ngIf=\"selected==='metadata'\"></shakemap-view-info>\n    </div>\n</div>\n"
+module.exports = "<div class=\"container\" [@panelState]='panelState'>\n    <div class=\"state-toggle\" (click)=\"toggleState()\">\n      <div class=\"arrow\">\n        <i class=\"fa fa-angle-up\" *ngIf=\"panelState === 'inactive'\"></i>\n        <i class=\"fa fa-angle-down\" *ngIf=\"panelState === 'active'\"></i>\n      </div>\n    </div>\n\n    <div class=\"content-container\">\n      <div class=\"tabs\">\n        <h3 class=\"tab\" *ngIf=\"infoService.hasData\" (click)=\"select('metadata')\">Metadata</h3>\n        <h3 class=\"tab\" *ngIf=\"stationService.hasData\" (click)=\"select('stations')\">Station List</h3>\n      </div>\n\n      <shakemap-view-info *ngIf=\"selected==='metadata'\"></shakemap-view-info>\n      <shakemap-view-station-list *ngIf=\"selected==='stations'\"></shakemap-view-station-list>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -186,7 +186,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".container {\n  position: absolute;\n  bottom: 0;\n  -webkit-transform: translateY(100%);\n          transform: translateY(100%);\n  z-index: 1000;\n  width: 100%;\n  background-color: #ffffff;\n  text-align: center; }\n\n.container.show {\n  -webkit-transform: translateY(0);\n          transform: translateY(0); }\n\n.state-toggle {\n  position: absolute;\n  top: 0;\n  -webkit-transform: translateY(-30%) translateX(-50%);\n          transform: translateY(-30%) translateX(-50%);\n  height: 75px;\n  width: 150px;\n  border-radius: 40%;\n  left: 50%;\n  background-color: #ffffff; }\n\n.content-container {\n  position: relative;\n  z-index: 1001; }\n", ""]);
+exports.push([module.i, ".container {\n  position: absolute;\n  bottom: 0;\n  -webkit-transform: translateY(100%);\n          transform: translateY(100%);\n  z-index: 1000;\n  width: 100%;\n  background-color: #ffffff;\n  text-align: center; }\n\n.container.show {\n  -webkit-transform: translateY(0);\n          transform: translateY(0); }\n\n.state-toggle {\n  position: absolute;\n  top: 0;\n  -webkit-transform: translateY(-30%) translateX(-50%);\n          transform: translateY(-30%) translateX(-50%);\n  height: 75px;\n  width: 150px;\n  border-radius: 40%;\n  left: 50%;\n  background-color: #ffffff; }\n\n.content-container {\n  position: relative;\n  z-index: 1001; }\n\n.arrow {\n  font-size: 32px;\n  -webkit-transform: translateY(-20%);\n          transform: translateY(-20%);\n  cursor: pointer; }\n\n.tab {\n  display: inline-block;\n  width: -webkit-max-content;\n  width: -moz-max-content;\n  width: max-content;\n  padding: 10px; }\n", ""]);
 
 // exports
 
@@ -204,6 +204,7 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_animations__ = __webpack_require__("../../../animations/esm5/animations.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__info_info_service__ = __webpack_require__("../../../../../src/app/bottom-panel/info/info.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__station_list_station_service__ = __webpack_require__("../../../../../src/app/bottom-panel/station-list/station.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -216,9 +217,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var BottomPanelComponent = /** @class */ (function () {
-    function BottomPanelComponent(infoService) {
+    function BottomPanelComponent(infoService, stationService) {
         this.infoService = infoService;
+        this.stationService = stationService;
         this.panelState = 'inactive';
         this.selected = null;
     }
@@ -259,7 +262,8 @@ var BottomPanelComponent = /** @class */ (function () {
                 ])
             ]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__info_info_service__["a" /* InfoService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__info_info_service__["a" /* InfoService */],
+            __WEBPACK_IMPORTED_MODULE_3__station_list_station_service__["a" /* StationService */]])
     ], BottomPanelComponent);
     return BottomPanelComponent;
 }());
@@ -271,7 +275,7 @@ var BottomPanelComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/bottom-panel/info/info.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"info-container\" *ngIf=\"info\">\n\n    <div class=\"input column\" *ngIf=\"info.input\">\n      <h2>Input</h2>\n\n      <div class=\"event-info group\" *ngIf=\"info.input.event_information\">\n        <h3>Event Information</h3>\n\n        <table>\n          <tr *ngFor=\"let name of name_order['event_information']\">\n            <th *ngIf=\"info.input.event_information[name]\">{{ names['event_information'][name] }}</th>\n            <td *ngIf=\"info.input.event_information[name]\">\n              {{ name !== 'dyfi' ? info.input.event_information[name] : info.input.event_information['intensity']}}\n            </td>\n          </tr>\n        </table>\n      </div>\n    </div>\n      \n\n    <div class=\"output column\" *ngIf=\"info.output\">\n      <h2>Output</h2>\n\n      <div class=\"ground-motion group\" *ngIf=\"info.output['ground_motions']\">\n        <h3>Ground Motion/Intensity Information</h3>\n\n        <table>\n          <thead>\n            <th>Type</th>\n            <th>Max value in grid</th>\n            <th>Max value on land</th>\n            <th>Bias</th>\n          </thead>\n          <tbody>\n            <tr *ngFor=\"let name of name_order['ground_motions']\">\n              <th *ngIf=\"info.output['ground_motions'][name]\">{{ names['ground_motions'][name] }}</th>\n              <td *ngIf=\"info.output['ground_motions'][name]\">\n                {{ info.output.ground_motions[name]['max_grid'] | number }}\n              </td>\n              <td *ngIf=\"info.output['ground_motions'][name]\">\n                {{ info.output.ground_motions[name]['max'] | number }}\n              </td>\n              <td *ngIf=\"info.output['ground_motions'][name]\">\n                {{ info.output.ground_motions[name]['bias'].toString().replace('[[', '').replace(']]', '') | number }}\n              </td>\n            </tr>\n          </tbody>\n        </table>\n\n      </div>\n\n      <div class=\"map-info group\" *ngIf=\"info.output['map_information']\">\n        <h3>Map Information</h3>\n\n        <table>\n          <thead>\n            <th>Type</th>\n            <th>Latitude</th>\n            <th>Longitude</th>\n          </thead>\n          <tbody>\n            <tr *ngFor=\"let name of name_order['map_information']\">\n              <th *ngIf=\"info.output['map_information'][name]\">{{ names['map_information'][name] }}</th>\n              <td *ngIf=\"info.output['map_information'][name]\">\n                {{ info.output['map_information'][name]['latitude'] | number }}\n                {{ info.output['map_information'][name]['units'] !== 'count' ? (info.output['map_information'][name]['units'] ) : ('') }}\n\n              </td>\n              <td *ngIf=\"info.output['map_information'][name]\">\n                {{ info.output['map_information'][name]['longitude'] | number }}\n                {{ info.output['map_information'][name]['units'] !== 'count' ? (info.output['map_information'][name]['units']) : ('') }}\n              </td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n\n      <div class=\"uncertainty group\" *ngIf=\"info.output.uncertainty\">\n        <h3>Uncertainty</h3>\n\n        <table>\n          <tr *ngFor=\"let name of name_order['uncertainty']\">\n            <th *ngIf=\"info.output.uncertainty[name]\">{{ names['uncertainty'][name] }}</th>\n            <td *ngIf=\"info.output.uncertainty[name]\">\n              {{name === 'grade' ? (info.output.uncertainty[name]) : (info.output.uncertainty[name] | number)}}\n            </td>\n          </tr>\n        </table>\n\n      </div>\n    </div>\n\n    <div class=\"processing column\" *ngIf=\"info.processing\">\n      <h2>Processing</h2>\n\n      <div class=\"ground-motion group\" *ngIf=\"info.processing['ground_motion_modules']\">\n        <h3>Ground Mation/Intensity Information</h3>\n\n        <table>\n          <thead>\n            <th>Type</th>\n            <th>Module</th>\n            <th>Reference</th>\n          </thead>\n          <tbody>\n            <tr *ngFor=\"let name of name_order['ground_motion_modules']\">\n              <th *ngIf=\"info.processing['ground_motion_modules'][name]\">{{ names['ground_motion_modules'][name] }}</th>\n              <td *ngIf=\"info.processing['ground_motion_modules'][name]\">\n                {{ info.processing['ground_motion_modules'][name]['module'] }}\n\n              </td>\n              <td *ngIf=\"info.processing['ground_motion_modules'][name]\">\n                {{ info.processing['ground_motion_modules'][name]['reference'] }}\n              </td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n\n      <div class=\"misc group\" *ngIf=\"name_order['miscellaneous']\">\n        <h3>Miscellaneous</h3>\n\n        <table>\n          <tr *ngFor=\"let name of name_order['miscellaneous']\">\n            <th *ngIf=\"info.processing['miscellaneous'][name]\">{{ names['miscellaneous'][name] }}</th>\n            <td *ngIf=\"info.processing['miscellaneous'][name]\">\n              {{ info.processing['miscellaneous'][name] }}\n\n            </td>\n          </tr>\n        </table>\n      </div>\n\n      <div class=\"shakemap group\" *ngIf=\"info.processing['shakemap_versions']\">\n        <h3>ShakeMap Versions</h3>\n\n        <table>\n          <tr *ngFor=\"let name of name_order['shakemap_versions']\">\n            <th *ngIf=\"info.processing['shakemap_versions'][name]\">{{ names['shakemap_versions'][name] }}</th>\n            <td *ngIf=\"info.processing['shakemap_versions'][name]\">\n              {{ info.processing['shakemap_versions'][name] }}\n\n            </td>\n          </tr>\n        </table>\n      </div>\n\n      <div class=\"site-response group\" *ngIf=\"info.processing['site_response']\">\n        <h3>Site Response</h3>\n\n        <table>\n          <tr *ngFor=\"let name of name_order['site_response']\">\n            <th *ngIf=\"info.processing['site_response'][name]\">\n              {{ names['site_response'][name] }}</th>\n            <td *ngIf=\"info.processing['site_response'][name]\">\n              {{ info.processing['site_response'][name] }}\n\n            </td>\n          </tr>\n        </table>\n\n      </div>\n\n      <div class=\"roi group\" *ngIf=\"info.processing['roi']\">\n        <h3>ROI</h3>\n\n        <table>\n          <thead>\n            <th>Type</th>\n            <th>ROI</th>\n            <th>Observation Decay</th>\n          </thead>\n          <tbody>\n            <tr *ngFor=\"let name of name_order['roi']\">\n              <th *ngIf=\"info.processing['roi'][name]\">\n                {{ names['roi'][name] }}</th>\n              <td *ngIf=\"info.processing['roi'][name]\">\n                {{ info.processing['roi'][name]['roi'] }}\n\n              </td>\n              <td *ngIf=\"info.processing['roi'][name]\">\n                {{ info.processing['roi'][name]['decay'] }}\n\n              </td>\n            </tr>\n          </tbody>\n        </table>\n\n      </div>\n\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"container\">\n  <div class=\"info-container\" *ngIf=\"info\">\n\n    <div class=\"input column\" *ngIf=\"info.input\">\n      <h2>Input</h2>\n\n      <div class=\"event-info group\" *ngIf=\"info.input.event_information\">\n        <h3>Event Information</h3>\n\n        <table>\n          <tr *ngFor=\"let name of name_order['event_information']\">\n            <th *ngIf=\"info.input.event_information[name]\">{{ names['event_information'][name] }}</th>\n            <td *ngIf=\"info.input.event_information[name]\">\n              {{ name !== 'dyfi' ? info.input.event_information[name] : info.input.event_information['intensity']}}\n            </td>\n          </tr>\n        </table>\n      </div>\n    </div>\n      \n\n    <div class=\"output column\" *ngIf=\"info.output\">\n      <h2>Output</h2>\n\n      <div class=\"ground-motion group\" *ngIf=\"info.output['ground_motions']\">\n        <h3>Ground Motion/Intensity Information</h3>\n\n        <table>\n          <thead>\n            <th>Type</th>\n            <th>Max value in grid</th>\n            <th>Max value on land</th>\n            <th>Bias</th>\n          </thead>\n          <tbody>\n            <tr *ngFor=\"let name of name_order['ground_motions']\">\n              <th *ngIf=\"info.output['ground_motions'][name]\">{{ names['ground_motions'][name] }}</th>\n              <td *ngIf=\"info.output['ground_motions'][name]\">\n                {{ info.output.ground_motions[name]['max_grid'] | number }}\n              </td>\n              <td *ngIf=\"info.output['ground_motions'][name]\">\n                {{ info.output.ground_motions[name]['max'] | number }}\n              </td>\n              <td *ngIf=\"info.output['ground_motions'][name]\">\n                {{ info.output.ground_motions[name]['bias'].toString().replace('[[', '').replace(']]', '') | number }}\n              </td>\n            </tr>\n          </tbody>\n        </table>\n\n      </div>\n\n      <div class=\"map-info group\" *ngIf=\"info.output['map_information']\">\n        <h3>Map Information</h3>\n\n        <table>\n          <thead>\n            <th>Type</th>\n            <th>Latitude</th>\n            <th>Longitude</th>\n          </thead>\n          <tbody>\n            <tr *ngFor=\"let name of name_order['map_information']\">\n              <th *ngIf=\"info.output['map_information'][name]\">{{ names['map_information'][name] }}</th>\n              <td *ngIf=\"info.output['map_information'][name]\">\n                {{ info.output['map_information'][name]['latitude'] | number }}\n                {{ info.output['map_information'][name]['units'] !== 'count' ? (info.output['map_information'][name]['units'] ) : ('') }}\n\n              </td>\n              <td *ngIf=\"info.output['map_information'][name]\">\n                {{ info.output['map_information'][name]['longitude'] | number }}\n                {{ info.output['map_information'][name]['units'] !== 'count' ? (info.output['map_information'][name]['units']) : ('') }}\n              </td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n\n      <div class=\"uncertainty group\" *ngIf=\"info.output.uncertainty\">\n        <h3>Uncertainty</h3>\n\n        <table>\n          <tr *ngFor=\"let name of name_order['uncertainty']\">\n            <th *ngIf=\"info.output.uncertainty[name]\">{{ names['uncertainty'][name] }}</th>\n            <td *ngIf=\"info.output.uncertainty[name]\">\n              {{ isNaN(name) ? (info.output.uncertainty[name]) : (info.output.uncertainty[name] | number)}}\n            </td>\n          </tr>\n        </table>\n\n      </div>\n    </div>\n\n    <div class=\"processing column\" *ngIf=\"info.processing\">\n      <h2>Processing</h2>\n\n      <div class=\"ground-motion group\" *ngIf=\"info.processing['ground_motion_modules']\">\n        <h3>Ground Mation/Intensity Information</h3>\n\n        <table>\n          <thead>\n            <th>Type</th>\n            <th>Module</th>\n            <th>Reference</th>\n          </thead>\n          <tbody>\n            <tr *ngFor=\"let name of name_order['ground_motion_modules']\">\n              <th *ngIf=\"info.processing['ground_motion_modules'][name]\">{{ names['ground_motion_modules'][name] }}</th>\n              <td *ngIf=\"info.processing['ground_motion_modules'][name]\">\n                {{ info.processing['ground_motion_modules'][name]['module'] }}\n\n              </td>\n              <td *ngIf=\"info.processing['ground_motion_modules'][name]\">\n                {{ info.processing['ground_motion_modules'][name]['reference'] }}\n              </td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n\n      <div class=\"misc group\" *ngIf=\"name_order['miscellaneous']\">\n        <h3>Miscellaneous</h3>\n\n        <table>\n          <tr *ngFor=\"let name of name_order['miscellaneous']\">\n            <th *ngIf=\"info.processing['miscellaneous'][name]\">{{ names['miscellaneous'][name] }}</th>\n            <td *ngIf=\"info.processing['miscellaneous'][name]\">\n              {{ info.processing['miscellaneous'][name] }}\n\n            </td>\n          </tr>\n        </table>\n      </div>\n\n      <div class=\"shakemap group\" *ngIf=\"info.processing['shakemap_versions']\">\n        <h3>ShakeMap Versions</h3>\n\n        <table>\n          <tr *ngFor=\"let name of name_order['shakemap_versions']\">\n            <th *ngIf=\"info.processing['shakemap_versions'][name]\">{{ names['shakemap_versions'][name] }}</th>\n            <td *ngIf=\"info.processing['shakemap_versions'][name]\">\n              {{ info.processing['shakemap_versions'][name] }}\n\n            </td>\n          </tr>\n        </table>\n      </div>\n\n      <div class=\"site-response group\" *ngIf=\"info.processing['site_response']\">\n        <h3>Site Response</h3>\n\n        <table>\n          <tr *ngFor=\"let name of name_order['site_response']\">\n            <th *ngIf=\"info.processing['site_response'][name]\">\n              {{ names['site_response'][name] }}</th>\n            <td *ngIf=\"info.processing['site_response'][name]\">\n              {{ info.processing['site_response'][name] }}\n\n            </td>\n          </tr>\n        </table>\n\n      </div>\n\n      <div class=\"roi group\" *ngIf=\"info.processing['roi']\">\n        <h3>ROI</h3>\n\n        <table>\n          <thead>\n            <th>Type</th>\n            <th>ROI</th>\n            <th>Observation Decay</th>\n          </thead>\n          <tbody>\n            <tr *ngFor=\"let name of name_order['roi']\">\n              <th *ngIf=\"info.processing['roi'][name]\">\n                {{ names['roi'][name] }}</th>\n              <td *ngIf=\"info.processing['roi'][name]\">\n                {{ info.processing['roi'][name]['roi'] }}\n\n              </td>\n              <td *ngIf=\"info.processing['roi'][name]\">\n                {{ info.processing['roi'][name]['decay'] }}\n\n              </td>\n            </tr>\n          </tbody>\n        </table>\n\n      </div>\n\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -317,6 +321,7 @@ var InfoComponent = /** @class */ (function () {
         this.subs = [];
         this.info = null;
         this.objKeys = Object.keys;
+        this.isNaN = isNaN;
         this.name_order = {
             'event_information': ['event_description', 'event_id', 'magnitude', 'depth', 'longitude', 'latitude', 'origin_time', 'src_mech', 'location', 'fault_ref', 'seismic_stations', 'intensity_observations'],
             'ground_motions': ['intensity', 'mmi', 'MMI', 'pga', 'PGA', 'pgv', 'PGV', 'SA(0.3)', 'psa03', 'SA(1.0)', 'psa10', 'SA(3.0)', 'psa30', 'bias'],
@@ -408,7 +413,7 @@ var InfoComponent = /** @class */ (function () {
     }
     InfoComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.subs.push(this.infoService.info.subscribe(function (info) {
+        this.subs.push(this.infoService.data.subscribe(function (info) {
             _this.info = info;
         }));
     };
@@ -457,8 +462,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var InfoService = /** @class */ (function () {
     function InfoService(http) {
         this.http = http;
-        this.info = new __WEBPACK_IMPORTED_MODULE_2_rxjs_replaysubject__["ReplaySubject"](1);
-        this.hasInfo = false;
+        this.data = new __WEBPACK_IMPORTED_MODULE_2_rxjs_replaysubject__["ReplaySubject"](1);
+        this.hasData = false;
     }
     InfoService.prototype.getInfo = function (event) {
         var _this = this;
@@ -466,13 +471,13 @@ var InfoService = /** @class */ (function () {
         if (contents['download/info.json']) {
             this.http.get(contents['download/info.json']['url'])
                 .subscribe(function (info) {
-                _this.info.next(info);
-                _this.hasInfo = true;
+                _this.data.next(info);
+                _this.hasData = true;
             });
         }
         else {
-            this.info.next(null);
-            this.hasInfo = false;
+            this.data.next(null);
+            this.hasData = false;
         }
     };
     InfoService = __decorate([
@@ -489,7 +494,7 @@ var InfoService = /** @class */ (function () {
 /***/ "../../../../../src/app/bottom-panel/station-list/station-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  station-list works!\n</p>\n"
+module.exports = "<div class=\"container\">\n  \n    <div class=\"station\" *ngFor=\"let station of stations\">\n        <h3 class=\"station-name\">\n            {{ station.properties.code }}: {{ station.properties.name }}\n        </h3>\n\n        <div class=\"data-container\">\n\n          <table>\n              <tr>\n                  <td class=\"mmi-td\">\n                      <table class=\"mmi-table\"\n                              [style.backgroundColor]=\"getColor(station.properties.intensity)\">\n                          <tr>\n                              <th>\n                                  <h1>\n                                      {{ getRoman(station.properties.intensity) }}\n                                  </h1>\n                              </th>\n                          </tr>\n                          <tr>\n                              <td>\n                                  mmi\n                              </td>\n                          </tr>\n                      </table>\n                  </td>\n                  <td>\n                      <table>\n                          <tr>\n                              <th *ngIf=\"!isNaN(station.properties.pga)\">\n                                {{ station.properties.pga | number }} %g\n                              </th>\n                              <th *ngIf=\"isNaN(station.properties.pga)\">\n                                None\n                              </th>\n                          </tr>\n                          <tr>\n                              <td>\n                                  pga\n                              </td>\n                          </tr>\n                      </table>\n                  </td>\n                  <td>\n                      <table>\n                          <tr>\n                              <th *ngIf=\"!isNaN(station.properties.pgv)\">\n                                {{ station.properties.pgv | number }} cm/s\n                              </th>\n                              <th *ngIf=\"isNaN(station.properties.pgv)\">\n                                None\n                              </th>\n                          </tr>\n                          <tr>\n                              <td>\n                                  pgv\n                              </td>\n                          </tr>\n                      </table>\n                  </td>\n                  <td>\n                      <table>\n                          <tr>\n                              <th *ngIf=\"!isNaN(station.properties.distance)\">\n                                {{ station.properties.distance }} km\n                              </th>\n                              <th *ngIf=\"isNaN(station.properties.distance)\">\n                                None\n                              </th>\n                          </tr>\n                          <tr>\n                              <td>\n                                  distance\n                              </td>\n                          </tr>\n                      </table>\n                  </td>\n              </tr>\n          </table>\n\n          <div class=\"details-container\">\n            <div class=\"details-toggle link\">\n              <h3 (click)=\"toggleDetails(station)\">\n\n                <i class=\"fa fa-angle-up\" *ngIf=\"station.showDetails\"></i>\n                <i class=\"fa fa-angle-down\" *ngIf=\"!station.showDetails\"></i>\n                \n                <div class=\"link\">\n                  Details\n                </div>\n              </h3>\n            </div>\n\n            <div class=\"details\" *ngIf=\"station.showDetails\">\n              <div class = \"column\">\n                <dl class=\"station-metadata vertical\">\n                  <dt class=\"station-metadata-network\">Network</dt>\n                  <dd class=\"station-metadata-network\">{{ station.properties.network }}</dd>\n                  <dt class=\"station-metadata-location\">Location</dt>\n                  <dd class=\"station-metadata-location\">{{ station.geometry.coordinates[1] }}°N \n                                                        {{ station.geometry.coordinates[0] * -1 }}°W</dd>\n                  <dt class=\"station-metadata-source\">Source</dt>\n                  <dd class=\"station-metadata-source\">{{ station.properties.source }}</dd>\n                  <dt class=\"station-metadata-intensity\">Intensity</dt>\n                  <dd class=\"station-metadata-intensity\">{{ station.properties.intensity }}</dd>\n                </dl>\n              </div>\n              \n              <div class=\"column\">\n                <table class=\"data-table\">\n                  <thead>\n                    <th>name</th>\n                    <th>pga</th>\n                    <th>pgv</th>\n                    <th>psa03</th>\n                    <th>psa10</th>\n                    <th>psa30</th>\n                  </thead>\n                  <tbody>\n                    <tr *ngFor=\"let channel of station.properties.channels\">\n                      <th>\n                        {{ channel.name }}\n                      </th>\n                      <td>{{ getAmp('pga', channel.amplitudes).value | number }}</td>\n                      <td>{{ getAmp('pgv', channel.amplitudes).value | number }}</td>\n                      <td>{{ getAmp('psa03', channel.amplitudes).value | number }}</td>\n                      <td>{{ getAmp('psa10', channel.amplitudes).value | number }}</td>\n                      <td>{{ getAmp('psa30', channel.amplitudes).value | number }}</td>\n                    </tr>\n                  </tbody>\n                </table>\n              </div>\n\n            </div>\n          </div>\n\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -501,7 +506,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".container {\n  text-align: left;\n  max-height: 500px;\n  overflow-y: scroll;\n  padding: 10px; }\n\n.station {\n  margin-bottom: 10px;\n  border-top: 1px solid #ddd; }\n\ntable table {\n  padding: 10px; }\n\ntable, th, td {\n  text-align: center; }\n\n.mmi-table {\n  border: 2px solid black;\n  border-radius: 3px;\n  width: 100%; }\n\n.mmi-td {\n  width: 80px;\n  padding-right: 10px; }\n\n.mmi-td h1 {\n  margin: 0; }\n\n.details-container {\n  margin-top: 15px; }\n\n.details-toggle {\n  position: relative;\n  display: block;\n  width: -webkit-max-content;\n  width: -moz-max-content;\n  width: max-content;\n  padding: 5px;\n  cursor: default; }\n\n.details-toggle .link {\n  margin-left: 10px; }\n\n.details-toggle * {\n  display: inline-block;\n  margin: 0; }\n\n.fa {\n  text-decoration: none; }\n\n.data-container {\n  padding: 10px; }\n\ndl > dt {\n  font-weight: 700; }\n\ndd {\n  margin: 0; }\n\n.data-table {\n  border-collapse: collapse;\n  border: 1px solid #ddd; }\n\n.data-table td, .data-table th {\n  border: 1px solid #ddd;\n  padding: .666em .75em; }\n\n.data-table th {\n  background-color: rgba(0, 0, 0, 0.04); }\n\n.column {\n  display: inline-block;\n  margin-right: 10px; }\n", ""]);
 
 // exports
 
@@ -517,6 +522,9 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StationListComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__station_service__ = __webpack_require__("../../../../../src/app/bottom-panel/station-list/station.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_mmi_roman__ = __webpack_require__("../../../../../src/app/util/mmi_roman.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_mmi_colors__ = __webpack_require__("../../../../../src/app/util/mmi_colors.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -527,10 +535,40 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
 var StationListComponent = /** @class */ (function () {
-    function StationListComponent() {
+    function StationListComponent(stationService) {
+        this.stationService = stationService;
+        this.subs = [];
+        this.stations = [];
+        this.getColor = __WEBPACK_IMPORTED_MODULE_3__util_mmi_colors__["a" /* getMmiRgba */];
+        this.getRoman = __WEBPACK_IMPORTED_MODULE_2__util_mmi_roman__["a" /* getRomanFromMmi */];
+        this.isNaN = isNaN;
     }
     StationListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.subs.push(this.stationService.data.subscribe(function (data) {
+            _this.stations = data;
+        }));
+    };
+    StationListComponent.prototype.toggleDetails = function (station) {
+        if (station['showDetails']) {
+            station['showDetails'] = false;
+        }
+        else {
+            station['showDetails'] = true;
+        }
+    };
+    StationListComponent.prototype.getAmp = function (name, amps) {
+        for (var _i = 0, amps_1 = amps; _i < amps_1.length; _i++) {
+            var amp = amps_1[_i];
+            if (amp['name'] === name) {
+                return amp;
+            }
+        }
+        return {};
     };
     StationListComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
@@ -538,7 +576,7 @@ var StationListComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/bottom-panel/station-list/station-list.component.html"),
             styles: [__webpack_require__("../../../../../src/app/bottom-panel/station-list/station-list.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__station_service__["a" /* StationService */]])
     ], StationListComponent);
     return StationListComponent;
 }());
@@ -553,6 +591,8 @@ var StationListComponent = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StationService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_ReplaySubject__ = __webpack_require__("../../../../rxjs/_esm5/ReplaySubject.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -563,12 +603,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var StationService = /** @class */ (function () {
-    function StationService() {
+    function StationService(http) {
+        this.http = http;
+        this.hasData = false;
+        this.data = new __WEBPACK_IMPORTED_MODULE_2_rxjs_ReplaySubject__["a" /* ReplaySubject */](1);
     }
+    StationService.prototype.getInfo = function (event) {
+        var _this = this;
+        var contents = event['shakemap'][0]['contents'];
+        if (contents['download/info.json']) {
+            this.http.get(contents['download/stationlist.json']['url'])
+                .subscribe(function (data) {
+                _this.data.next(data.features);
+                _this.hasData = true;
+            });
+        }
+        else {
+            this.data.next(null);
+            this.hasData = false;
+        }
+    };
     StationService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* Injectable */])(),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
     ], StationService);
     return StationService;
 }());
@@ -630,6 +690,7 @@ var ConfService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_replaysubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_replaysubject__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__map_map_service__ = __webpack_require__("../../../../../src/app/map/map.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__bottom_panel_info_info_service__ = __webpack_require__("../../../../../src/app/bottom-panel/info/info.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__bottom_panel_station_list_station_service__ = __webpack_require__("../../../../../src/app/bottom-panel/station-list/station.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -644,11 +705,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var EventService = /** @class */ (function () {
-    function EventService(http, mapService, infoService) {
+    function EventService(http, mapService, infoService, stationService) {
         this.http = http;
         this.mapService = mapService;
         this.infoService = infoService;
+        this.stationService = stationService;
         this.selectedEvent = new __WEBPACK_IMPORTED_MODULE_2_rxjs_replaysubject__["ReplaySubject"](1);
         this.events = new __WEBPACK_IMPORTED_MODULE_2_rxjs_replaysubject__["ReplaySubject"](1);
         this.manualEntry = null;
@@ -673,12 +736,14 @@ var EventService = /** @class */ (function () {
     EventService.prototype.selectEvent = function (event) {
         this.mapService.plotEvent.next(event);
         this.infoService.getInfo(event);
+        this.stationService.getInfo(event);
     };
     EventService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* Injectable */])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */],
             __WEBPACK_IMPORTED_MODULE_3__map_map_service__["a" /* MapService */],
-            __WEBPACK_IMPORTED_MODULE_4__bottom_panel_info_info_service__["a" /* InfoService */]])
+            __WEBPACK_IMPORTED_MODULE_4__bottom_panel_info_info_service__["a" /* InfoService */],
+            __WEBPACK_IMPORTED_MODULE_5__bottom_panel_station_list_station_service__["a" /* StationService */]])
     ], EventService);
     return EventService;
 }());
@@ -777,11 +842,13 @@ var EventsComponent = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return miLayer; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet__ = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_leaflet__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_mmi_roman__ = __webpack_require__("../../../../../src/app/util/mmi_roman.ts");
+
 
 var lineStyle = {
     "color": "#EFEFF0",
-    "weight": 5,
-    "opacity": .8
+    "weight": 2,
+    "opacity": 1
 };
 function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
@@ -790,61 +857,7 @@ function onEachFeature(feature, layer) {
     }
 }
 function generatePopup(props) {
-    var mmi;
-    var color;
-    switch (Math.round(Number(props.value))) {
-        case 1: {
-            mmi = 'I';
-            break;
-        }
-        case 2: {
-            mmi = 'II';
-            break;
-        }
-        case 3: {
-            mmi = 'III';
-            break;
-        }
-        case 4: {
-            mmi = 'IV';
-            break;
-        }
-        case 5: {
-            mmi = 'V';
-            break;
-        }
-        case 6: {
-            mmi = 'VI';
-            break;
-        }
-        case 7: {
-            mmi = 'VII';
-            break;
-        }
-        case 8: {
-            mmi = 'VIII';
-            break;
-        }
-        case 9: {
-            mmi = 'IX';
-            break;
-        }
-        case 10: {
-            mmi = 'X';
-            break;
-        }
-        case 11: {
-            mmi = 'XI';
-            break;
-        }
-        case 12: {
-            mmi = 'XII';
-            break;
-        }
-        default: {
-            mmi = '0';
-        }
-    }
+    var mmi = Object(__WEBPACK_IMPORTED_MODULE_1__util_mmi_roman__["a" /* getRomanFromMmi */])(props.value);
     var popupContent = "\n        <table style=\"background-color:" + props.color + ";\n                        border:2px solid black;\n                        border-radius:3px;\n                        width:100%;\n                        text-align:center\">\n            <tr>\n                <th>\n                    <h1 style=\"margin:0;\">\n                        " + mmi + "\n                    </h1>\n                </th>\n            </tr>\n            <tr>\n                <td>\n                    mmi\n                </td>\n            </tr>\n        </table>\n    ";
     return popupContent;
 }
@@ -860,7 +873,14 @@ var miLayer = {
     generateLayer: function (json) {
         return __WEBPACK_IMPORTED_MODULE_0_leaflet__["geoJson"](json, {
             style: function (feature, latlng) {
-                return getLineStyle(feature);
+                if (lineStyle.weight == 4) {
+                    lineStyle.weight = 2;
+                }
+                else {
+                    lineStyle.weight = 4;
+                }
+                lineStyle.color = feature.properties.color;
+                return lineStyle;
             },
             onEachFeature: onEachFeature
         });
@@ -877,7 +897,9 @@ var miLayer = {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return mmiLayer; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet__ = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_leaflet__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mmi_colors__ = __webpack_require__("../../../../../src/app/map/layers/mmi_colors.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_mmi_colors__ = __webpack_require__("../../../../../src/app/util/mmi_colors.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_mmi_roman__ = __webpack_require__("../../../../../src/app/util/mmi_roman.ts");
+
 
 
 var lineStyle = {
@@ -892,61 +914,8 @@ function onEachFeature(feature, layer) {
     }
 }
 function generatePopup(props) {
-    var mmi;
-    var color = Object(__WEBPACK_IMPORTED_MODULE_1__mmi_colors__["a" /* getMmiRgba */])(props.value);
-    switch (Math.round(Number(props.value))) {
-        case 1: {
-            mmi = 'I';
-            break;
-        }
-        case 2: {
-            mmi = 'II';
-            break;
-        }
-        case 3: {
-            mmi = 'III';
-            break;
-        }
-        case 4: {
-            mmi = 'IV';
-            break;
-        }
-        case 5: {
-            mmi = 'V';
-            break;
-        }
-        case 6: {
-            mmi = 'VI';
-            break;
-        }
-        case 7: {
-            mmi = 'VII';
-            break;
-        }
-        case 8: {
-            mmi = 'VIII';
-            break;
-        }
-        case 9: {
-            mmi = 'IX';
-            break;
-        }
-        case 10: {
-            mmi = 'X';
-            break;
-        }
-        case 11: {
-            mmi = 'XI';
-            break;
-        }
-        case 12: {
-            mmi = 'XII';
-            break;
-        }
-        default: {
-            mmi = '0';
-        }
-    }
+    var mmi = Object(__WEBPACK_IMPORTED_MODULE_2__util_mmi_roman__["a" /* getRomanFromMmi */])(props.value);
+    var color = Object(__WEBPACK_IMPORTED_MODULE_1__util_mmi_colors__["a" /* getMmiRgba */])(props.value);
     var popupContent = "\n        <table style=\"background-color:" + color + ";\n                        border:2px solid black;\n                        border-radius:3px;\n                        width:100%;\n                        text-align:center\">\n            <tr>\n                <th>\n                    <h1 style=\"margin:0;\">\n                        " + mmi + "\n                    </h1>\n                </th>\n            </tr>\n            <tr>\n                <td>\n                    mmi\n                </td>\n            </tr>\n        </table>\n    ";
     return popupContent;
 }
@@ -958,7 +927,7 @@ var mmiLayer = {
     generateLayer: function (json) {
         return __WEBPACK_IMPORTED_MODULE_0_leaflet__["geoJson"](json, {
             style: function (feature, latlng) {
-                lineStyle.color = Object(__WEBPACK_IMPORTED_MODULE_1__mmi_colors__["a" /* getMmiRgba */])(feature.properties.value);
+                lineStyle.color = Object(__WEBPACK_IMPORTED_MODULE_1__util_mmi_colors__["a" /* getMmiRgba */])(feature.properties.value);
                 if (lineStyle.weight == 4) {
                     lineStyle.weight = 2;
                 }
@@ -1197,66 +1166,6 @@ var LayerService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/map/layers/mmi_colors.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = getMmiRgba;
-var colormap = {
-    0: { 'r': 255, 'g': 255, 'b': 255 },
-    1: { 'r': 255, 'g': 255, 'b': 255 },
-    2: { 'r': 191, 'g': 204, 'b': 255 },
-    3: { 'r': 160, 'g': 230, 'b': 255 },
-    4: { 'r': 128, 'g': 255, 'b': 255 },
-    5: { 'r': 122, 'g': 255, 'b': 147 },
-    6: { 'r': 255, 'g': 255, 'b': 0 },
-    7: { 'r': 255, 'g': 200, 'b': 0 },
-    8: { 'r': 255, 'g': 145, 'b': 0 },
-    9: { 'r': 255, 'g': 0, 'b': 0 },
-    10: { 'r': 200, 'g': 0, 'b': 0 },
-    13: { 'r': 128, 'g': 0, 'b': 0 },
-};
-function getMmiRgba(mmi, opacity) {
-    if (opacity === void 0) { opacity = 1; }
-    if (mmi === 'null') {
-        mmi = .1;
-    }
-    var low = Math.floor(mmi);
-    var lowC = colormap[low];
-    var high = low + 1;
-    var highC = colormap[high];
-    var colors = { 'r': 0, 'g': 0, 'b': 0 };
-    for (var color in colors) {
-        var cNum = (high - mmi) * highC[color] +
-            (mmi - low) * lowC[color];
-        colors[color] = Math.round(cNum);
-    }
-    return 'rgba(' + colors['r'] + ',' +
-        colors['g'] + ',' +
-        colors['b'] + ',' +
-        opacity + ')';
-}
-/*
-
-DEFAULT COLOR MAP
-
-0       255     255     255     1       255     255     255
-1       255     255     255     2       191     204     255
-2       191     204     255     3       160     230     255
-3       160     230     255     4       128     255     255
-4       128     255     255     5       122     255     147
-5       122     255     147     6       255     255     0
-6       255     255     0       7       255     200     0
-7       255     200     0       8       255     145     0
-8       255     145     0       9       255     0       0
-9       255     0       0       10      200     0       0
-#10      200     0       0       13      128     0       0
-
-*/ 
-
-
-/***/ }),
-
 /***/ "../../../../../src/app/map/layers/stations.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1266,7 +1175,9 @@ DEFAULT COLOR MAP
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_leaflet__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_leaflet_svg_shape_markers__ = __webpack_require__("../../../../leaflet-svg-shape-markers/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_leaflet_svg_shape_markers___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_leaflet_svg_shape_markers__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mmi_colors__ = __webpack_require__("../../../../../src/app/map/layers/mmi_colors.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_mmi_colors__ = __webpack_require__("../../../../../src/app/util/mmi_colors.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_mmi_roman__ = __webpack_require__("../../../../../src/app/util/mmi_roman.ts");
+
 
 
 
@@ -1285,61 +1196,8 @@ function onEachFeature(feature, layer) {
     }
 }
 var generatePopup = function (props) {
-    var mmi;
-    var color = Object(__WEBPACK_IMPORTED_MODULE_2__mmi_colors__["a" /* getMmiRgba */])(props.intensity);
-    switch (Math.round(Number(props.intensity))) {
-        case 1: {
-            mmi = 'I';
-            break;
-        }
-        case 2: {
-            mmi = 'II';
-            break;
-        }
-        case 3: {
-            mmi = 'III';
-            break;
-        }
-        case 4: {
-            mmi = 'IV';
-            break;
-        }
-        case 5: {
-            mmi = 'V';
-            break;
-        }
-        case 6: {
-            mmi = 'VI';
-            break;
-        }
-        case 7: {
-            mmi = 'VII';
-            break;
-        }
-        case 8: {
-            mmi = 'VIII';
-            break;
-        }
-        case 9: {
-            mmi = 'IX';
-            break;
-        }
-        case 10: {
-            mmi = 'X';
-            break;
-        }
-        case 11: {
-            mmi = 'XI';
-            break;
-        }
-        case 12: {
-            mmi = 'XII';
-            break;
-        }
-        default: {
-            mmi = '0';
-        }
-    }
+    var mmi = Object(__WEBPACK_IMPORTED_MODULE_3__util_mmi_roman__["a" /* getRomanFromMmi */])(props.intensity);
+    var color = Object(__WEBPACK_IMPORTED_MODULE_2__util_mmi_colors__["a" /* getMmiRgba */])(props.intensity);
     return "\n    <div>\n        <h3 style=\"border-bottom:2px solid black\">" +
         props.network + ': ' + props.name +
         "</h3>\n        <table style=\"width:100%;\n                    text-align:center;\">\n            <tr>\n                <td style=\"width:60px;\n                        padding-right:10px;\">\n                    <table style=\"background-color:" + color + ";\n                            border:2px solid black;\n                            border-radius:3px;\n                            width:100%\">\n                        <tr>\n                            <th>\n                                <h1 style=\"margin:0;\">\n                                    " + mmi + "\n                                </h1>\n                            </th>\n                        </tr>\n                        <tr>\n                            <td>\n                                mmi\n                            </td>\n                        </tr>\n                    </table>\n                </td>\n                <td>\n                    <table>\n                        <tr>\n                            <th>\n                                " + makeNumber(props.pga) + " %g\n                            </th>\n                        </tr>\n                        <tr>\n                            <td>\n                                pga\n                            </td>\n                        </tr>\n                    </table>\n                </td>\n                <td>\n                    <table>\n                        <tr>\n                            <th>\n                                " + makeNumber(props.pgv) + " cm/s\n                            </th>\n                        </tr>\n                        <tr>\n                            <td>\n                                pgv\n                            </td>\n                        </tr>\n                    </table>\n                </td>\n                <td>\n                    <table>\n                        <tr>\n                            <th>\n                                " + makeNumber(props.distance) + " km\n                            </th>\n                        </tr>\n                        <tr>\n                            <td>\n                                distance\n                            </td>\n                        </tr>\n                    </table>\n                </td>\n            </tr>\n        </table>\n    </div>\n    ";
@@ -1361,7 +1219,7 @@ var stationLayer = {
                 else {
                     shapeMarkerOptions.shape = 'triangle';
                 }
-                shapeMarkerOptions.fillColor = Object(__WEBPACK_IMPORTED_MODULE_2__mmi_colors__["a" /* getMmiRgba */])(feature.properties.intensity);
+                shapeMarkerOptions.fillColor = Object(__WEBPACK_IMPORTED_MODULE_2__util_mmi_colors__["a" /* getMmiRgba */])(feature.properties.intensity);
                 return __WEBPACK_IMPORTED_MODULE_0_leaflet__["shapeMarker"](latlng, shapeMarkerOptions);
             },
             onEachFeature: onEachFeature
@@ -1555,6 +1413,132 @@ var MapService = /** @class */ (function () {
     return MapService;
 }());
 
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/util/mmi_colors.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = getMmiRgba;
+var colormap = {
+    0: { 'r': 255, 'g': 255, 'b': 255 },
+    1: { 'r': 255, 'g': 255, 'b': 255 },
+    2: { 'r': 191, 'g': 204, 'b': 255 },
+    3: { 'r': 160, 'g': 230, 'b': 255 },
+    4: { 'r': 128, 'g': 255, 'b': 255 },
+    5: { 'r': 122, 'g': 255, 'b': 147 },
+    6: { 'r': 255, 'g': 255, 'b': 0 },
+    7: { 'r': 255, 'g': 200, 'b': 0 },
+    8: { 'r': 255, 'g': 145, 'b': 0 },
+    9: { 'r': 255, 'g': 0, 'b': 0 },
+    10: { 'r': 200, 'g': 0, 'b': 0 },
+    13: { 'r': 128, 'g': 0, 'b': 0 },
+};
+function getMmiRgba(mmi, opacity) {
+    if (opacity === void 0) { opacity = 1; }
+    if (mmi === 'null') {
+        mmi = .1;
+    }
+    var low = Math.floor(mmi);
+    var lowC = colormap[low];
+    var high = low + 1;
+    var highC = colormap[high];
+    var colors = { 'r': 0, 'g': 0, 'b': 0 };
+    for (var color in colors) {
+        var cNum = (high - mmi) * highC[color] +
+            (mmi - low) * lowC[color];
+        colors[color] = Math.round(cNum);
+    }
+    return 'rgba(' + colors['r'] + ',' +
+        colors['g'] + ',' +
+        colors['b'] + ',' +
+        opacity + ')';
+}
+/*
+
+DEFAULT COLOR MAP
+
+0       255     255     255     1       255     255     255
+1       255     255     255     2       191     204     255
+2       191     204     255     3       160     230     255
+3       160     230     255     4       128     255     255
+4       128     255     255     5       122     255     147
+5       122     255     147     6       255     255     0
+6       255     255     0       7       255     200     0
+7       255     200     0       8       255     145     0
+8       255     145     0       9       255     0       0
+9       255     0       0       10      200     0       0
+#10      200     0       0       13      128     0       0
+
+*/ 
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/util/mmi_roman.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = getRomanFromMmi;
+function getRomanFromMmi(mmiIn) {
+    var mmi;
+    switch (Math.round(Number(mmiIn))) {
+        case 1: {
+            mmi = 'I';
+            break;
+        }
+        case 2: {
+            mmi = 'II';
+            break;
+        }
+        case 3: {
+            mmi = 'III';
+            break;
+        }
+        case 4: {
+            mmi = 'IV';
+            break;
+        }
+        case 5: {
+            mmi = 'V';
+            break;
+        }
+        case 6: {
+            mmi = 'VI';
+            break;
+        }
+        case 7: {
+            mmi = 'VII';
+            break;
+        }
+        case 8: {
+            mmi = 'VIII';
+            break;
+        }
+        case 9: {
+            mmi = 'IX';
+            break;
+        }
+        case 10: {
+            mmi = 'X';
+            break;
+        }
+        case 11: {
+            mmi = 'XI';
+            break;
+        }
+        case 12: {
+            mmi = 'XII';
+            break;
+        }
+        default: {
+            mmi = '0';
+        }
+    }
+    return mmi;
+}
 
 
 /***/ }),
