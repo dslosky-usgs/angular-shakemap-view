@@ -12,13 +12,14 @@ import 'rxjs/add/operator/take';
   styleUrls: ['./map-control.component.scss']
 })
 export class MapControlComponent implements OnInit, OnDestroy {
+  public subs: Subscription[] = [];
   public controlCollapsed: boolean = true;
   public legendCollapsed: boolean = true;
+  public allowLegend: boolean = false;
   public control: any[] = [];
   public plotting: string[] = [];
   public legend: any = {};
   public onMap: any = {};
-  public subs: Subscription[] = [];
   public objKeys: any = Object.keys;
   private initLoading: boolean = true; // True after first map layers render
   private timeoutTimer: any = null;
@@ -84,6 +85,9 @@ export class MapControlComponent implements OnInit, OnDestroy {
 
     // add to map
     this.mapService.map.addLayer(overlay.layer)
+
+    // check if the legend is available
+    this.checkAllowLegend();
   }
 
   removeLayer(overlay) {
@@ -103,6 +107,9 @@ export class MapControlComponent implements OnInit, OnDestroy {
 
     // stop tracking this layer
     this.plotting = this.plotting.filter(l => l !== overlay.id)
+
+    // check if the legend should be open
+    this.checkAllowLegend();
   }
 
   clearAll() {
@@ -113,6 +120,20 @@ export class MapControlComponent implements OnInit, OnDestroy {
     this.control = []
     this.legend = []
     this.onMap = {}
+  }
+
+  checkAllowLegend() {
+    for (let item in this.legend) {
+      if (this.legend[item].count > 0) {
+        this.allowLegend = true;
+        return true;
+      }
+    }
+
+    // no legends in use
+    this.legendCollapsed = true;
+    this.allowLegend = false;
+    return false;
   }
 
   ngOnDestroy() {

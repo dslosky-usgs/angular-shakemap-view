@@ -16,7 +16,7 @@
         <p *ngFor="let item of control" 
             (click)="toggleLayer(item);"
             class="layer-item">
-          <input type="checkbox" [checked]="item?.onMap">
+          <input type="checkbox" [checked]="plotting.indexOf(item.id) > -1">
           {{ item.name }}
         </p>
       </div>
@@ -25,13 +25,13 @@
   </div>
 
   <div class="legend control" 
-          [ngClass]="{'collapsed': legendCollapsed || (objKeys(onMap).length === 0)}" 
+          [ngClass]="{'collapsed': legendCollapsed || !allowLegend}" 
           (dblclick)="$event.stopPropagation();">
 
-    <div class="collapsed-control" *ngIf="legendCollapsed || (objKeys(onMap).length === 0)" (click)="legendCollapsed=false">
+    <div class="collapsed-control" *ngIf="legendCollapsed || !allowLegend" (click)="legendCollapsed=false">
       Legend Collapsed
     </div>
-    <div class="open" *ngIf="!legendCollapsed && (objKeys(onMap).length > 0)">
+    <div class="open" *ngIf="!legendCollapsed && allowLegend">
       <div class="close">
         <i class="fa fa-times" (click)="legendCollapsed=true"></i>
       </div>
