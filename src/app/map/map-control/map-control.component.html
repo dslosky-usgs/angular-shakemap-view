@@ -12,12 +12,14 @@
         <i class="fa fa-times" (click)="controlCollapsed=true"></i>
       </div>
 
-      <p *ngFor="let item of control" 
-          (click)="toggleLayer(item);"
-          class="layer-item">
-        <input type="checkbox" [checked]="item?.onMap">
-        {{ item.name }}
-      </p>
+      <div class="items">
+        <p *ngFor="let item of control" 
+            (click)="toggleLayer(item);"
+            class="layer-item">
+          <input type="checkbox" [checked]="item?.onMap">
+          {{ item.name }}
+        </p>
+      </div>
     </div>
 
   </div>
@@ -25,7 +27,7 @@
   <div class="legend control" 
           [ngClass]="{'collapsed': legendCollapsed || (objKeys(onMap).length === 0)}" 
           (dblclick)="$event.stopPropagation();">
-          
+
     <div class="collapsed-control" *ngIf="legendCollapsed || (objKeys(onMap).length === 0)" (click)="legendCollapsed=false">
       Legend Collapsed
     </div>
@@ -34,8 +36,10 @@
         <i class="fa fa-times" (click)="legendCollapsed=true"></i>
       </div>
 
-      <div class="image" *ngFor="let image of objKeys(legend)">
-        <img *ngIf="legend[image].count>0" class="legend-image" src="{{ legend[image].url }}">
+      <div class="items">
+        <div class="image" *ngFor="let image of objKeys(legend)">
+          <img *ngIf="legend[image].count>0" class="legend-image" src="{{ legend[image].url }}">
+        </div>
       </div>
     </div>
   </div>
