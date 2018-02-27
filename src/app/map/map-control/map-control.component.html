@@ -1,5 +1,8 @@
 <div class="container">
-  <div class="control" [ngClass]="{'collapsed': controlCollapsed}">
+  <div class="control" 
+        [ngClass]="{'collapsed': controlCollapsed}" 
+        (dblclick)="$event.stopPropagation();">
+
     <div class="collapsed-control" *ngIf="controlCollapsed" (click)="controlCollapsed=false">
       Control Collapsed
     </div>
@@ -9,7 +12,9 @@
         <i class="fa fa-times" (click)="controlCollapsed=true"></i>
       </div>
 
-      <p *ngFor="let item of control" (click)="toggleLayer(item)">
+      <p *ngFor="let item of control" 
+          (click)="toggleLayer(item);"
+          class="layer-item">
         <input type="checkbox" [checked]="item?.onMap">
         {{ item.name }}
       </p>
@@ -17,7 +22,10 @@
 
   </div>
 
-  <div class="legend control" [ngClass]="{'collapsed': legendCollapsed || (objKeys(onMap).length === 0)}">
+  <div class="legend control" 
+          [ngClass]="{'collapsed': legendCollapsed || (objKeys(onMap).length === 0)}" 
+          (dblclick)="$event.stopPropagation();">
+          
     <div class="collapsed-control" *ngIf="legendCollapsed || (objKeys(onMap).length === 0)" (click)="legendCollapsed=false">
       Legend Collapsed
     </div>
