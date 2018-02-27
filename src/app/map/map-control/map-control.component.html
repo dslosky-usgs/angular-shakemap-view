@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="control" [ngClass]="{'collapsed': controlCollapsed}">
+    <div class="collapsed-control" *ngIf="controlCollapsed" (click)="controlCollapsed=false">
+      Control Collapsed
+    </div>
+
+    <div class="open" *ngIf="!controlCollapsed">
+      <div class="close">
+        <i class="fa fa-times" (click)="controlCollapsed=true"></i>
+      </div>
+
+      <p *ngFor="let item of control" (click)="toggleLayer(item)">
+        <input type="checkbox" [checked]="item?.onMap">
+        {{ item.name }}
+      </p>
+    </div>
+
+  </div>
+
+  <div class="legend control" [ngClass]="{'collapsed': legendCollapsed || (objKeys(onMap).length === 0)}">
+    <div class="collapsed-control" *ngIf="legendCollapsed || (objKeys(onMap).length === 0)" (click)="legendCollapsed=false">
+      Legend Collapsed
+    </div>
+    <div class="open" *ngIf="!legendCollapsed && (objKeys(onMap).length > 0)">
+      <div class="close">
+        <i class="fa fa-times" (click)="legendCollapsed=true"></i>
+      </div>
+
+      <div class="image" *ngFor="let image of objKeys(legend)">
+        <img *ngIf="legend[image].count>0" class="legend-image" src="{{ legend[image].url }}">
+      </div>
+    </div>
+  </div>
+</div>

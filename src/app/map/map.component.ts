@@ -8,6 +8,7 @@ import * as L from 'leaflet';
 import { MapService } from './map.service';
 import { LayerService } from './layers/layer.service';
 import { ConfService } from '../conf.service';
+import { MapControlService } from './map-control/map-control.service';
 
 @Component({
   selector: 'shakemap-view-map',
@@ -24,6 +25,7 @@ export class MapComponent implements OnInit, OnDestroy {
 
   constructor(private mapService: MapService,
               private layerService: LayerService,
+              private controlService: MapControlService,
               private c: ConfService) { }
 
   ngOnInit() {
@@ -52,18 +54,21 @@ export class MapComponent implements OnInit, OnDestroy {
       }).setView([51.505, -0.09], 13);
     this.basemap.addTo(this.map);
     this.layersControl = L.control.layers({'Basemap': this.basemap});
+
+    this.mapService.map = this.map
   }
 
   plotEvent(event) {
     //this.basemap.addTo(this.map);
     this.layersControl = L.control.layers({'Basemap': this.basemap});
-    this.layersControl.addTo(this.map);
+    //this.layersControl.addTo(this.map);
     
     this.layerService.genLayers(event);
   }
 
   addLayer(layer) {
     this.layersControl.addOverlay(layer.layer, layer.name);
+    this.controlService.addOverlay(layer.layer, layer.name, layer['legendImages']);
 
     if (this.c.conf['defaultLayers'].includes(layer.id)) {
       layer.layer.addTo(this.map);
