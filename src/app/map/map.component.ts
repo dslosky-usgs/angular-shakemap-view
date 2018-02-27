@@ -7,8 +7,8 @@ import * as L from 'leaflet';
 
 import { MapService } from './map.service';
 import { LayerService } from './layers/layer.service';
-import { ConfService } from '../conf.service';
 import { MapControlService } from './map-control/map-control.service';
+import { ConfService } from '../conf.service';
 
 @Component({
   selector: 'shakemap-view-map',
@@ -59,28 +59,19 @@ export class MapComponent implements OnInit, OnDestroy {
   }
 
   plotEvent(event) {
-    //this.basemap.addTo(this.map);
     this.layersControl = L.control.layers({'Basemap': this.basemap});
-    //this.layersControl.addTo(this.map);
-    
     this.layerService.genLayers(event);
   }
 
   addLayer(layer) {
-    this.layersControl.addOverlay(layer.layer, layer.name);
-    this.controlService.addOverlay(layer.layer, layer.name, layer['legendImages']);
+      this.controlService.addOverlay(layer);
 
-    if (this.c.conf['defaultLayers'].includes(layer.id)) {
-      layer.layer.addTo(this.map);
-
-      // Set bounds based on new default layers
-      this.defLayers.push(layer.layer);
-      let group = L.featureGroup(this.defLayers);
-      this.map.fitBounds(group.getBounds().pad(0.1));
-    }
-
-    // track current non-base layers for later removal
-    this.allLayers.push(layer.layer);
+      if (this.c.conf['defaultLayers'].includes(layer.id)) {
+        // Set bounds based on new default layers
+        this.defLayers.push(layer.layer);
+        let group = L.featureGroup(this.defLayers);
+        this.map.fitBounds(group.getBounds().pad(0.1));
+      }
   }
 
   genBasemap() {
@@ -94,23 +85,7 @@ export class MapComponent implements OnInit, OnDestroy {
   }
 
   clearMap() {
-    if (this.layersControl) {
-      this.layersControl.remove();
-    }
-
-    /*
-    this.map.eachLayer(layer => {
-      this.map.removeLayer(layer);
-    });
-    */
-
-    for (let layer of this.allLayers) {
-      layer.removeFrom(this.map);
-    }
-
-    // clear the tracked layers
-    this.defLayers = [];
-    this.allLayers = [];
+    this.controlService.clear();
   }
 
   ngOnDestroy() {

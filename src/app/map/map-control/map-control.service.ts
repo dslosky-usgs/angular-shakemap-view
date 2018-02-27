@@ -8,8 +8,8 @@ export class MapControlService {
 
   constructor() { }
 
-  addOverlay(layer, name, images=null) {
-    this.addOverlay_.next({layer:layer,name:name,images:images});
+  addOverlay(layer) {
+    this.addOverlay_.next(layer);
   }
 
   clear() {
