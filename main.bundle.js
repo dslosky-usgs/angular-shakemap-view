@@ -50,6 +50,7 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__conf_service__ = __webpack_require__("../../../../../src/app/conf.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__events_event_service__ = __webpack_require__("../../../../../src/app/events/event.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fortawesome_fontawesome__ = __webpack_require__("../../../../@fortawesome/fontawesome/index.es.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -59,6 +60,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -73,6 +75,19 @@ var AppComponent = /** @class */ (function () {
             this.c.getConfigs();
         }
         this.eService.manualEntry = this.eventFeed;
+        this.iconSetup();
+    };
+    AppComponent.prototype.iconSetup = function () {
+        var icons = [
+            __webpack_require__("../../../../@fortawesome/fontawesome-free-solid/faAngleUp.js"),
+            __webpack_require__("../../../../@fortawesome/fontawesome-free-solid/faAngleDown.js"),
+            __webpack_require__("../../../../@fortawesome/fontawesome-free-solid/faTimes.js"),
+            __webpack_require__("../../../../@fortawesome/fontawesome-free-solid/faKey.js"),
+        ];
+        for (var _i = 0, icons_1 = icons; _i < icons_1.length; _i++) {
+            var icon = icons_1[_i];
+            __WEBPACK_IMPORTED_MODULE_3__fortawesome_fontawesome__["a" /* library */].add(icon);
+        }
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Input */])(),
@@ -119,12 +134,16 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__bottom_panel_info_info_service__ = __webpack_require__("../../../../../src/app/bottom-panel/info/info.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__bottom_panel_station_list_station_list_component__ = __webpack_require__("../../../../../src/app/bottom-panel/station-list/station-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__bottom_panel_station_list_station_service__ = __webpack_require__("../../../../../src/app/bottom-panel/station-list/station.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__map_map_control_map_control_component__ = __webpack_require__("../../../../../src/app/map/map-control/map-control.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__map_map_control_map_control_service__ = __webpack_require__("../../../../../src/app/map/map-control/map-control.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -152,14 +171,15 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_7__events_events_component__["a" /* EventsComponent */],
                 __WEBPACK_IMPORTED_MODULE_11__bottom_panel_bottom_panel_component__["a" /* BottomPanelComponent */],
                 __WEBPACK_IMPORTED_MODULE_12__bottom_panel_info_info_component__["a" /* InfoComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__bottom_panel_station_list_station_list_component__["a" /* StationListComponent */]
+                __WEBPACK_IMPORTED_MODULE_14__bottom_panel_station_list_station_list_component__["a" /* StationListComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__map_map_control_map_control_component__["a" /* MapControlComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["b" /* HttpClientModule */]
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_6__map_layers_layer_service__["a" /* LayerService */], __WEBPACK_IMPORTED_MODULE_8__events_event_service__["a" /* EventService */], __WEBPACK_IMPORTED_MODULE_9__map_map_service__["a" /* MapService */], __WEBPACK_IMPORTED_MODULE_10__conf_service__["a" /* ConfService */], __WEBPACK_IMPORTED_MODULE_13__bottom_panel_info_info_service__["a" /* InfoService */], __WEBPACK_IMPORTED_MODULE_15__bottom_panel_station_list_station_service__["a" /* StationService */]],
+            providers: [__WEBPACK_IMPORTED_MODULE_6__map_layers_layer_service__["a" /* LayerService */], __WEBPACK_IMPORTED_MODULE_8__events_event_service__["a" /* EventService */], __WEBPACK_IMPORTED_MODULE_9__map_map_service__["a" /* MapService */], __WEBPACK_IMPORTED_MODULE_10__conf_service__["a" /* ConfService */], __WEBPACK_IMPORTED_MODULE_13__bottom_panel_info_info_service__["a" /* InfoService */], __WEBPACK_IMPORTED_MODULE_15__bottom_panel_station_list_station_service__["a" /* StationService */], __WEBPACK_IMPORTED_MODULE_17__map_map_control_map_control_service__["a" /* MapControlService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]],
             exports: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
         })
@@ -174,7 +194,7 @@ var AppModule = /** @class */ (function () {
 /***/ "../../../../../src/app/bottom-panel/bottom-panel.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" [@panelState]='panelState'>\n    <div class=\"state-toggle\" (click)=\"toggleState()\">\n      <div class=\"arrow\">\n        <i class=\"fa fa-angle-up\" *ngIf=\"panelState === 'inactive'\"></i>\n        <i class=\"fa fa-angle-down\" *ngIf=\"panelState === 'active'\"></i>\n      </div>\n    </div>\n\n    <div class=\"content-container\">\n      <div class=\"tabs\">\n        <h3 class=\"tab\" *ngIf=\"infoService.hasData\" (click)=\"selected='metadata'\">Metadata</h3>\n        <h3 class=\"tab\" *ngIf=\"stationService.hasData\" (click)=\"selected='stations'\">Station List</h3>\n      </div>\n\n      <div class=\"exit\" *ngIf=\"selected\" (click)=\"selected=null\">\n        <i class=\"fa fa-times\"></i>\n      </div>\n\n      <shakemap-view-info *ngIf=\"selected==='metadata'\"></shakemap-view-info>\n      <shakemap-view-station-list *ngIf=\"selected==='stations'\"></shakemap-view-station-list>\n    </div>\n</div>\n"
+module.exports = "<div class=\"container\" [@panelState]='panelState'>\n    <div class=\"state-toggle\" (click)=\"toggleState()\">\n      <div class=\"arrow\">\n        <div class=\"up\" *ngIf=\"panelState === 'inactive'\">\n          <i class=\"fas fa-angle-up\"></i>\n        </div>\n        <div class=\"down\" *ngIf=\"panelState === 'active'\">\n          <i class=\"fas fa-angle-down\"></i>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"content-container\">\n      <div class=\"tabs\">\n        <h3 class=\"tab\" *ngIf=\"infoService.hasData\" (click)=\"selected='metadata'\">Metadata</h3>\n        <h3 class=\"tab\" *ngIf=\"stationService.hasData\" (click)=\"selected='stations'\">Station List</h3>\n      </div>\n\n      <div class=\"exit\" *ngIf=\"selected\" (click)=\"selected=null\">\n        <i class=\"fas fa-times\"></i>\n      </div>\n\n      <shakemap-view-info *ngIf=\"selected==='metadata'\"></shakemap-view-info>\n      <shakemap-view-station-list *ngIf=\"selected==='stations'\"></shakemap-view-station-list>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -186,7 +206,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".container {\n  position: absolute;\n  bottom: 0;\n  -webkit-transform: translateY(100%);\n          transform: translateY(100%);\n  z-index: 1000;\n  width: 100%;\n  background-color: #ffffff;\n  text-align: center; }\n\n.container.show {\n  -webkit-transform: translateY(0);\n          transform: translateY(0); }\n\n.state-toggle {\n  position: absolute;\n  top: 0;\n  -webkit-transform: translateY(-30%) translateX(-50%);\n          transform: translateY(-30%) translateX(-50%);\n  height: 75px;\n  width: 150px;\n  border-radius: 40%;\n  left: 50%;\n  background-color: #ffffff; }\n\n.content-container {\n  position: relative;\n  z-index: 1001; }\n\n.arrow {\n  font-size: 32px;\n  -webkit-transform: translateY(-20%);\n          transform: translateY(-20%);\n  cursor: pointer; }\n\n.tab {\n  display: inline-block;\n  width: -webkit-max-content;\n  width: -moz-max-content;\n  width: max-content;\n  padding: 10px;\n  border: 2px solid #0099FF;\n  border-radius: 10px;\n  cursor: pointer; }\n\n.tab:hover {\n  background-color: #0099FF; }\n\n.exit {\n  text-align: right;\n  margin-right: 10px;\n  font-size: 34px; }\n\n.exit .fa {\n  cursor: pointer; }\n\n.exit .fa:hover {\n  color: #0099FF; }\n", ""]);
+exports.push([module.i, ".container {\n  position: absolute;\n  bottom: 0;\n  -webkit-transform: translateY(100%);\n          transform: translateY(100%);\n  z-index: 1000;\n  width: 100%;\n  background-color: #ffffff;\n  text-align: center; }\n\n.container.show {\n  -webkit-transform: translateY(0);\n          transform: translateY(0); }\n\n.state-toggle {\n  position: absolute;\n  top: 0;\n  -webkit-transform: translateY(-30%) translateX(-50%);\n          transform: translateY(-30%) translateX(-50%);\n  height: 75px;\n  width: 150px;\n  border-radius: 40%;\n  left: 50%;\n  background-color: #ffffff; }\n\n.content-container {\n  position: relative;\n  z-index: 1001; }\n\n.arrow {\n  font-size: 32px;\n  -webkit-transform: translateY(-20%);\n          transform: translateY(-20%);\n  cursor: pointer; }\n\n.tab {\n  display: inline-block;\n  width: -webkit-max-content;\n  width: -moz-max-content;\n  width: max-content;\n  padding: 10px;\n  border: 2px solid #0099FF;\n  border-radius: 10px;\n  cursor: pointer; }\n\n.tab:hover {\n  background-color: #0099FF; }\n\n.exit {\n  text-align: right;\n  margin-right: 10px;\n  font-size: 34px; }\n\n.exit * {\n  cursor: pointer; }\n", ""]);
 
 // exports
 
@@ -494,7 +514,7 @@ var InfoService = /** @class */ (function () {
 /***/ "../../../../../src/app/bottom-panel/station-list/station-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  \n    <div class=\"station\" *ngFor=\"let station of stations\">\n        <h3 class=\"station-name\">\n            {{ station.properties.code }}: {{ station.properties.name }}\n        </h3>\n\n        <div class=\"data-container\">\n\n          <table>\n              <tr>\n                  <td class=\"mmi-td\">\n                      <table class=\"mmi-table\"\n                              [style.backgroundColor]=\"getColor(station.properties.intensity)\">\n                          <tr>\n                              <th>\n                                  <h1>\n                                      {{ getRoman(station.properties.intensity) }}\n                                  </h1>\n                              </th>\n                          </tr>\n                          <tr>\n                              <td>\n                                  mmi\n                              </td>\n                          </tr>\n                      </table>\n                  </td>\n                  <td>\n                      <table>\n                          <tr>\n                              <th *ngIf=\"!isNaN(station.properties.pga)\">\n                                {{ station.properties.pga | number }} %g\n                              </th>\n                              <th *ngIf=\"isNaN(station.properties.pga)\">\n                                None\n                              </th>\n                          </tr>\n                          <tr>\n                              <td>\n                                  pga\n                              </td>\n                          </tr>\n                      </table>\n                  </td>\n                  <td>\n                      <table>\n                          <tr>\n                              <th *ngIf=\"!isNaN(station.properties.pgv)\">\n                                {{ station.properties.pgv | number }} cm/s\n                              </th>\n                              <th *ngIf=\"isNaN(station.properties.pgv)\">\n                                None\n                              </th>\n                          </tr>\n                          <tr>\n                              <td>\n                                  pgv\n                              </td>\n                          </tr>\n                      </table>\n                  </td>\n                  <td>\n                      <table>\n                          <tr>\n                              <th *ngIf=\"!isNaN(station.properties.distance)\">\n                                {{ station.properties.distance }} km\n                              </th>\n                              <th *ngIf=\"isNaN(station.properties.distance)\">\n                                None\n                              </th>\n                          </tr>\n                          <tr>\n                              <td>\n                                  distance\n                              </td>\n                          </tr>\n                      </table>\n                  </td>\n              </tr>\n          </table>\n\n          <div class=\"details-container\">\n            <div class=\"details-toggle link\">\n              <h3 (click)=\"toggleDetails(station)\">\n\n                <i class=\"fa fa-angle-up\" *ngIf=\"station.showDetails\"></i>\n                <i class=\"fa fa-angle-down\" *ngIf=\"!station.showDetails\"></i>\n                \n                <div class=\"link\">\n                  Details\n                </div>\n              </h3>\n            </div>\n\n            <div class=\"details\" *ngIf=\"station.showDetails\">\n              <div class = \"column\">\n                <dl class=\"station-metadata vertical\">\n                  <dt class=\"station-metadata-network\">Network</dt>\n                  <dd class=\"station-metadata-network\">{{ station.properties.network }}</dd>\n                  <dt class=\"station-metadata-location\">Location</dt>\n                  <dd class=\"station-metadata-location\">{{ station.geometry.coordinates[1] }}°N \n                                                        {{ station.geometry.coordinates[0] * -1 }}°W</dd>\n                  <dt class=\"station-metadata-source\">Source</dt>\n                  <dd class=\"station-metadata-source\">{{ station.properties.source }}</dd>\n                  <dt class=\"station-metadata-intensity\">Intensity</dt>\n                  <dd class=\"station-metadata-intensity\">{{ station.properties.intensity }}</dd>\n                </dl>\n              </div>\n              \n              <div class=\"column\">\n                <table class=\"data-table\">\n                  <thead>\n                    <th>name</th>\n                    <th>pga</th>\n                    <th>pgv</th>\n                    <th>psa03</th>\n                    <th>psa10</th>\n                    <th>psa30</th>\n                  </thead>\n                  <tbody>\n                    <tr *ngFor=\"let channel of station.properties.channels\">\n                      <th>\n                        {{ channel.name }}\n                      </th>\n                      <td>{{ getAmp('pga', channel.amplitudes).value | number }}</td>\n                      <td>{{ getAmp('pgv', channel.amplitudes).value | number }}</td>\n                      <td *ngIf=\"getAmp('psa03', channel.amplitudes).value\">{{ getAmp('psa03', channel.amplitudes).value | number }}</td>\n                      <td *ngIf=\"getAmp('psa10', channel.amplitudes).value\">{{ getAmp('psa10', channel.amplitudes).value | number }}</td>\n                      <td *ngIf=\"getAmp('psa30', channel.amplitudes).value\">{{ getAmp('psa30', channel.amplitudes).value | number }}</td>\n                      <td *ngIf=\"getAmp('sa(0.3)', channel.amplitudes).value\">{{ getAmp('sa(0.3)', channel.amplitudes).value | number }}</td>\n                      <td *ngIf=\"getAmp('sa(1.0)', channel.amplitudes).value\">{{ getAmp('sa(1.0)', channel.amplitudes).value | number }}</td>\n                      <td *ngIf=\"getAmp('sa(3.0)', channel.amplitudes).value\">{{ getAmp('sa(3.0)', channel.amplitudes).value | number }}</td>\n                    </tr>\n                  </tbody>\n                </table>\n              </div>\n\n            </div>\n          </div>\n\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"container\">\n    <div class=\"render-fa\" style=\"dispaly:hidden\">\n        <!-- Pre render fa icons and insert svg in actual station list -->\n        <i class=\"fa fa-angle-up\" data-fa-symbol=\"symbolUp\"></i>\n        <i class=\"fa fa-angle-down\" data-fa-symbol=\"symbolDown\"></i>\n    </div>\n\n    <div class=\"station\" *ngFor=\"let station of stations\">\n        <h3 class=\"station-name\">\n            {{ station.properties.code }}: {{ station.properties.name }}\n        </h3>\n\n        <div class=\"data-container\">\n\n          <table>\n              <tr>\n                  <td class=\"mmi-td\">\n                      <table class=\"mmi-table\"\n                              [style.backgroundColor]=\"getColor(station.properties.intensity)\">\n                          <tr>\n                              <th>\n                                  <h1>\n                                      {{ getRoman(station.properties.intensity) }}\n                                  </h1>\n                              </th>\n                          </tr>\n                          <tr>\n                              <td>\n                                  mmi\n                              </td>\n                          </tr>\n                      </table>\n                  </td>\n                  <td>\n                      <table>\n                          <tr>\n                              <th *ngIf=\"!isNaN(station.properties.pga)\">\n                                {{ station.properties.pga | number }} %g\n                              </th>\n                              <th *ngIf=\"isNaN(station.properties.pga)\">\n                                None\n                              </th>\n                          </tr>\n                          <tr>\n                              <td>\n                                  pga\n                              </td>\n                          </tr>\n                      </table>\n                  </td>\n                  <td>\n                      <table>\n                          <tr>\n                              <th *ngIf=\"!isNaN(station.properties.pgv)\">\n                                {{ station.properties.pgv | number }} cm/s\n                              </th>\n                              <th *ngIf=\"isNaN(station.properties.pgv)\">\n                                None\n                              </th>\n                          </tr>\n                          <tr>\n                              <td>\n                                  pgv\n                              </td>\n                          </tr>\n                      </table>\n                  </td>\n                  <td>\n                      <table>\n                          <tr>\n                              <th *ngIf=\"!isNaN(station.properties.distance)\">\n                                {{ station.properties.distance }} km\n                              </th>\n                              <th *ngIf=\"isNaN(station.properties.distance)\">\n                                None\n                              </th>\n                          </tr>\n                          <tr>\n                              <td>\n                                  distance\n                              </td>\n                          </tr>\n                      </table>\n                  </td>\n              </tr>\n          </table>\n\n          <div class=\"details-container\">\n            <div class=\"details-toggle link\">\n              <h3 (click)=\"toggleDetails(station)\">\n                  <div class=\"icon\" *ngIf=\"station.showDetails\">\n                    <svg class=\"svg-inline--fa fa-w-20\"><use xlink:href=\"#symbolUp\"></use></svg>\n                  </div>\n                  <div class=\"icon\" *ngIf=\"!station.showDetails\">\n                    <svg class=\"svg-inline--fa fa-w-20\"><use xlink:href=\"#symbolDown\"></use></svg>\n                  </div>\n                \n                <div class=\"link\">\n                  Details\n                </div>\n              </h3>\n            </div>\n\n            <div class=\"details\" *ngIf=\"station.showDetails\">\n              <div class = \"column\">\n                <dl class=\"station-metadata vertical\">\n                  <dt class=\"station-metadata-network\">Network</dt>\n                  <dd class=\"station-metadata-network\">{{ station.properties.network }}</dd>\n                  <dt class=\"station-metadata-location\">Location</dt>\n                  <dd class=\"station-metadata-location\">{{ station.geometry.coordinates[1] }}°N \n                                                        {{ station.geometry.coordinates[0] * -1 }}°W</dd>\n                  <dt class=\"station-metadata-source\">Source</dt>\n                  <dd class=\"station-metadata-source\">{{ station.properties.source }}</dd>\n                  <dt class=\"station-metadata-intensity\">Intensity</dt>\n                  <dd class=\"station-metadata-intensity\">{{ station.properties.intensity }}</dd>\n                </dl>\n              </div>\n              \n              <div class=\"column\">\n                <table class=\"data-table\">\n                  <thead>\n                    <th>name</th>\n                    <th>pga</th>\n                    <th>pgv</th>\n                    <th>psa03</th>\n                    <th>psa10</th>\n                    <th>psa30</th>\n                  </thead>\n                  <tbody>\n                    <tr *ngFor=\"let channel of station.properties.channels\">\n                      <th>\n                        {{ channel.name }}\n                      </th>\n                      <td>{{ getAmp('pga', channel.amplitudes).value | number }}</td>\n                      <td>{{ getAmp('pgv', channel.amplitudes).value | number }}</td>\n                      <td *ngIf=\"getAmp('psa03', channel.amplitudes).value\">{{ getAmp('psa03', channel.amplitudes).value | number }}</td>\n                      <td *ngIf=\"getAmp('psa10', channel.amplitudes).value\">{{ getAmp('psa10', channel.amplitudes).value | number }}</td>\n                      <td *ngIf=\"getAmp('psa30', channel.amplitudes).value\">{{ getAmp('psa30', channel.amplitudes).value | number }}</td>\n                      <td *ngIf=\"getAmp('sa(0.3)', channel.amplitudes).value\">{{ getAmp('sa(0.3)', channel.amplitudes).value | number }}</td>\n                      <td *ngIf=\"getAmp('sa(1.0)', channel.amplitudes).value\">{{ getAmp('sa(1.0)', channel.amplitudes).value | number }}</td>\n                      <td *ngIf=\"getAmp('sa(3.0)', channel.amplitudes).value\">{{ getAmp('sa(3.0)', channel.amplitudes).value | number }}</td>\n                    </tr>\n                  </tbody>\n                </table>\n              </div>\n\n            </div>\n          </div>\n\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -870,6 +890,7 @@ var miLayer = {
     id: 'mmi_cont',
     productId: 'download/cont_mi.json',
     type: 'json',
+    legendImages: ['assets/images/legend-intensity-scale.png'],
     generateLayer: function (json) {
         return __WEBPACK_IMPORTED_MODULE_0_leaflet__["geoJson"](json, {
             style: function (feature, latlng) {
@@ -924,6 +945,7 @@ var mmiLayer = {
     id: 'mmi_cont',
     productId: 'download/cont_mmi.json',
     type: 'json',
+    legendImages: ['assets/images/legend-intensity-scale.png'],
     generateLayer: function (json) {
         return __WEBPACK_IMPORTED_MODULE_0_leaflet__["geoJson"](json, {
             style: function (feature, latlng) {
@@ -1049,6 +1071,7 @@ var epicenterLayer = {
     id: 'epicenter',
     productId: 'download/grid.xml',
     productType: 'text',
+    legendImages: ['assets/images/legend-epicenter.png'],
     generateLayer: function (xml) {
         var parser = new DOMParser();
         var xmlDoc = parser.parseFromString(xml, 'text/xml');
@@ -1210,6 +1233,9 @@ var stationLayer = {
     id: 'stations',
     productId: 'download/stationlist.json',
     type: 'json',
+    legendImages: ['assets/images/legend-shakemap-station.png',
+        'assets/images/legend-seismic-station.png',
+        'assets/images/legend-intensity-scale.png'],
     generateLayer: function (json) {
         return __WEBPACK_IMPORTED_MODULE_0_leaflet__["geoJson"](json, {
             pointToLayer: function (feature, latlng) {
@@ -1230,10 +1256,256 @@ var stationLayer = {
 
 /***/ }),
 
+/***/ "../../../../../src/app/map/map-control/map-control.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <div class=\"control\" \n        [ngClass]=\"{'collapsed': controlCollapsed}\" \n        (dblclick)=\"$event.stopPropagation();\">\n\n    <div class=\"collapsed-control\" *ngIf=\"controlCollapsed\" (click)=\"controlCollapsed=false\">\n      <div class=\"control-image\">\n        <img src=\"{{ layersImg }}\">\n      </div>\n    </div>\n\n    <div class=\"open\" *ngIf=\"!controlCollapsed\">\n      <div class=\"close\">\n        <div class=\"close-icon\" (click)=\"controlCollapsed=true\">\n          <i class=\"fas fa-times\"></i>\n        </div>\n      </div>\n\n      <div class=\"items\">\n        <p *ngFor=\"let item of control\" \n            (click)=\"toggleLayer(item);\"\n            class=\"layer-item\">\n          <input type=\"checkbox\" [checked]=\"plotting.indexOf(item.id) > -1\">\n          {{ item.name }}\n        </p>\n      </div>\n    </div>\n\n  </div>\n\n  <!-- Clear the float to let legend sit under control -->\n  <br style=\"clear:both\" />\n\n  <div class=\"legend control\" \n          [ngClass]=\"{'collapsed': legendCollapsed}\" \n          (dblclick)=\"$event.stopPropagation();\">\n\n    <div class=\"collapsed-control\" *ngIf=\"legendCollapsed\" (click)=\"toggleLegend()\">\n      <div class=\"control-image\">\n        <i class=\"fas fa-key\"></i>\n      </div>\n    </div>\n    <div class=\"open\" *ngIf=\"!legendCollapsed\">\n      <div class=\"close\">\n        <div class=\"close-icon\" (click)=\"toggleLegend()\">\n          <i class=\"fas fa-times\"></i>\n        </div>\n      </div>\n\n      <div class=\"items\">\n        <div class=\"image\" *ngFor=\"let image of objKeys(legend)\">\n          <img *ngIf=\"legend[image].count>0\" class=\"legend-image\" src=\"{{ legend[image].url }}\">\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/map/map-control/map-control.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".container {\n  z-index: 501;\n  text-align: center;\n  position: fixed;\n  top: 5px;\n  right: 5px; }\n\n.control {\n  border: 2px solid #aaaaaa;\n  background-color: white;\n  display: block;\n  border-radius: 5px;\n  margin: 5px;\n  max-width: -webkit-max-content;\n  max-width: -moz-max-content;\n  max-width: max-content;\n  position: relative;\n  float: right;\n  cursor: auto; }\n\n.control.collapsed {\n  min-width: 45px;\n  height: 45px;\n  cursor: pointer; }\n\n.control.collapsed:hover {\n  border: 2px solid #0099FF; }\n\n.control .collapsed-control {\n  height: 100%;\n  width: 100%; }\n\n.control-image {\n  position: relative;\n  top: 50%;\n  -webkit-transform: translateY(-50%);\n          transform: translateY(-50%);\n  color: #454545;\n  font-size: 18px; }\n\n.close {\n  text-align: right;\n  padding-right: 5px; }\n\n.close-icon {\n  display: inline-block;\n  cursor: pointer; }\n\n.layer-item {\n  margin: 0 0 0 5px;\n  padding: 5px 5px; }\n\n.items {\n  text-align: left; }\n\n.legend-image {\n  max-width: 200px; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/map/map-control/map-control.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapControlComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__map_control_service__ = __webpack_require__("../../../../../src/app/map/map-control/map-control.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__map_service__ = __webpack_require__("../../../../../src/app/map/map.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__conf_service__ = __webpack_require__("../../../../../src/app/conf.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_TimerObservable__ = __webpack_require__("../../../../rxjs/_esm5/observable/TimerObservable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_take__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/take.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_leaflet__ = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_leaflet__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var MapControlComponent = /** @class */ (function () {
+    function MapControlComponent(controlService, mapService, confService) {
+        this.controlService = controlService;
+        this.mapService = mapService;
+        this.confService = confService;
+        this.subs = [];
+        this.controlCollapsed = true;
+        this.legendCollapsed = true;
+        this.allowLegend = false;
+        this.control = [];
+        this.plotting = [];
+        this.legend = {};
+        this.onMap = {};
+        this.objKeys = Object.keys;
+        this.layersImg = __webpack_require__("../../../../leaflet/dist/images/layers.png");
+        this.initLoading = true; // True after first map layers render
+        this.timeoutTimer = null;
+    }
+    MapControlComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.subs.push(this.controlService.addOverlay_.subscribe(function (overlay) {
+            _this.newOverlay(overlay);
+        }));
+        this.subs.push(this.controlService.clear_.subscribe(function (overlay) {
+            // remember which layers are plotted
+            _this.clearAll();
+        }));
+        this.timeoutTimer = __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_TimerObservable__["a" /* TimerObservable */].create(5000, 1000).subscribe(function (time) {
+            _this.initLoading = false;
+            _this.timeoutTimer.unsubscribe();
+        });
+    };
+    MapControlComponent.prototype.toggleLayer = function (overlay) {
+        if (!this.onMap[overlay.id]) {
+            this.addLayer(overlay);
+        }
+        else {
+            this.removeLayer(overlay);
+        }
+    };
+    MapControlComponent.prototype.newOverlay = function (overlay) {
+        this.control.push(overlay);
+        if (((this.confService.conf['defaultLayers'].includes(overlay.id))
+            && (this.plotting.length === 0) ||
+            ((this.confService.conf['defaultLayers'].includes(overlay.id))
+                && this.initLoading)) ||
+            (this.plotting.indexOf(overlay.id) > -1)) {
+            // add the layer to the map
+            this.addLayer(overlay);
+            // align map
+            var layers = [];
+            for (var layer in this.onMap) {
+                layers.push(this.onMap[layer].layer);
+            }
+            var group = __WEBPACK_IMPORTED_MODULE_6_leaflet__["featureGroup"](layers);
+            this.mapService.setBounds.next(group.getBounds().pad(0.1));
+        }
+    };
+    MapControlComponent.prototype.addLayer = function (overlay) {
+        // if legend images exists, add them
+        if (overlay['legendImages']) {
+            for (var _i = 0, _a = overlay['legendImages']; _i < _a.length; _i++) {
+                var url = _a[_i];
+                if (!this.legend[url]) {
+                    this.legend[url] = { 'count': 1,
+                        'url': url };
+                }
+                else {
+                    this.legend[url].count += 1;
+                }
+            }
+        }
+        this.onMap[overlay.id] = overlay;
+        overlay['onMap'] = true;
+        this.plotting.push(overlay.id);
+        // add to map
+        this.mapService.map.addLayer(overlay.layer);
+        // check if the legend is available
+        this.checkAllowLegend();
+    };
+    MapControlComponent.prototype.removeLayer = function (overlay) {
+        if (this.onMap[overlay.id]) {
+            delete this.onMap[overlay.id];
+            overlay.onMap = false;
+            if (overlay['legendImages']) {
+                for (var _i = 0, _a = overlay['legendImages']; _i < _a.length; _i++) {
+                    var url = _a[_i];
+                    this.legend[url].count -= 1;
+                }
+            }
+        }
+        // remove from map
+        this.mapService.map.removeLayer(overlay.layer);
+        // stop tracking this layer
+        this.plotting = this.plotting.filter(function (l) { return l !== overlay.id; });
+        // check if the legend should be open
+        this.checkAllowLegend();
+    };
+    MapControlComponent.prototype.clearAll = function () {
+        for (var overlay in this.onMap) {
+            this.mapService.map.removeLayer(this.onMap[overlay].layer);
+        }
+        this.control = [];
+        this.legend = [];
+        this.onMap = {};
+    };
+    MapControlComponent.prototype.checkAllowLegend = function () {
+        for (var item in this.legend) {
+            if (this.legend[item].count > 0) {
+                this.allowLegend = true;
+                return true;
+            }
+        }
+        // no legends in use
+        this.legendCollapsed = true;
+        this.allowLegend = false;
+        return false;
+    };
+    MapControlComponent.prototype.toggleLegend = function () {
+        var allow = this.checkAllowLegend();
+        if (!this.legendCollapsed) {
+            this.legendCollapsed = true;
+        }
+        else if (allow) {
+            this.legendCollapsed = false;
+        }
+    };
+    MapControlComponent.prototype.ngOnDestroy = function () {
+        for (var _i = 0, _a = this.subs; _i < _a.length; _i++) {
+            var sub = _a[_i];
+            if (sub) {
+                sub.unsubscribe();
+            }
+        }
+    };
+    MapControlComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'shakemap-view-map-control',
+            template: __webpack_require__("../../../../../src/app/map/map-control/map-control.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/map/map-control/map-control.component.scss")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__map_control_service__["a" /* MapControlService */],
+            __WEBPACK_IMPORTED_MODULE_2__map_service__["a" /* MapService */],
+            __WEBPACK_IMPORTED_MODULE_3__conf_service__["a" /* ConfService */]])
+    ], MapControlComponent);
+    return MapControlComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/map/map-control/map-control.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapControlService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__ = __webpack_require__("../../../../rxjs/_esm5/ReplaySubject.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var MapControlService = /** @class */ (function () {
+    function MapControlService() {
+        this.addOverlay_ = new __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__["a" /* ReplaySubject */](1);
+        this.clear_ = new __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__["a" /* ReplaySubject */](1);
+    }
+    MapControlService.prototype.addOverlay = function (layer) {
+        this.addOverlay_.next(layer);
+    };
+    MapControlService.prototype.clear = function () {
+        this.clear_.next(true);
+    };
+    MapControlService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], MapControlService);
+    return MapControlService;
+}());
+
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/map/map.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"map\"></div>\n"
+module.exports = "<div id=\"map\">\n    <shakemap-view-map-control></shakemap-view-map-control>\n</div>\n"
 
 /***/ }),
 
@@ -1265,7 +1537,8 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_leaflet__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__map_service__ = __webpack_require__("../../../../../src/app/map/map.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__layers_layer_service__ = __webpack_require__("../../../../../src/app/map/layers/layer.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__conf_service__ = __webpack_require__("../../../../../src/app/conf.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__map_control_map_control_service__ = __webpack_require__("../../../../../src/app/map/map-control/map-control.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__conf_service__ = __webpack_require__("../../../../../src/app/conf.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1280,10 +1553,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var MapComponent = /** @class */ (function () {
-    function MapComponent(mapService, layerService, c) {
+    function MapComponent(mapService, layerService, controlService, c) {
         this.mapService = mapService;
         this.layerService = layerService;
+        this.controlService = controlService;
         this.c = c;
         this.subs = [];
         this.map = null;
@@ -1301,6 +1576,9 @@ var MapComponent = /** @class */ (function () {
         this.subs.push(this.layerService.nextLayer.subscribe(function (layer) {
             _this.addLayer(layer);
         }));
+        this.subs.push(this.mapService.setBounds.subscribe(function (bounds) {
+            _this.setBounds(bounds);
+        }));
         // eslint-disable-next-line  
         delete __WEBPACK_IMPORTED_MODULE_1_leaflet__["Icon"].Default.prototype._getIconUrl;
         // eslint-disable-next-line  
@@ -1315,24 +1593,17 @@ var MapComponent = /** @class */ (function () {
         }).setView([51.505, -0.09], 13);
         this.basemap.addTo(this.map);
         this.layersControl = __WEBPACK_IMPORTED_MODULE_1_leaflet__["control"].layers({ 'Basemap': this.basemap });
+        this.mapService.map = this.map;
     };
     MapComponent.prototype.plotEvent = function (event) {
-        //this.basemap.addTo(this.map);
         this.layersControl = __WEBPACK_IMPORTED_MODULE_1_leaflet__["control"].layers({ 'Basemap': this.basemap });
-        this.layersControl.addTo(this.map);
         this.layerService.genLayers(event);
     };
     MapComponent.prototype.addLayer = function (layer) {
-        this.layersControl.addOverlay(layer.layer, layer.name);
-        if (this.c.conf['defaultLayers'].includes(layer.id)) {
-            layer.layer.addTo(this.map);
-            // Set bounds based on new default layers
-            this.defLayers.push(layer.layer);
-            var group = __WEBPACK_IMPORTED_MODULE_1_leaflet__["featureGroup"](this.defLayers);
-            this.map.fitBounds(group.getBounds().pad(0.1));
-        }
-        // track current non-base layers for later removal
-        this.allLayers.push(layer.layer);
+        this.controlService.addOverlay(layer);
+    };
+    MapComponent.prototype.setBounds = function (bounds) {
+        this.map.fitBounds(bounds);
     };
     MapComponent.prototype.genBasemap = function () {
         this.basemap = __WEBPACK_IMPORTED_MODULE_1_leaflet__["tileLayer"]('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=' + this.mapService.mapKey, {
@@ -1344,21 +1615,7 @@ var MapComponent = /** @class */ (function () {
         });
     };
     MapComponent.prototype.clearMap = function () {
-        if (this.layersControl) {
-            this.layersControl.remove();
-        }
-        /*
-        this.map.eachLayer(layer => {
-          this.map.removeLayer(layer);
-        });
-        */
-        for (var _i = 0, _a = this.allLayers; _i < _a.length; _i++) {
-            var layer = _a[_i];
-            layer.removeFrom(this.map);
-        }
-        // clear the tracked layers
-        this.defLayers = [];
-        this.allLayers = [];
+        this.controlService.clear();
     };
     MapComponent.prototype.ngOnDestroy = function () {
         for (var _i = 0, _a = this.subs; _i < _a.length; _i++) {
@@ -1374,7 +1631,8 @@ var MapComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__map_service__["a" /* MapService */],
             __WEBPACK_IMPORTED_MODULE_3__layers_layer_service__["a" /* LayerService */],
-            __WEBPACK_IMPORTED_MODULE_4__conf_service__["a" /* ConfService */]])
+            __WEBPACK_IMPORTED_MODULE_4__map_control_map_control_service__["a" /* MapControlService */],
+            __WEBPACK_IMPORTED_MODULE_5__conf_service__["a" /* ConfService */]])
     ], MapComponent);
     return MapComponent;
 }());
@@ -1404,7 +1662,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var MapService = /** @class */ (function () {
     function MapService() {
         this.plotEvent = new __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__["a" /* ReplaySubject */](1);
+        this.setBounds = new __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__["a" /* ReplaySubject */](1);
         this.mapKey = 'pk.eyJ1IjoiZHNsb3NreSIsImEiOiJjaXR1aHJnY3EwMDFoMnRxZWVtcm9laWJmIn0.1C3GE0kHPGOpbVV9kTxBlQ';
+        this.map = null;
     }
     MapService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* Injectable */])(),
