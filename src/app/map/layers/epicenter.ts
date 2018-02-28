@@ -12,6 +12,7 @@ export var epicenterLayer = {
     id: 'epicenter',
     productId: 'download/grid.xml',
     productType: 'text',
+    legendImages: ['assets/images/legend-epicenter.png'],
     generateLayer: function (xml) {
         var parser = new DOMParser();
         var xmlDoc = parser.parseFromString(xml,'text/xml');

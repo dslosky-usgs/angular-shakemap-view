@@ -108,6 +108,9 @@ export var stationLayer = {
     id: 'stations',
     productId: 'download/stationlist.json',
     type: 'json',
+    legendImages: ['assets/images/legend-shakemap-station.png',
+                    'assets/images/legend-seismic-station.png',
+                    'assets/images/legend-intensity-scale.png'],
     generateLayer: function (json) {
         return L.geoJson(json, {
             pointToLayer: function (feature, latlng) {
