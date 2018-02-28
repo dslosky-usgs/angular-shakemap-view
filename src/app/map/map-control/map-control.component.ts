@@ -1,3 +1,5 @@
+declare function require(string): string;
+
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MapControlService } from './map-control.service';
 import { MapService } from '../map.service';
@@ -21,6 +23,7 @@ export class MapControlComponent implements OnInit, OnDestroy {
   public legend: any = {};
   public onMap: any = {};
   public objKeys: any = Object.keys;
+  public layersImg: any = require('leaflet/dist/images/layers.png');
   private initLoading: boolean = true; // True after first map layers render
   private timeoutTimer: any = null;
 
@@ -134,6 +137,15 @@ export class MapControlComponent implements OnInit, OnDestroy {
     this.legendCollapsed = true;
     this.allowLegend = false;
     return false;
+  }
+
+  toggleLegend() {
+    let allow = this.checkAllowLegend();
+    if (!this.legendCollapsed) {
+      this.legendCollapsed = true;
+    } else if (allow) {
+      this.legendCollapsed = false;
+    }
   }
 
   ngOnDestroy() {

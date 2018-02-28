@@ -19,7 +19,7 @@
 }
 
 .control.collapsed {
-    width: 45px;
+    min-width: 45px;
     height: 45px;
     cursor: pointer;
 }
@@ -28,9 +28,28 @@
     border: 2px solid #0099FF;
 }
 
+.control .collapsed-control {
+    height:100%;
+    width:100%;
+}
+
+.control-image {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #454545;
+    font-size: 18px;
+}
+
 .close {
     text-align: right;
-    padding-right: 5px;}
+    padding-right: 5px;
+}
+
+.close-icon {
+    display: inline-block;
+    cursor: pointer;
+}
 
 .layer-item {
     margin: 0 0 0 5px;

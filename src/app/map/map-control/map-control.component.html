@@ -4,12 +4,16 @@
         (dblclick)="$event.stopPropagation();">
 
     <div class="collapsed-control" *ngIf="controlCollapsed" (click)="controlCollapsed=false">
-      Control Collapsed
+      <div class="control-image">
+        <img src="{{ layersImg }}">
+      </div>
     </div>
 
     <div class="open" *ngIf="!controlCollapsed">
       <div class="close">
-        <i class="fa fa-times" (click)="controlCollapsed=true"></i>
+        <div class="close-icon" (click)="controlCollapsed=true">
+          <i class="fas fa-times"></i>
+        </div>
       </div>
 
       <div class="items">
@@ -24,16 +28,23 @@
 
   </div>
 
+  <!-- Clear the float to let legend sit under control -->
+  <br style="clear:both" />
+
   <div class="legend control" 
-          [ngClass]="{'collapsed': legendCollapsed || !allowLegend}" 
+          [ngClass]="{'collapsed': legendCollapsed}" 
           (dblclick)="$event.stopPropagation();">
 
-    <div class="collapsed-control" *ngIf="legendCollapsed || !allowLegend" (click)="legendCollapsed=false">
-      Legend Collapsed
+    <div class="collapsed-control" *ngIf="legendCollapsed" (click)="toggleLegend()">
+      <div class="control-image">
+        <i class="fas fa-key"></i>
+      </div>
     </div>
-    <div class="open" *ngIf="!legendCollapsed && allowLegend">
+    <div class="open" *ngIf="!legendCollapsed">
       <div class="close">
-        <i class="fa fa-times" (click)="legendCollapsed=true"></i>
+        <div class="close-icon" (click)="toggleLegend()">
+          <i class="fas fa-times"></i>
+        </div>
       </div>
 
       <div class="items">

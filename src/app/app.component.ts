@@ -1,6 +1,10 @@
+declare function require(string): fontawesome.IconPack;
+
 import { Component, OnInit, Input } from '@angular/core';
 import { ConfService } from './conf.service';
 import { EventService } from './events/event.service';
+
+import * as fontawesome from '@fortawesome/fontawesome';
 
 @Component({
   selector: 'shakemap-view-root',
@@ -21,5 +25,19 @@ export class AppComponent {
       this.c.getConfigs();
     }
     this.eService.manualEntry = this.eventFeed;
+    this.iconSetup();
+  }
+
+  iconSetup() {
+    let icons = [
+        require('@fortawesome/fontawesome-free-solid/faAngleUp'),
+        require('@fortawesome/fontawesome-free-solid/faAngleDown'),
+        require('@fortawesome/fontawesome-free-solid/faTimes'),
+        require('@fortawesome/fontawesome-free-solid/faKey'),
+    ]
+
+    for (let icon of icons) {
+      fontawesome.library.add(icon)
+    }
   }
 }

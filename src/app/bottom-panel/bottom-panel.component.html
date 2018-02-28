@@ -1,8 +1,12 @@
 <div class="container" [@panelState]='panelState'>
     <div class="state-toggle" (click)="toggleState()">
       <div class="arrow">
-        <i class="fa fa-angle-up" *ngIf="panelState === 'inactive'"></i>
-        <i class="fa fa-angle-down" *ngIf="panelState === 'active'"></i>
+        <div class="up" *ngIf="panelState === 'inactive'">
+          <i class="fas fa-angle-up"></i>
+        </div>
+        <div class="down" *ngIf="panelState === 'active'">
+          <i class="fas fa-angle-down"></i>
+        </div>
       </div>
     </div>
 
@@ -13,7 +17,7 @@
       </div>
 
       <div class="exit" *ngIf="selected" (click)="selected=null">
-        <i class="fa fa-times"></i>
+        <i class="fas fa-times"></i>
       </div>
 
       <shakemap-view-info *ngIf="selected==='metadata'"></shakemap-view-info>
