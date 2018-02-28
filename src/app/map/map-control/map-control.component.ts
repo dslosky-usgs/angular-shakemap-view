@@ -8,6 +8,8 @@ import { ConfService } from '../../conf.service';
 import { TimerObservable } from 'rxjs/observable/TimerObservable';
 import 'rxjs/add/operator/take';
 
+import * as L from 'leaflet';
+
 @Component({
   selector: 'shakemap-view-map-control',
   templateUrl: './map-control.component.html',
@@ -64,8 +66,16 @@ export class MapControlComponent implements OnInit, OnDestroy {
               && this.initLoading)) || 
               (this.plotting.indexOf(overlay.id) > -1)) {
         
-        // add the layer to the map
+      // add the layer to the map
       this.addLayer(overlay);
+
+      // align map
+      let layers = []
+      for (let layer in this.onMap) {
+        layers.push(this.onMap[layer].layer)
+      }
+      let group = L.featureGroup(layers);
+      this.mapService.setBounds.next(group.getBounds().pad(0.1));
     }
   }
 

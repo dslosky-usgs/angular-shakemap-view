@@ -38,6 +38,9 @@ export class MapComponent implements OnInit, OnDestroy {
       this.addLayer(layer);
     }));
 
+    this.subs.push(this.mapService.setBounds.subscribe(bounds => { 
+      this.setBounds(bounds);
+    }));
 
     // eslint-disable-next-line  
     delete L.Icon.Default.prototype._getIconUrl
@@ -65,13 +68,10 @@ export class MapComponent implements OnInit, OnDestroy {
 
   addLayer(layer) {
       this.controlService.addOverlay(layer);
+  }
 
-      if (this.c.conf['defaultLayers'].includes(layer.id)) {
-        // Set bounds based on new default layers
-        this.defLayers.push(layer.layer);
-        let group = L.featureGroup(this.defLayers);
-        this.map.fitBounds(group.getBounds().pad(0.1));
-      }
+  setBounds(bounds) {
+    this.map.fitBounds(bounds);
   }
 
   genBasemap() {
