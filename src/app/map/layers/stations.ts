@@ -114,10 +114,10 @@ export var stationLayer = {
     generateLayer: function (json) {
         return L.geoJson(json, {
             pointToLayer: function (feature, latlng) {
-                if (feature.id.toLowerCase().includes('dyfi')) {
-                    shapeMarkerOptions.shape = 'circle'
+                if ((feature.properties['station_type']) && feature.properties['station_type'] === 'macroseismic') {
+                    shapeMarkerOptions.shape = 'circle';
                 } else {
-                    shapeMarkerOptions.shape = 'triangle'
+                    shapeMarkerOptions.shape = 'triangle';
                 }
 
                 shapeMarkerOptions.fillColor = getMmiRgba(feature.properties.intensity)
