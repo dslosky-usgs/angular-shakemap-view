@@ -1239,7 +1239,7 @@ var stationLayer = {
     generateLayer: function (json) {
         return __WEBPACK_IMPORTED_MODULE_0_leaflet__["geoJson"](json, {
             pointToLayer: function (feature, latlng) {
-                if (feature.id.toLowerCase().includes('dyfi')) {
+                if ((feature.properties['station_type']) && feature.properties['station_type'] === 'macroseismic') {
                     shapeMarkerOptions.shape = 'circle';
                 }
                 else {
