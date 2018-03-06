@@ -1,7 +1,7 @@
 import * as L from 'leaflet';
 
 var epiIcon = L.icon({
-    iconUrl: 'assets/images/star.png',
+    iconUrl: 'assets/star.png',
     iconSize:     [32, 32], // size of the icon
     iconAnchor:   [16, 16], // point of the icon which will correspond to marker's location
     popupAnchor:  [0, 0] // point from which the popup should open relative to the iconAnchor
@@ -12,7 +12,7 @@ export var epicenterLayer = {
     id: 'epicenter',
     productId: 'download/grid.xml',
     productType: 'text',
-    legendImages: ['assets/images/legend-epicenter.png'],
+    legendImages: ['assets/legend-epicenter.png'],
     generateLayer: function (xml) {
         var parser = new DOMParser();
         var xmlDoc = parser.parseFromString(xml,'text/xml');

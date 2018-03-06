@@ -2,10 +2,10 @@
     <div class="state-toggle" (click)="toggleState()">
       <div class="arrow">
         <div class="up" *ngIf="panelState === 'inactive'">
-          <i class="fas fa-angle-up"></i>
+          <mat-icon class="md-32">keyboard_arrow_up</mat-icon>
         </div>
         <div class="down" *ngIf="panelState === 'active'">
-          <i class="fas fa-angle-down"></i>
+          <mat-icon class="md-32">keyboard_arrow_down</mat-icon>
         </div>
       </div>
     </div>
@@ -17,7 +17,7 @@
       </div>
 
       <div class="exit" *ngIf="selected" (click)="selected=null">
-        <i class="fas fa-times"></i>
+        <mat-icon>close</mat-icon>
       </div>
 
       <shakemap-view-info *ngIf="selected==='metadata'"></shakemap-view-info>

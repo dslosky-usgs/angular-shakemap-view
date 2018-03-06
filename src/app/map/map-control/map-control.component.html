@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="!confService.conf?.display || confService.conf?.display !== 'static'">
   <div class="control" 
         [ngClass]="{'collapsed': controlCollapsed}" 
         (dblclick)="$event.stopPropagation();">
@@ -12,7 +12,7 @@
     <div class="open" *ngIf="!controlCollapsed">
       <div class="close">
         <div class="close-icon" (click)="controlCollapsed=true">
-          <i class="fas fa-times"></i>
+          <mat-icon>close</mat-icon>
         </div>
       </div>
 
@@ -37,13 +37,13 @@
 
     <div class="collapsed-control" *ngIf="legendCollapsed" (click)="toggleLegend()">
       <div class="control-image">
-        <i class="fas fa-key"></i>
+        <mat-icon>vpn_key</mat-icon>
       </div>
     </div>
     <div class="open" *ngIf="!legendCollapsed">
       <div class="close">
         <div class="close-icon" (click)="toggleLegend()">
-          <i class="fas fa-times"></i>
+          <mat-icon>close</mat-icon>
         </div>
       </div>
 

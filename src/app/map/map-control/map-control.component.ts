@@ -3,7 +3,7 @@ declare function require(string): string;
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MapControlService } from './map-control.service';
 import { MapService } from '../map.service';
-import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs/observable';
 import { ConfService } from '../../conf.service';
 import { TimerObservable } from 'rxjs/observable/TimerObservable';
 import 'rxjs/add/operator/take';
@@ -16,7 +16,7 @@ import * as L from 'leaflet';
   styleUrls: ['./map-control.component.scss']
 })
 export class MapControlComponent implements OnInit, OnDestroy {
-  public subs: Subscription[] = [];
+  public subs: any[] = [];
   public controlCollapsed: boolean = true;
   public legendCollapsed: boolean = true;
   public allowLegend: boolean = false;
