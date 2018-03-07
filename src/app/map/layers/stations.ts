@@ -1,5 +1,5 @@
 import * as L from 'leaflet';
-import 'leaflet-svg-shape-markers';
+import '../../util/leaflet-svg-shape-markers';
 import { getMmiRgba } from '../../util/mmi_colors';
 import { getRomanFromMmi } from '../../util/mmi_roman';
 
@@ -108,16 +108,16 @@ export var stationLayer = {
     id: 'stations',
     productId: 'download/stationlist.json',
     type: 'json',
-    legendImages: ['assets/images/legend-shakemap-station.png',
-                    'assets/images/legend-seismic-station.png',
-                    'assets/images/legend-intensity-scale.png'],
+    legendImages: ['assets/legend-shakemap-station.png',
+                    'assets/legend-seismic-station.png',
+                    'assets/legend-intensity-scale.png'],
     generateLayer: function (json) {
         return L.geoJson(json, {
             pointToLayer: function (feature, latlng) {
-                if (feature.id.toLowerCase().includes('dyfi')) {
-                    shapeMarkerOptions.shape = 'circle'
+                if ((feature.properties['station_type']) && feature.properties['station_type'] === 'macroseismic') {
+                    shapeMarkerOptions.shape = 'circle';
                 } else {
-                    shapeMarkerOptions.shape = 'triangle'
+                    shapeMarkerOptions.shape = 'triangle';
                 }
 
                 shapeMarkerOptions.fillColor = getMmiRgba(feature.properties.intensity)

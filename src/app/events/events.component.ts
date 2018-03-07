@@ -9,20 +9,18 @@ import { EventService } from './event.service';
 })
 export class EventsComponent implements OnInit, OnDestroy {
   public eventData: any = [];
-  private subs: Subscription[] = [];
+  private subs: any[] = [];
 
   constructor(public eventService: EventService) { }
 
   ngOnInit() {
-    this.subs.push(this.eventService.events.subscribe(data => {
+    this.subs.push(this.eventService.events.subscribe((data: any[]) => {
       this.eventData = data;
 
-      if (data) {
+      if (data.length > 0) {
         this.plot(data[0])
       }
     }));
-
-    this.eventService.getEventFeed();
   }
 
   plot(event) {

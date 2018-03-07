@@ -22,14 +22,7 @@ export class EventService {
         this.events.next(data);
       },
       error => {
-        let events = []
-        if (this.manualEntry) {
-          events.push({
-            id: this.manualEntry['properties']['products']['shakemap'][0]['code'],
-            shakemap: this.manualEntry['properties']['products']['shakemap']
-          });
-        }
-        this.events.next(events);
+        
       }
     );
   }

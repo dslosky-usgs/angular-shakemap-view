@@ -1,8 +1,6 @@
 <div class="container">
-    <div class="render-fa" style="dispaly:hidden">
+    <div class="render-icons" style="dispaly:hidden">
         <!-- Pre render fa icons and insert svg in actual station list -->
-        <i class="fa fa-angle-up" data-fa-symbol="symbolUp"></i>
-        <i class="fa fa-angle-down" data-fa-symbol="symbolDown"></i>
     </div>
 
     <div class="station" *ngFor="let station of stations">
@@ -89,10 +87,10 @@
             <div class="details-toggle link">
               <h3 (click)="toggleDetails(station)">
                   <div class="icon" *ngIf="station.showDetails">
-                    <svg class="svg-inline--fa fa-w-20"><use xlink:href="#symbolUp"></use></svg>
+                    <mat-icon>keyboard_arrow_up</mat-icon>
                   </div>
                   <div class="icon" *ngIf="!station.showDetails">
-                    <svg class="svg-inline--fa fa-w-20"><use xlink:href="#symbolDown"></use></svg>
+                    <mat-icon>keyboard_arrow_down</mat-icon>
                   </div>
                 
                 <div class="link">

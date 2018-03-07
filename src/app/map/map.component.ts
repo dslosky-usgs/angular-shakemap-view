@@ -1,7 +1,7 @@
 declare function require(string): string;
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs/observable';
 
 import * as L from 'leaflet';
 
@@ -16,7 +16,7 @@ import { ConfService } from '../conf.service';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit, OnDestroy {
-  private subs: Subscription[] = [];
+  private subs: any[] = [];
   private map: any = null;
   private basemap: any = null;
   private layersControl: any = null;
@@ -52,9 +52,31 @@ export class MapComponent implements OnInit, OnDestroy {
     })
 
     this.genBasemap();
-    this.map = L.map('map', {
-        scrollWheelZoom: false                    
-      }).setView([51.505, -0.09], 13);
+
+    let mapControls = {};
+    if (this.c.conf['display'] === 'static') {
+      mapControls = {
+        boxZoom: false,
+        center: [0, 0],
+        zoom: 0,
+        doubleClickZoom: false,
+        dragging: false,
+        fadeAnimation: false,
+        keyboard: false,
+        markerZoomAnimation: false,
+        scrollWheelZoom: false,
+        tap: false,
+        touchZoom: false,
+        zoomAnimation: false,
+        zoomControl: false
+      }
+    } else {
+      mapControls = {
+        scrollWheelZoom: false
+      }
+    }
+
+    this.map = L.map('map', mapControls).setView([51.505, -0.09], 13);
     this.basemap.addTo(this.map);
     this.layersControl = L.control.layers({'Basemap': this.basemap});
 

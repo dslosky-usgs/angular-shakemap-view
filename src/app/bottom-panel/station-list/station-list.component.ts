@@ -12,7 +12,7 @@ import { getMmiRgba } from '../../util/mmi_colors';
   styleUrls: ['./station-list.component.scss']
 })
 export class StationListComponent implements OnInit {
-  private subs: Subscription[] = [];
+  private subs: any[] = [];
   public stations: any = [];
   public getColor: any = getMmiRgba;
   public getRoman: any = getRomanFromMmi;

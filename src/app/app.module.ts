@@ -1,7 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+
+import { MatIconModule } from '@angular/material';
+
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpHostNameInterceptor } from './http-interceptor';
 
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
@@ -32,9 +36,21 @@ import { MapControlService } from './map/map-control/map-control.service';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule
   ],
-  providers: [LayerService, EventService, MapService, ConfService, InfoService, StationService, MapControlService],
+  providers: [LayerService,
+                EventService,
+                MapService,
+                ConfService,
+                InfoService,
+                StationService,
+                MapControlService,
+                { 
+                    provide: HTTP_INTERCEPTORS, 
+                    useClass: HttpHostNameInterceptor, 
+                    multi: true
+                }],
   bootstrap: [AppComponent],
   exports: [AppComponent]
 })

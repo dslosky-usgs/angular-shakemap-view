@@ -51,7 +51,7 @@ export var miLayer = {
     id: 'mmi_cont',
     productId: 'download/cont_mi.json',
     type: 'json',
-    legendImages: ['assets/images/legend-intensity-scale.png'],
+    legendImages: ['assets/legend-intensity-scale.png'],
     generateLayer: function (json) {
         return L.geoJson(json, {
             style: function (feature, latlng) {

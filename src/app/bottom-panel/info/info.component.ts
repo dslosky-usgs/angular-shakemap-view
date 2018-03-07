@@ -8,7 +8,7 @@ import { InfoService } from './info.service';
   styleUrls: ['./info.component.scss']
 })
 export class InfoComponent implements OnInit, OnDestroy {
-  private subs: Subscription[] = [];
+  private subs: any[] = [];
   public info: any = null;
   public objKeys: any = Object.keys;
   public isNaN: any = isNaN;

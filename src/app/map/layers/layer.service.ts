@@ -17,7 +17,7 @@ var layers = [epicenterLayer, mmiLayer, miLayer, pgaLayer, pgvLayer, stationLaye
 export class LayerService {
   public nextLayer = new ReplaySubject(1);
   public data: any = {};
-  public waiting: Subscription[] = [];
+  public waiting: any[] = [];
 
   constructor(private http: HttpClient) {}
 
