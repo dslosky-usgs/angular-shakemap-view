@@ -31,7 +31,7 @@ export class MapControlComponent implements OnInit, OnDestroy {
 
   constructor(public controlService: MapControlService,
               private mapService: MapService,
-              private confService: ConfService) { }
+              public confService: ConfService) { }
 
   ngOnInit() {
     this.subs.push(this.controlService.addOverlay_.subscribe((overlay:any) => {
