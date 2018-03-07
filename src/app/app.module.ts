@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { MatIconModule } from '@angular/material';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { HttpInterceptor_ } from './http-interceptor';
+import { HttpHostNameInterceptor } from './http-interceptor';
 
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
@@ -48,7 +48,7 @@ import { MapControlService } from './map/map-control/map-control.service';
                 MapControlService,
                 { 
                     provide: HTTP_INTERCEPTORS, 
-                    useClass: HttpInterceptor_, 
+                    useClass: HttpHostNameInterceptor, 
                     multi: true
                 }],
   bootstrap: [AppComponent],

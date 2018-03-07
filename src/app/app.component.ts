@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { ConfService } from './conf.service';
+import { ConfService, Config } from './conf.service';
 import { EventService } from './events/event.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class AppComponent {
 
   title = 'shakemap-view';
 
-  constructor(private c: ConfService,
+  constructor(public c: ConfService,
               private eService: EventService) { }
 
   ngOnInit() {
