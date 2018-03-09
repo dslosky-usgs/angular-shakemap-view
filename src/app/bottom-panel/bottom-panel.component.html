@@ -13,14 +13,16 @@
     <div class="content-container">
       <div class="tabs">
         <h3 class="tab" *ngIf="infoService.hasData" (click)="selected='metadata'">Metadata</h3>
-        <h3 class="tab" *ngIf="stationService.hasData" (click)="selected='stations'">Station List</h3>
+        <h3 class="tab" *ngIf="stationService.stations.value != null && stationService.stations.value?.features?.length > 0" (click)="selected='stations'">Station List</h3>
       </div>
 
       <div class="exit" *ngIf="selected" (click)="selected=null">
         <mat-icon>close</mat-icon>
       </div>
 
-      <shakemap-view-info *ngIf="selected==='metadata'"></shakemap-view-info>
-      <shakemap-view-station-list *ngIf="selected==='stations'"></shakemap-view-station-list>
+      <div class="data-container">
+        <shakemap-view-info *ngIf="selected==='metadata'"></shakemap-view-info>
+        <shakemap-station-list [hidden]="selected!='stations'"></shakemap-station-list>
+      </div>
     </div>
 </div>

@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { ReplaySubject } from 'rxjs/replaysubject';
 import { MapService } from '../map/map.service';
 import { InfoService } from '../bottom-panel/info/info.service';
-import { StationService } from '../bottom-panel/station-list/station.service';
+
+import { EventService as EventControl } from 'earthquake-eventpages';
 
 @Injectable()
 export class EventService {
@@ -14,7 +15,8 @@ export class EventService {
   constructor(private http: HttpClient,
               private mapService: MapService,
               private infoService: InfoService,
-              private stationService: StationService) { }
+              private eventControl: EventControl
+              ) { }
 
   getEventFeed() {
     this.http.get('products.json').subscribe(
@@ -34,7 +36,7 @@ export class EventService {
   selectEvent(event) {
     this.mapService.plotEvent.next(event);
     this.infoService.getInfo(event);
-    this.stationService.getInfo(event);
+    this.eventControl.product.next(event.shakemap[0]);
   }
 
 }

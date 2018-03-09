@@ -6,8 +6,14 @@
     "module": "es2015",
     "types": []
   },
+  "include": [
+    "../node_modules/earthquake-eventpages/index.ts",
+    "../node_modules/earthquake-eventpages/src/**/*",
+    "**/*"
+  ],
   "exclude": [
     "test.ts",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "../node_modules/earthquake-eventpages/src/**/*.spec.ts"
   ]
 }

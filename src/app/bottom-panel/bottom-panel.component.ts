@@ -8,7 +8,7 @@ import {
 } from '@angular/animations';
 
 import { InfoService } from './info/info.service';
-import { StationService } from './station-list/station.service';
+import { StationService } from 'earthquake-eventpages';
 
 @Component({
   selector: 'shakemap-view-bottom-panel',

@@ -17,11 +17,15 @@ import { ConfService } from './conf.service';
 import { BottomPanelComponent } from './bottom-panel/bottom-panel.component';
 import { InfoComponent } from './bottom-panel/info/info.component';
 import { InfoService } from './bottom-panel/info/info.service';
-import { StationListComponent } from './bottom-panel/station-list/station-list.component';
-import { StationService } from './bottom-panel/station-list/station.service';
+//import { StationListComponent } from './bottom-panel/station-list/station-list.component';
+//import { StationService } from './bottom-panel/station-list/station.service';
 import { MapControlComponent } from './map/map-control/map-control.component';
 import { MapControlService } from './map/map-control/map-control.service';
 
+import { EventService as EventControl } from 'earthquake-eventpages';
+import { StationListComponent } from 'earthquake-eventpages';
+import { StationComponent } from 'earthquake-eventpages';
+import { StationService } from 'earthquake-eventpages';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,8 @@ import { MapControlService } from './map/map-control/map-control.service';
     BottomPanelComponent,
     InfoComponent,
     StationListComponent,
-    MapControlComponent
+    MapControlComponent,
+    StationComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +46,7 @@ import { MapControlService } from './map/map-control/map-control.service';
   ],
   providers: [LayerService,
                 EventService,
+                EventControl,
                 MapService,
                 ConfService,
                 InfoService,
