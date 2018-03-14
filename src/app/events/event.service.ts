@@ -36,7 +36,7 @@ export class EventService {
   selectEvent(event) {
     this.mapService.plotEvent.next(event);
     this.infoService.getInfo(event);
-    this.eventControl.product.next(event.shakemap[0]);
+    this.eventControl.product$.next(event.shakemap[0]);
   }
 
 }

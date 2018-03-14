@@ -22,10 +22,12 @@ import { InfoService } from './bottom-panel/info/info.service';
 import { MapControlComponent } from './map/map-control/map-control.component';
 import { MapControlService } from './map/map-control/map-control.service';
 
-import { EventService as EventControl } from 'earthquake-eventpages';
-import { StationListComponent } from 'earthquake-eventpages';
-import { StationComponent } from 'earthquake-eventpages';
-import { StationService } from 'earthquake-eventpages';
+//import { EventService as EventControl } from 'earthquake-eventpages';
+//import { StationService } from 'earthquake-eventpages';
+
+import { EventpagesModule } from 'earthquake-eventpages';
+
+import { ShakemapModule } from 'earthquake-eventpages';
 
 @NgModule({
   declarations: [
@@ -34,23 +36,23 @@ import { StationService } from 'earthquake-eventpages';
     EventsComponent,
     BottomPanelComponent,
     InfoComponent,
-    StationListComponent,
     MapControlComponent,
-    StationComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+    EventpagesModule.forRoot(),
+    ShakemapModule
   ],
   providers: [LayerService,
                 EventService,
-                EventControl,
+                //EventControl,
                 MapService,
                 ConfService,
                 InfoService,
-                StationService,
+                //StationService,
                 MapControlService,
                 { 
                     provide: HTTP_INTERCEPTORS, 
