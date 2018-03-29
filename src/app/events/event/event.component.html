@@ -1,7 +1,30 @@
 <ng-container *ngIf="event as event">
   <mat-card>
-    <mat-card-title>
-      {{ event.id }}
-    </mat-card-title>
+    <mat-card-header>
+      <mat-card-title>
+        {{ event.id }}
+      </mat-card-title>
+
+      <mat-card-subtitle>
+        {{ event.shakemap[0].properties.event_description }}
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <dl class="description-table">
+        <dt>
+          Magnitude
+        </dt>
+        <dd>
+          {{ event.shakemap[0].properties.magnitude }}
+        </dd>
+        <dt>
+          Depth
+        </dt>
+        <dd>
+          {{ event.shakemap[0].properties.depth }}
+        </dd>
+      </dl>
+    </mat-card-content>
   </mat-card>
 </ng-container>
