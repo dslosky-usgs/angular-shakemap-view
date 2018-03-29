@@ -1,0 +1,10 @@
+<div class="container" *ngIf="eventData.length > 1">
+  <div class="event-list">
+    <div class="event" *ngFor="let event of eventData">
+      <shakemap-view-event
+          [event]="event"
+          (click)="plot(event)">
+      </shakemap-view-event>
+    </div>
+  </div>
+</div>

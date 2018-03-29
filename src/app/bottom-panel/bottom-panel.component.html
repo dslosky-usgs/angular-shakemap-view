@@ -11,18 +11,27 @@
     </div>
 
     <div class="content-container">
+      
       <div class="tabs">
-        <h3 class="tab" *ngIf="infoService.hasData" (click)="selected='metadata'">Metadata</h3>
-        <h3 class="tab" *ngIf="stationService.stations.value != null && stationService.stations.value?.features?.length > 0" (click)="selected='stations'">Station List</h3>
+
+        <h3 class="tab" *ngIf="metadataService.metadata$.value != null" (click)="selected='metadata'">Metadata</h3>
+
+        <h3 class="tab" *ngIf="stationService.stationsJson$.value != null && stationService.stationsJson$.value?.features?.length > 0" (click)="selected='stations'">Station List</h3>
+
+        <h3 class="tab" (click)="selected='uncertainty'">Uncertainty</h3>
+
       </div>
 
-      <div class="exit" *ngIf="selected" (click)="selected=null">
-        <mat-icon>close</mat-icon>
+      <div class="exit" *ngIf="selected">
+        <mat-icon (click)="selected=null">close</mat-icon>
       </div>
 
       <div class="data-container">
-        <shakemap-view-info *ngIf="selected==='metadata'"></shakemap-view-info>
+        <shakemap-metadata [hidden]="selected!='metadata'"></shakemap-metadata>
         <shakemap-station-list [hidden]="selected!='stations'"></shakemap-station-list>
+
+        <shakemap-uncertainty [hidden]="selected!='uncertainty'"></shakemap-uncertainty>
       </div>
+
     </div>
 </div>

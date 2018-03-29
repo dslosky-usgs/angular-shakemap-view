@@ -7,7 +7,7 @@ import {
   transition
 } from '@angular/animations';
 
-import { InfoService } from './info/info.service';
+import { MetadataService } from 'earthquake-eventpages';
 import { StationService } from 'earthquake-eventpages';
 
 @Component({
@@ -31,7 +31,7 @@ export class BottomPanelComponent implements OnInit {
   public panelState: string = 'inactive';
   public selected: string = null;
 
-  constructor(public infoService: InfoService,
+  constructor(public metadataService: MetadataService,
               public stationService: StationService) { }
 
   ngOnInit() {

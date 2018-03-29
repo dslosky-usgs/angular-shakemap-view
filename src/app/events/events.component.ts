@@ -1,5 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+
 import { Subscription } from 'rxjs/Subscription';
+
 import { EventService } from './event.service';
 
 @Component({
@@ -7,29 +9,16 @@ import { EventService } from './event.service';
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.scss']
 })
-export class EventsComponent implements OnInit, OnDestroy {
-  public eventData: any = [];
-  private subs: any[] = [];
+export class EventsComponent implements OnInit {
+  public sub = new Subscription()
+  public focus = false;
 
-  constructor(public eventService: EventService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.subs.push(this.eventService.events.subscribe((data: any[]) => {
-      this.eventData = data;
-
-      if (data.length > 0) {
-        this.plot(data[0])
-      }
-    }));
   }
 
-  plot(event) {
-    this.eventService.selectEvent(event);
-  }
-
-  ngOnDestroy() {
-    for (let sub of this.subs) {
-      sub.unsubscribe();
-    }
+  setFocus(focus) {
+    this.focus = focus;
   }
 }

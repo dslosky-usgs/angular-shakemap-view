@@ -5,7 +5,6 @@
     z-index: 1000;
     width: 100%;
     background-color: #ffffff;
-    text-align: center;
 }
 
 .container.show {
@@ -25,13 +24,19 @@
 
 .content-container {
     position: relative;
-    z-index: 1001
+    padding: 10px;
+    z-index: 1001;
 }
 
 .arrow {
     font-size: 32px;
     transform: translateY(-20%);
     cursor: pointer;
+    text-align: center;
+}
+
+.tabs {
+    text-align: center;
 }
 
 .tab {

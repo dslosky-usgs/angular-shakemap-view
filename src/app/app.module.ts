@@ -2,9 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
-import { MatIconModule } from '@angular/material';
+import { MatIconModule,
+    MatCardModule } from '@angular/material';
 
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { HttpHostNameInterceptor } from './http-interceptor';
 
 import { AppComponent } from './app.component';
@@ -15,19 +16,20 @@ import { EventService } from './events/event.service';
 import { MapService } from './map/map.service';
 import { ConfService } from './conf.service';
 import { BottomPanelComponent } from './bottom-panel/bottom-panel.component';
-import { InfoComponent } from './bottom-panel/info/info.component';
-import { InfoService } from './bottom-panel/info/info.service';
+//import { InfoComponent } from './bottom-panel/info/info.component';
+//import { InfoService } from './bottom-panel/info/info.service';
 //import { StationListComponent } from './bottom-panel/station-list/station-list.component';
 //import { StationService } from './bottom-panel/station-list/station.service';
 import { MapControlComponent } from './map/map-control/map-control.component';
 import { MapControlService } from './map/map-control/map-control.service';
 
-//import { EventService as EventControl } from 'earthquake-eventpages';
-//import { StationService } from 'earthquake-eventpages';
-
 import { EventpagesModule } from 'earthquake-eventpages';
-
 import { ShakemapModule } from 'earthquake-eventpages';
+
+import { HeaderComponent } from './header/header.component';
+import { EventFilterComponent } from './events/event-filter/event-filter.component';
+import { EventListComponent } from './events/event-list/event-list.component';
+import { EventComponent } from './events/event/event.component';
 
 @NgModule({
   declarations: [
@@ -35,30 +37,27 @@ import { ShakemapModule } from 'earthquake-eventpages';
     MapComponent,
     EventsComponent,
     BottomPanelComponent,
-    InfoComponent,
     MapControlComponent,
+    HeaderComponent,
+    EventFilterComponent,
+    EventListComponent,
+    EventComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MatIconModule,
+    MatCardModule,
     EventpagesModule.forRoot(),
     ShakemapModule
   ],
   providers: [LayerService,
                 EventService,
-                //EventControl,
                 MapService,
                 ConfService,
-                InfoService,
-                //StationService,
-                MapControlService,
-                { 
-                    provide: HTTP_INTERCEPTORS, 
-                    useClass: HttpHostNameInterceptor, 
-                    multi: true
-                }],
+                MapControlService
+  ],
   bootstrap: [AppComponent],
   exports: [AppComponent]
 })

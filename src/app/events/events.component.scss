@@ -1,7 +1,13 @@
-.container {
-    position: fixed;
-    top: 0;
-    border: 2px black dashed;
-    background-color: white;
-    z-index: 500;
+.filter {
+    display: flex;
+    font-size: 15px;
+}
+
+.close {
+    cursor: pointer;
+}
+
+.event-list {
+    max-width: 90vw;
+    overflow-x: auto;
 }

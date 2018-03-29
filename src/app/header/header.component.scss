@@ -1,0 +1,14 @@
+.container {
+    position: absolute;
+    z-index: 1000;
+    left: 10%;
+}
+
+.name-container {
+    display: flex;
+    align-items: center;
+}
+
+img {
+    height: 50px;
+}

@@ -1,7 +1,13 @@
-<div class="container" *ngIf="eventData.length > 1">
-  <div class="event-list">
-    <div class="event" *ngFor="let event of eventData">
-      <h1 (click)="plot(event)">{{ event.id }}</h1>
-    </div>
+<div class="filter">
+  <shakemap-view-event-filter (click)="setFocus(true)">
+  </shakemap-view-event-filter>
+
+  <div class="close" *ngIf="focus">
+    <mat-icon (click)="setFocus(false)">close</mat-icon>
   </div>
+</div>
+
+<div class="event-list" [hidden]="!focus">
+  <shakemap-view-event-list>
+  </shakemap-view-event-list>
 </div>
