@@ -666,7 +666,7 @@ module.exports = "<div class=\"filter\">\n  <shakemap-view-event-filter (click)=
 /***/ "./src/app/events/events.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".filter {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 15px; }\n\n.close {\n  cursor: pointer; }\n\n.event-list {\n  max-width: 90vw;\n  overflow-x: auto; }\n"
+module.exports = ".filter {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 15px; }\n\n.close {\n  cursor: pointer; }\n\n.event-list {\n  max-width: 90vw;\n  overflow-x: auto;\n  white-space: nowrap; }\n"
 
 /***/ }),
 
