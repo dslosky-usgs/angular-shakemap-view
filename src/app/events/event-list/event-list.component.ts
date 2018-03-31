@@ -10,12 +10,12 @@ import { EventService } from '../event.service';
 export class EventListComponent implements OnInit, OnDestroy {
   public eventData: any = [];
   private init = false;
-  private subs: any[] = [];
+  private subs = new Subscription();
 
   constructor(public eventService: EventService) { }
 
   ngOnInit() {
-    this.subs.push(this.eventService.events.subscribe((data: any[]) => {
+    this.subs.add(this.eventService.events.subscribe((data: any[]) => {
       this.onEvents(data);
     }));
   }
@@ -39,8 +39,6 @@ export class EventListComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    for (let sub of this.subs) {
-      sub.unsubscribe();
-    }
+    this.subs.unsubscribe();
   }
 }

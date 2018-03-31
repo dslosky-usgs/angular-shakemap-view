@@ -1,2 +1,4 @@
 <input
+    [(ngModel)]="filter"
+    (ngModelChange)="updateEvents(filter)"
     placeholder="Search..." />

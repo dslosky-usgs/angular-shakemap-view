@@ -7,10 +7,14 @@ import { EventService } from '../event.service';
   styleUrls: ['./event-filter.component.scss']
 })
 export class EventFilterComponent implements OnInit {
-
-  constructor(public eService: EventService) { }
+  public filter = '';
+  constructor(private eService: EventService) { }
 
   ngOnInit() {
+  }
+
+  updateEvents(filter) {
+    this.eService.getFilteredEvents(filter);
   }
 
 }
