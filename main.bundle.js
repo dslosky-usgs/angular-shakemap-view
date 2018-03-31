@@ -1,6 +1,6 @@
 webpackJsonp(["main"],{
 
-/***/ "../../../../../src/$$_lazy_route_resource lazy recursive":
+/***/ "./src/$$_lazy_route_resource lazy recursive":
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -13,43 +13,32 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy recursive";
+webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
-/***/ "../../../../../src/app/app.component.html":
+/***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<shakemap-view-map></shakemap-view-map>\n<shakemap-view-events></shakemap-view-events>\n<div *ngIf=\"!c.conf?.display || c.conf?.display !== 'static'\">\n    <shakemap-view-bottom-panel></shakemap-view-bottom-panel>\n</div>\n"
+module.exports = "<shakemap-view-header></shakemap-view-header>\n\n<shakemap-view-map></shakemap-view-map>\n\n<div *ngIf=\"!c.conf?.display || c.conf?.display !== 'static'\">\n    <shakemap-view-bottom-panel></shakemap-view-bottom-panel>\n</div>\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/app.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./src/app/app.component.scss":
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
+module.exports = ""
 
 /***/ }),
 
-/***/ "../../../../../src/app/app.component.ts":
+/***/ "./src/app/app.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__conf_service__ = __webpack_require__("../../../../../src/app/conf.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__events_event_service__ = __webpack_require__("../../../../../src/app/events/event.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__conf_service__ = __webpack_require__("./src/app/conf.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__events_event_service__ = __webpack_require__("./src/app/events/event.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -91,18 +80,18 @@ var AppComponent = /** @class */ (function () {
         }
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Input */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", Object)
     ], AppComponent.prototype, "eventFeed", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Input */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
         __metadata("design:type", Object)
     ], AppComponent.prototype, "configs", void 0);
     AppComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'shakemap-view-root',
-            template: __webpack_require__("../../../../../src/app/app.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/app.component.scss")]
+            template: __webpack_require__("./src/app/app.component.html"),
+            styles: [__webpack_require__("./src/app/app.component.scss")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__conf_service__["a" /* ConfService */],
             __WEBPACK_IMPORTED_MODULE_2__events_event_service__["a" /* EventService */]])
@@ -114,31 +103,32 @@ var AppComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/app.module.ts":
+/***/ "./src/app/app.module.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/esm5/animations.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__http_interceptor__ = __webpack_require__("../../../../../src/app/http-interceptor.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__map_map_component__ = __webpack_require__("../../../../../src/app/map/map.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__map_layers_layer_service__ = __webpack_require__("../../../../../src/app/map/layers/layer.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__events_events_component__ = __webpack_require__("../../../../../src/app/events/events.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__events_event_service__ = __webpack_require__("../../../../../src/app/events/event.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__map_map_service__ = __webpack_require__("../../../../../src/app/map/map.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__conf_service__ = __webpack_require__("../../../../../src/app/conf.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__bottom_panel_bottom_panel_component__ = __webpack_require__("../../../../../src/app/bottom-panel/bottom-panel.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__bottom_panel_info_info_component__ = __webpack_require__("../../../../../src/app/bottom-panel/info/info.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__bottom_panel_info_info_service__ = __webpack_require__("../../../../../src/app/bottom-panel/info/info.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__bottom_panel_station_list_station_list_component__ = __webpack_require__("../../../../../src/app/bottom-panel/station-list/station-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__bottom_panel_station_list_station_service__ = __webpack_require__("../../../../../src/app/bottom-panel/station-list/station.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__map_map_control_map_control_component__ = __webpack_require__("../../../../../src/app/map/map-control/map-control.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__map_map_control_map_control_service__ = __webpack_require__("../../../../../src/app/map/map-control/map-control.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/platform-browser.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__map_map_component__ = __webpack_require__("./src/app/map/map.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__map_layers_layer_service__ = __webpack_require__("./src/app/map/layers/layer.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__events_events_component__ = __webpack_require__("./src/app/events/events.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__events_event_service__ = __webpack_require__("./src/app/events/event.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__map_map_service__ = __webpack_require__("./src/app/map/map.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__conf_service__ = __webpack_require__("./src/app/conf.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__bottom_panel_bottom_panel_component__ = __webpack_require__("./src/app/bottom-panel/bottom-panel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__map_map_control_map_control_component__ = __webpack_require__("./src/app/map/map-control/map-control.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__map_map_control_map_control_service__ = __webpack_require__("./src/app/map/map-control/map-control.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_earthquake_eventpages__ = __webpack_require__("./node_modules/earthquake-eventpages/index.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__header_header_component__ = __webpack_require__("./src/app/header/header.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__events_event_filter_event_filter_component__ = __webpack_require__("./src/app/events/event-filter/event-filter.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__events_event_list_event_list_component__ = __webpack_require__("./src/app/events/event-list/event-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__events_event_event_component__ = __webpack_require__("./src/app/events/event/event.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -159,6 +149,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+//import { InfoComponent } from './bottom-panel/info/info.component';
+//import { InfoService } from './bottom-panel/info/info.service';
+//import { StationListComponent } from './bottom-panel/station-list/station-list.component';
+//import { StationService } from './bottom-panel/station-list/station.service';
+
+
 
 
 
@@ -169,34 +165,34 @@ var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["H" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["K" /* NgModule */])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
                 __WEBPACK_IMPORTED_MODULE_7__map_map_component__["a" /* MapComponent */],
                 __WEBPACK_IMPORTED_MODULE_9__events_events_component__["a" /* EventsComponent */],
                 __WEBPACK_IMPORTED_MODULE_13__bottom_panel_bottom_panel_component__["a" /* BottomPanelComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__bottom_panel_info_info_component__["a" /* InfoComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__bottom_panel_station_list_station_list_component__["a" /* StationListComponent */],
-                __WEBPACK_IMPORTED_MODULE_18__map_map_control_map_control_component__["a" /* MapControlComponent */]
+                __WEBPACK_IMPORTED_MODULE_14__map_map_control_map_control_component__["a" /* MapControlComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__header_header_component__["a" /* HeaderComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__events_event_filter_event_filter_component__["a" /* EventFilterComponent */],
+                __WEBPACK_IMPORTED_MODULE_19__events_event_list_event_list_component__["a" /* EventListComponent */],
+                __WEBPACK_IMPORTED_MODULE_20__events_event_event_component__["a" /* EventComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["c" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["a" /* MatIconModule */]
+                __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["f" /* MatIconModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_material__["c" /* MatCardModule */],
+                __WEBPACK_IMPORTED_MODULE_16_earthquake_eventpages__["b" /* EventpagesModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_16_earthquake_eventpages__["d" /* ShakemapModule */]
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_8__map_layers_layer_service__["a" /* LayerService */],
                 __WEBPACK_IMPORTED_MODULE_10__events_event_service__["a" /* EventService */],
                 __WEBPACK_IMPORTED_MODULE_11__map_map_service__["a" /* MapService */],
                 __WEBPACK_IMPORTED_MODULE_12__conf_service__["a" /* ConfService */],
-                __WEBPACK_IMPORTED_MODULE_15__bottom_panel_info_info_service__["a" /* InfoService */],
-                __WEBPACK_IMPORTED_MODULE_17__bottom_panel_station_list_station_service__["a" /* StationService */],
-                __WEBPACK_IMPORTED_MODULE_19__map_map_control_map_control_service__["a" /* MapControlService */],
-                {
-                    provide: __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HTTP_INTERCEPTORS */],
-                    useClass: __WEBPACK_IMPORTED_MODULE_5__http_interceptor__["a" /* HttpHostNameInterceptor */],
-                    multi: true
-                }],
+                __WEBPACK_IMPORTED_MODULE_15__map_map_control_map_control_service__["a" /* MapControlService */]
+            ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]],
             exports: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
         })
@@ -208,40 +204,28 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/bottom-panel/bottom-panel.component.html":
+/***/ "./src/app/bottom-panel/bottom-panel.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" [@panelState]='panelState'>\n    <div class=\"state-toggle\" (click)=\"toggleState()\">\n      <div class=\"arrow\">\n        <div class=\"up\" *ngIf=\"panelState === 'inactive'\">\n          <mat-icon class=\"md-32\">keyboard_arrow_up</mat-icon>\n        </div>\n        <div class=\"down\" *ngIf=\"panelState === 'active'\">\n          <mat-icon class=\"md-32\">keyboard_arrow_down</mat-icon>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"content-container\">\n      <div class=\"tabs\">\n        <h3 class=\"tab\" *ngIf=\"infoService.hasData\" (click)=\"selected='metadata'\">Metadata</h3>\n        <h3 class=\"tab\" *ngIf=\"stationService.hasData\" (click)=\"selected='stations'\">Station List</h3>\n      </div>\n\n      <div class=\"exit\" *ngIf=\"selected\" (click)=\"selected=null\">\n        <mat-icon>close</mat-icon>\n      </div>\n\n      <shakemap-view-info *ngIf=\"selected==='metadata'\"></shakemap-view-info>\n      <shakemap-view-station-list *ngIf=\"selected==='stations'\"></shakemap-view-station-list>\n    </div>\n</div>\n"
+module.exports = "<div class=\"container\" [@panelState]='panelState'>\n    <div class=\"state-toggle\" (click)=\"toggleState()\">\n      <div class=\"arrow\">\n        <div class=\"up\" *ngIf=\"panelState === 'inactive'\">\n          <mat-icon class=\"md-32\">keyboard_arrow_up</mat-icon>\n        </div>\n        <div class=\"down\" *ngIf=\"panelState === 'active'\">\n          <mat-icon class=\"md-32\">keyboard_arrow_down</mat-icon>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"content-container\">\n      \n      <div class=\"tabs\">\n\n        <h3 class=\"tab\" *ngIf=\"metadataService.metadata$.value != null\" (click)=\"selected='metadata'\">Metadata</h3>\n\n        <h3 class=\"tab\" *ngIf=\"stationService.stationsJson$.value != null && stationService.stationsJson$.value?.features?.length > 0\" (click)=\"selected='stations'\">Station List</h3>\n\n        <h3 class=\"tab\" (click)=\"selected='uncertainty'\">Uncertainty</h3>\n\n      </div>\n\n      <div class=\"exit\" *ngIf=\"selected\">\n        <mat-icon (click)=\"selected=null\">close</mat-icon>\n      </div>\n\n      <div class=\"data-container\">\n        <shakemap-metadata [hidden]=\"selected!='metadata'\"></shakemap-metadata>\n        <shakemap-station-list [hidden]=\"selected!='stations'\"></shakemap-station-list>\n\n        <shakemap-uncertainty [hidden]=\"selected!='uncertainty'\"></shakemap-uncertainty>\n      </div>\n\n    </div>\n</div>\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/bottom-panel/bottom-panel.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./src/app/bottom-panel/bottom-panel.component.scss":
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".container {\n  position: absolute;\n  bottom: 0;\n  -webkit-transform: translateY(100%);\n          transform: translateY(100%);\n  z-index: 1000;\n  width: 100%;\n  background-color: #ffffff;\n  text-align: center; }\n\n.container.show {\n  -webkit-transform: translateY(0);\n          transform: translateY(0); }\n\n.state-toggle {\n  position: absolute;\n  top: 0;\n  -webkit-transform: translateY(-30%) translateX(-50%);\n          transform: translateY(-30%) translateX(-50%);\n  height: 75px;\n  width: 150px;\n  border-radius: 40%;\n  left: 50%;\n  background-color: #ffffff; }\n\n.content-container {\n  position: relative;\n  z-index: 1001; }\n\n.arrow {\n  font-size: 32px;\n  -webkit-transform: translateY(-20%);\n          transform: translateY(-20%);\n  cursor: pointer; }\n\n.tab {\n  display: inline-block;\n  width: -webkit-max-content;\n  width: -moz-max-content;\n  width: max-content;\n  padding: 10px;\n  border: 2px solid #0099FF;\n  border-radius: 10px;\n  cursor: pointer; }\n\n.tab:hover {\n  background-color: #0099FF; }\n\n.exit {\n  text-align: right;\n  margin-right: 10px;\n  font-size: 34px; }\n\n.exit * {\n  cursor: pointer; }\n\n.material-icons.md-32 {\n  font-size: 32px;\n  height: 32px;\n  width: 32px; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
+module.exports = ".container {\n  position: absolute;\n  bottom: 0;\n  -webkit-transform: translateY(100%);\n          transform: translateY(100%);\n  z-index: 1000;\n  width: 100%;\n  background-color: #ffffff; }\n\n.container.show {\n  -webkit-transform: translateY(0);\n          transform: translateY(0); }\n\n.state-toggle {\n  position: absolute;\n  top: 0;\n  -webkit-transform: translateY(-30%) translateX(-50%);\n          transform: translateY(-30%) translateX(-50%);\n  height: 75px;\n  width: 150px;\n  border-radius: 40%;\n  left: 50%;\n  background-color: #ffffff; }\n\n.content-container {\n  position: relative;\n  padding: 10px;\n  z-index: 1001; }\n\n.arrow {\n  font-size: 32px;\n  -webkit-transform: translateY(-20%);\n          transform: translateY(-20%);\n  cursor: pointer;\n  text-align: center; }\n\n.tabs {\n  text-align: center; }\n\n.tab {\n  display: inline-block;\n  width: -webkit-max-content;\n  width: -moz-max-content;\n  width: max-content;\n  padding: 10px;\n  border: 2px solid #0099FF;\n  border-radius: 10px;\n  cursor: pointer; }\n\n.tab:hover {\n  background-color: #0099FF; }\n\n.exit {\n  text-align: right;\n  margin-right: 10px;\n  font-size: 34px; }\n\n.exit * {\n  cursor: pointer; }\n\n.material-icons.md-32 {\n  font-size: 32px;\n  height: 32px;\n  width: 32px; }\n\n.data-container {\n  max-height: 400px;\n  overflow-y: scroll; }\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/bottom-panel/bottom-panel.component.ts":
+/***/ "./src/app/bottom-panel/bottom-panel.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BottomPanelComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_animations__ = __webpack_require__("../../../animations/esm5/animations.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__info_info_service__ = __webpack_require__("../../../../../src/app/bottom-panel/info/info.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__station_list_station_service__ = __webpack_require__("../../../../../src/app/bottom-panel/station-list/station.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_animations__ = __webpack_require__("./node_modules/@angular/animations/esm5/animations.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_earthquake_eventpages__ = __webpack_require__("./node_modules/earthquake-eventpages/index.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -256,8 +240,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var BottomPanelComponent = /** @class */ (function () {
-    function BottomPanelComponent(infoService, stationService) {
-        this.infoService = infoService;
+    function BottomPanelComponent(metadataService, stationService) {
+        this.metadataService = metadataService;
         this.stationService = stationService;
         this.panelState = 'inactive';
         this.selected = null;
@@ -282,10 +266,10 @@ var BottomPanelComponent = /** @class */ (function () {
         }
     };
     BottomPanelComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'shakemap-view-bottom-panel',
-            template: __webpack_require__("../../../../../src/app/bottom-panel/bottom-panel.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/bottom-panel/bottom-panel.component.scss")],
+            template: __webpack_require__("./src/app/bottom-panel/bottom-panel.component.html"),
+            styles: [__webpack_require__("./src/app/bottom-panel/bottom-panel.component.scss")],
             animations: [
                 Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["m" /* trigger */])('panelState', [
                     Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["j" /* state */])('inactive', Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["k" /* style */])({
@@ -299,8 +283,8 @@ var BottomPanelComponent = /** @class */ (function () {
                 ])
             ]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__info_info_service__["a" /* InfoService */],
-            __WEBPACK_IMPORTED_MODULE_3__station_list_station_service__["a" /* StationService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_earthquake_eventpages__["c" /* MetadataService */],
+            __WEBPACK_IMPORTED_MODULE_2_earthquake_eventpages__["e" /* StationService */]])
     ], BottomPanelComponent);
     return BottomPanelComponent;
 }());
@@ -309,378 +293,13 @@ var BottomPanelComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/bottom-panel/info/info.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container\">\n  <div class=\"info-container\" *ngIf=\"info\">\n\n    <div class=\"input column\" *ngIf=\"info.input\">\n      <h2>Input</h2>\n\n      <div class=\"event-info group\" *ngIf=\"info.input.event_information\">\n        <h3>Event Information</h3>\n\n        <table>\n          <tr *ngFor=\"let name of name_order['event_information']\">\n            <th *ngIf=\"info.input.event_information[name]\">{{ names['event_information'][name] }}</th>\n            <td *ngIf=\"info.input.event_information[name]\">\n              {{ name !== 'dyfi' ? info.input.event_information[name] : info.input.event_information['intensity']}}\n            </td>\n          </tr>\n        </table>\n      </div>\n    </div>\n      \n\n    <div class=\"output column\" *ngIf=\"info.output\">\n      <h2>Output</h2>\n\n      <div class=\"ground-motion group\" *ngIf=\"info.output['ground_motions']\">\n        <h3>Ground Motion/Intensity Information</h3>\n\n        <table>\n          <thead>\n            <th>Type</th>\n            <th>Max value in grid</th>\n            <th>Max value on land</th>\n            <th>Bias</th>\n          </thead>\n          <tbody>\n            <tr *ngFor=\"let name of name_order['ground_motions']\">\n              <th *ngIf=\"info.output['ground_motions'][name]\">{{ names['ground_motions'][name] }}</th>\n              <td *ngIf=\"info.output['ground_motions'][name]\">\n                {{ info.output.ground_motions[name]['max_grid'] | number }}\n              </td>\n              <td *ngIf=\"info.output['ground_motions'][name]\">\n                {{ info.output.ground_motions[name]['max'] | number }}\n              </td>\n              <td *ngIf=\"info.output['ground_motions'][name]\">\n                {{ info.output.ground_motions[name]['bias'].toString().replace('[[', '').replace(']]', '') | number }}\n              </td>\n            </tr>\n          </tbody>\n        </table>\n\n      </div>\n\n      <div class=\"map-info group\" *ngIf=\"info.output['map_information']\">\n        <h3>Map Information</h3>\n\n        <table>\n          <thead>\n            <th>Type</th>\n            <th>Latitude</th>\n            <th>Longitude</th>\n          </thead>\n          <tbody>\n            <tr *ngFor=\"let name of name_order['map_information']\">\n              <th *ngIf=\"info.output['map_information'][name]\">{{ names['map_information'][name] }}</th>\n              <td *ngIf=\"info.output['map_information'][name]\">\n                {{ info.output['map_information'][name]['latitude'] | number }}\n                {{ info.output['map_information'][name]['units'] !== 'count' ? (info.output['map_information'][name]['units'] ) : ('') }}\n\n              </td>\n              <td *ngIf=\"info.output['map_information'][name]\">\n                {{ info.output['map_information'][name]['longitude'] | number }}\n                {{ info.output['map_information'][name]['units'] !== 'count' ? (info.output['map_information'][name]['units']) : ('') }}\n              </td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n\n      <div class=\"uncertainty group\" *ngIf=\"info.output.uncertainty\">\n        <h3>Uncertainty</h3>\n\n        <table>\n          <tr *ngFor=\"let name of name_order['uncertainty']\">\n            <th *ngIf=\"info.output.uncertainty[name]\">{{ names['uncertainty'][name] }}</th>\n            <td *ngIf=\"info.output.uncertainty[name]\">\n              {{ isNaN(name) ? (info.output.uncertainty[name]) : (info.output.uncertainty[name] | number)}}\n            </td>\n          </tr>\n        </table>\n\n      </div>\n    </div>\n\n    <div class=\"processing column\" *ngIf=\"info.processing\">\n      <h2>Processing</h2>\n\n      <div class=\"ground-motion group\" *ngIf=\"info.processing['ground_motion_modules']\">\n        <h3>Ground Mation/Intensity Information</h3>\n\n        <table>\n          <thead>\n            <th>Type</th>\n            <th>Module</th>\n            <th>Reference</th>\n          </thead>\n          <tbody>\n            <tr *ngFor=\"let name of name_order['ground_motion_modules']\">\n              <th *ngIf=\"info.processing['ground_motion_modules'][name]\">{{ names['ground_motion_modules'][name] }}</th>\n              <td *ngIf=\"info.processing['ground_motion_modules'][name]\">\n                {{ info.processing['ground_motion_modules'][name]['module'] }}\n\n              </td>\n              <td *ngIf=\"info.processing['ground_motion_modules'][name]\">\n                {{ info.processing['ground_motion_modules'][name]['reference'] }}\n              </td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n\n      <div class=\"misc group\" *ngIf=\"name_order['miscellaneous']\">\n        <h3>Miscellaneous</h3>\n\n        <table>\n          <tr *ngFor=\"let name of name_order['miscellaneous']\">\n            <th *ngIf=\"info.processing['miscellaneous'][name]\">{{ names['miscellaneous'][name] }}</th>\n            <td *ngIf=\"info.processing['miscellaneous'][name]\">\n              {{ info.processing['miscellaneous'][name] }}\n\n            </td>\n          </tr>\n        </table>\n      </div>\n\n      <div class=\"shakemap group\" *ngIf=\"info.processing['shakemap_versions']\">\n        <h3>ShakeMap Versions</h3>\n\n        <table>\n          <tr *ngFor=\"let name of name_order['shakemap_versions']\">\n            <th *ngIf=\"info.processing['shakemap_versions'][name]\">{{ names['shakemap_versions'][name] }}</th>\n            <td *ngIf=\"info.processing['shakemap_versions'][name]\">\n              {{ info.processing['shakemap_versions'][name] }}\n\n            </td>\n          </tr>\n        </table>\n      </div>\n\n      <div class=\"site-response group\" *ngIf=\"info.processing['site_response']\">\n        <h3>Site Response</h3>\n\n        <table>\n          <tr *ngFor=\"let name of name_order['site_response']\">\n            <th *ngIf=\"info.processing['site_response'][name]\">\n              {{ names['site_response'][name] }}</th>\n            <td *ngIf=\"info.processing['site_response'][name]\">\n              {{ info.processing['site_response'][name] }}\n\n            </td>\n          </tr>\n        </table>\n\n      </div>\n\n      <div class=\"roi group\" *ngIf=\"info.processing['roi']\">\n        <h3>ROI</h3>\n\n        <table>\n          <thead>\n            <th>Type</th>\n            <th>ROI</th>\n            <th>Observation Decay</th>\n          </thead>\n          <tbody>\n            <tr *ngFor=\"let name of name_order['roi']\">\n              <th *ngIf=\"info.processing['roi'][name]\">\n                {{ names['roi'][name] }}</th>\n              <td *ngIf=\"info.processing['roi'][name]\">\n                {{ info.processing['roi'][name]['roi'] }}\n\n              </td>\n              <td *ngIf=\"info.processing['roi'][name]\">\n                {{ info.processing['roi'][name]['decay'] }}\n\n              </td>\n            </tr>\n          </tbody>\n        </table>\n\n      </div>\n\n    </div>\n  </div>\n</div>"
-
-/***/ }),
-
-/***/ "../../../../../src/app/bottom-panel/info/info.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".container {\n  text-align: left;\n  max-height: 500px;\n  overflow-y: scroll;\n  padding: 10px; }\n\n.column {\n  position: relative;\n  width: 48%;\n  float: left;\n  margin: 1%; }\n\n.group {\n  padding-top: 10px; }\n\ntable {\n  border-collapse: collapse;\n  border: 1px solid #ddd; }\n\ntable td, th {\n  border: 1px solid #ddd;\n  padding: .666em .75em; }\n\nth {\n  background-color: rgba(0, 0, 0, 0.04); }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/bottom-panel/info/info.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InfoComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__info_service__ = __webpack_require__("../../../../../src/app/bottom-panel/info/info.service.ts");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var InfoComponent = /** @class */ (function () {
-    function InfoComponent(infoService) {
-        this.infoService = infoService;
-        this.subs = [];
-        this.info = null;
-        this.objKeys = Object.keys;
-        this.isNaN = isNaN;
-        this.name_order = {
-            'event_information': ['event_description', 'event_id', 'magnitude', 'depth', 'longitude', 'latitude', 'origin_time', 'src_mech', 'location', 'fault_ref', 'seismic_stations', 'intensity_observations'],
-            'ground_motions': ['intensity', 'mmi', 'MMI', 'pga', 'PGA', 'pgv', 'PGV', 'SA(0.3)', 'psa03', 'SA(1.0)', 'psa10', 'SA(3.0)', 'psa30', 'bias'],
-            'map_information': ['grid_span', 'grid_spacing', 'grid_points', 'min', 'max'],
-            'uncertainty': ['mean_uncertainty_ratio', 'grade', 'total_flagged_mi', 'total_flagged_pgm'],
-            'ground_motion_modules': ['gmpe', 'ipe', 'gmice', 'igmice', 'ccf', 'directivity', 'basin_correction'],
-            'shakemap_versions': ['shakemap_revision', 'shakemap_revision_id', 'map_version', 'process_time'],
-            'miscellaneous': ['bias_max_mag', 'bias_max_range', 'bias_log_amp', 'bias_max_bias', 'bias_min_bias', 'bias_min_stations', 'bias_norm', 'median_dist', 'outlier_deviation_level', 'outlier_max_mag'],
-            'roi': ['gm', 'intensity'],
-            'site_response': ['vs30default', 'site_correction']
-        };
-        this.names = {
-            'event_information': {
-                'location': 'Location',
-                'longitude': 'Longitude',
-                'seismic_stations': 'Number of Seismic Stations',
-                'magnitude': 'Magnitude',
-                'depth': 'Depth',
-                'event_id': 'ID',
-                'event_description': 'Description', 'origin_time': 'Origin Time',
-                'latitude': 'Latitude',
-                'fault_ref': 'Fault References',
-                'src_mech': 'Mechanism Source',
-                'intensity_observations': "Number of DYFI Stations"
-            },
-            'ground_motions': {
-                'PGA': 'PGA (%g)',
-                'PGV': 'PGV (cm/s)',
-                'pga': 'PGA (%g)',
-                'pgv': 'PGV (cm/s)',
-                'SA(0.3)': 'PSA03',
-                'SA(1.0)': 'PSA10',
-                'SA(3.0)': 'PSA30',
-                'psa03': 'PSA03',
-                'psa10': 'PSA10',
-                'psa30': 'PSA30',
-                'bias': 'Bias',
-                'MMI': 'Intensity'
-            },
-            'map_information': {
-                'grid_spacing': 'Grid spacing',
-                'grid_points': 'Number of points',
-                'grid_span': 'Span',
-                'min': 'Min',
-                'max': 'Max'
-            },
-            'uncertainty': {
-                'total_flagged_mi': "Flagged seismic stations",
-                'grade': 'Empirical ShakeMap grade',
-                'total_flagged_pgm': 'Flagged DYFI stations',
-                'mean_uncertainty_ratio': 'Mean of map uncertainty'
-            },
-            'ground_motion_modules': {
-                'basin_correction': 'Basin',
-                'gmpe': 'GMPE',
-                'directivity': 'Directivity',
-                'gmice': 'GMICE',
-                'ipe': 'IPE',
-                'ccf': 'CCF',
-                'igmice': 'IGMICE'
-            },
-            'shakemap_versions': {
-                'map_version': 'Map',
-                'shakemap_revision_id': 'GitHub commit',
-                'shakemap_revision': 'Code',
-                'process_time': 'Date'
-            },
-            'miscellaneous': {
-                'bias_max_mag': 'Max magnitude to compute bias',
-                'bias_max_range': 'Maximum distance to include station in bias',
-                'bias_log_amp': 'Use log amp to compute bias',
-                'bias_max_bias': 'Max allowed bias',
-                'bias_min_bias': 'Min allowed bias',
-                'bias_min_stations': 'Min # of stations necessary to compute bias',
-                'bias_norm': 'Norm of the bias',
-                'median_dist': 'Median distance used',
-                'outlier_deviation_level': 'Outlier level (# of std dev)',
-                'outlier_max_mag': 'Max magnitude to flag outliers',
-            },
-            'roi': {
-                'gm': 'Ground Motion',
-                'intensity': 'Intensity'
-            },
-            'site_response': {
-                'site_correction': 'Site correction applied',
-                'vs30default': 'Reference rock Vs30'
-            }
-        };
-    }
-    InfoComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.subs.push(this.infoService.data.subscribe(function (info) {
-            _this.info = info;
-        }));
-    };
-    InfoComponent.prototype.ngOnDestroy = function () {
-        for (var _i = 0, _a = this.subs; _i < _a.length; _i++) {
-            var sub = _a[_i];
-            sub.unsubscribe();
-        }
-    };
-    InfoComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'shakemap-view-info',
-            template: __webpack_require__("../../../../../src/app/bottom-panel/info/info.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/bottom-panel/info/info.component.scss")]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__info_service__["a" /* InfoService */]])
-    ], InfoComponent);
-    return InfoComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/bottom-panel/info/info.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InfoService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_replaysubject__ = __webpack_require__("../../../../rxjs/replaysubject.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_replaysubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_replaysubject__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var InfoService = /** @class */ (function () {
-    function InfoService(http) {
-        this.http = http;
-        this.data = new __WEBPACK_IMPORTED_MODULE_2_rxjs_replaysubject__["ReplaySubject"](1);
-        this.hasData = false;
-    }
-    InfoService.prototype.getInfo = function (event) {
-        var _this = this;
-        var contents = event['shakemap'][0]['contents'];
-        if (contents['download/info.json']) {
-            this.http.get(contents['download/info.json']['url'])
-                .subscribe(function (info) {
-                _this.data.next(info);
-                _this.hasData = true;
-            });
-        }
-        else {
-            this.data.next(null);
-            this.hasData = false;
-        }
-    };
-    InfoService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
-    ], InfoService);
-    return InfoService;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/bottom-panel/station-list/station-list.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container\">\n    <div class=\"render-icons\" style=\"dispaly:hidden\">\n        <!-- Pre render fa icons and insert svg in actual station list -->\n    </div>\n\n    <div class=\"station\" *ngFor=\"let station of stations\">\n        <h3 class=\"station-name\">\n            {{ station.properties.code }}: {{ station.properties.name }}\n        </h3>\n\n        <div class=\"data-container\">\n\n          <table>\n              <tr>\n                  <td class=\"mmi-td\">\n                      <table class=\"mmi-table\"\n                              [style.backgroundColor]=\"getColor(station.properties.intensity)\">\n                          <tr>\n                              <th>\n                                  <h1>\n                                      {{ getRoman(station.properties.intensity) }}\n                                  </h1>\n                              </th>\n                          </tr>\n                          <tr>\n                              <td>\n                                  mmi\n                              </td>\n                          </tr>\n                      </table>\n                  </td>\n                  <td>\n                      <table>\n                          <tr>\n                              <th *ngIf=\"!isNaN(station.properties.pga)\">\n                                {{ station.properties.pga | number }} %g\n                              </th>\n                              <th *ngIf=\"isNaN(station.properties.pga)\">\n                                None\n                              </th>\n                          </tr>\n                          <tr>\n                              <td>\n                                  pga\n                              </td>\n                          </tr>\n                      </table>\n                  </td>\n                  <td>\n                      <table>\n                          <tr>\n                              <th *ngIf=\"!isNaN(station.properties.pgv)\">\n                                {{ station.properties.pgv | number }} cm/s\n                              </th>\n                              <th *ngIf=\"isNaN(station.properties.pgv)\">\n                                None\n                              </th>\n                          </tr>\n                          <tr>\n                              <td>\n                                  pgv\n                              </td>\n                          </tr>\n                      </table>\n                  </td>\n                  <td>\n                      <table>\n                          <tr>\n                              <th *ngIf=\"!isNaN(station.properties.distance)\">\n                                {{ station.properties.distance }} km\n                              </th>\n                              <th *ngIf=\"isNaN(station.properties.distance)\">\n                                None\n                              </th>\n                          </tr>\n                          <tr>\n                              <td>\n                                  distance\n                              </td>\n                          </tr>\n                      </table>\n                  </td>\n              </tr>\n          </table>\n\n          <div class=\"details-container\">\n            <div class=\"details-toggle link\">\n              <h3 (click)=\"toggleDetails(station)\">\n                  <div class=\"icon\" *ngIf=\"station.showDetails\">\n                    <mat-icon>keyboard_arrow_up</mat-icon>\n                  </div>\n                  <div class=\"icon\" *ngIf=\"!station.showDetails\">\n                    <mat-icon>keyboard_arrow_down</mat-icon>\n                  </div>\n                \n                <div class=\"link\">\n                  Details\n                </div>\n              </h3>\n            </div>\n\n            <div class=\"details\" *ngIf=\"station.showDetails\">\n              <div class = \"column\">\n                <dl class=\"station-metadata vertical\">\n                  <dt class=\"station-metadata-network\">Network</dt>\n                  <dd class=\"station-metadata-network\">{{ station.properties.network }}</dd>\n                  <dt class=\"station-metadata-location\">Location</dt>\n                  <dd class=\"station-metadata-location\">{{ station.geometry.coordinates[1] }}°N \n                                                        {{ station.geometry.coordinates[0] * -1 }}°W</dd>\n                  <dt class=\"station-metadata-source\">Source</dt>\n                  <dd class=\"station-metadata-source\">{{ station.properties.source }}</dd>\n                  <dt class=\"station-metadata-intensity\">Intensity</dt>\n                  <dd class=\"station-metadata-intensity\">{{ station.properties.intensity }}</dd>\n                </dl>\n              </div>\n              \n              <div class=\"column\">\n                <table class=\"data-table\">\n                  <thead>\n                    <th>name</th>\n                    <th>pga</th>\n                    <th>pgv</th>\n                    <th>psa03</th>\n                    <th>psa10</th>\n                    <th>psa30</th>\n                  </thead>\n                  <tbody>\n                    <tr *ngFor=\"let channel of station.properties.channels\">\n                      <th>\n                        {{ channel.name }}\n                      </th>\n                      <td>{{ getAmp('pga', channel.amplitudes).value | number }}</td>\n                      <td>{{ getAmp('pgv', channel.amplitudes).value | number }}</td>\n                      <td *ngIf=\"getAmp('psa03', channel.amplitudes).value\">{{ getAmp('psa03', channel.amplitudes).value | number }}</td>\n                      <td *ngIf=\"getAmp('psa10', channel.amplitudes).value\">{{ getAmp('psa10', channel.amplitudes).value | number }}</td>\n                      <td *ngIf=\"getAmp('psa30', channel.amplitudes).value\">{{ getAmp('psa30', channel.amplitudes).value | number }}</td>\n                      <td *ngIf=\"getAmp('sa(0.3)', channel.amplitudes).value\">{{ getAmp('sa(0.3)', channel.amplitudes).value | number }}</td>\n                      <td *ngIf=\"getAmp('sa(1.0)', channel.amplitudes).value\">{{ getAmp('sa(1.0)', channel.amplitudes).value | number }}</td>\n                      <td *ngIf=\"getAmp('sa(3.0)', channel.amplitudes).value\">{{ getAmp('sa(3.0)', channel.amplitudes).value | number }}</td>\n                    </tr>\n                  </tbody>\n                </table>\n              </div>\n\n            </div>\n          </div>\n\n        </div>\n    </div>\n</div>\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/bottom-panel/station-list/station-list.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".container {\n  text-align: left;\n  max-height: 500px;\n  overflow-y: scroll;\n  padding: 10px; }\n\n.station {\n  margin-bottom: 10px;\n  border-top: 1px solid #ddd; }\n\ntable table {\n  padding: 10px; }\n\ntable, th, td {\n  text-align: center; }\n\n.mmi-table {\n  border: 2px solid black;\n  border-radius: 3px;\n  width: 100%; }\n\n.mmi-td {\n  width: 80px;\n  padding-right: 10px; }\n\n.mmi-td h1 {\n  margin: 0; }\n\n.details-container {\n  margin-top: 15px; }\n\n.details-toggle {\n  position: relative;\n  display: block;\n  width: -webkit-max-content;\n  width: -moz-max-content;\n  width: max-content;\n  padding: 5px;\n  cursor: default; }\n\n.details-toggle .link {\n  margin-left: 10px; }\n\n.details-toggle * {\n  display: inline-block;\n  margin: 0; }\n\n.fa {\n  text-decoration: none; }\n\n.data-container {\n  padding: 10px; }\n\ndl > dt {\n  font-weight: 700; }\n\ndd {\n  margin: 0; }\n\n.data-table {\n  border-collapse: collapse;\n  border: 1px solid #ddd; }\n\n.data-table td, .data-table th {\n  border: 1px solid #ddd;\n  padding: .666em .75em; }\n\n.data-table th {\n  background-color: rgba(0, 0, 0, 0.04); }\n\n.column {\n  display: inline-block;\n  margin-right: 10px; }\n\n.icon {\n  vertical-align: middle; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/bottom-panel/station-list/station-list.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StationListComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__station_service__ = __webpack_require__("../../../../../src/app/bottom-panel/station-list/station.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_mmi_roman__ = __webpack_require__("../../../../../src/app/util/mmi_roman.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_mmi_colors__ = __webpack_require__("../../../../../src/app/util/mmi_colors.ts");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var StationListComponent = /** @class */ (function () {
-    function StationListComponent(stationService) {
-        this.stationService = stationService;
-        this.subs = [];
-        this.stations = [];
-        this.getColor = __WEBPACK_IMPORTED_MODULE_3__util_mmi_colors__["a" /* getMmiRgba */];
-        this.getRoman = __WEBPACK_IMPORTED_MODULE_2__util_mmi_roman__["a" /* getRomanFromMmi */];
-        this.isNaN = isNaN;
-    }
-    StationListComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.subs.push(this.stationService.data.subscribe(function (data) {
-            _this.stations = data;
-        }));
-    };
-    StationListComponent.prototype.toggleDetails = function (station) {
-        if (station['showDetails']) {
-            station['showDetails'] = false;
-        }
-        else {
-            station['showDetails'] = true;
-        }
-    };
-    StationListComponent.prototype.getAmp = function (name, amps) {
-        for (var _i = 0, amps_1 = amps; _i < amps_1.length; _i++) {
-            var amp = amps_1[_i];
-            if (amp['name'] === name) {
-                return amp;
-            }
-        }
-        return {};
-    };
-    StationListComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'shakemap-view-station-list',
-            template: __webpack_require__("../../../../../src/app/bottom-panel/station-list/station-list.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/bottom-panel/station-list/station-list.component.scss")]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__station_service__["a" /* StationService */]])
-    ], StationListComponent);
-    return StationListComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/bottom-panel/station-list/station.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StationService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_ReplaySubject__ = __webpack_require__("../../../../rxjs/_esm5/ReplaySubject.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var StationService = /** @class */ (function () {
-    function StationService(http) {
-        this.http = http;
-        this.hasData = false;
-        this.data = new __WEBPACK_IMPORTED_MODULE_2_rxjs_ReplaySubject__["a" /* ReplaySubject */](1);
-    }
-    StationService.prototype.getInfo = function (event) {
-        var _this = this;
-        var contents = event['shakemap'][0]['contents'];
-        if (contents['download/info.json']) {
-            this.http.get(contents['download/stationlist.json']['url'])
-                .subscribe(function (data) {
-                _this.data.next(data.features);
-                _this.hasData = true;
-            });
-        }
-        else {
-            this.data.next(null);
-            this.hasData = false;
-        }
-    };
-    StationService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
-    ], StationService);
-    return StationService;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/conf.service.ts":
+/***/ "./src/app/conf.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConfService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -707,8 +326,8 @@ var ConfService = /** @class */ (function () {
         });
     };
     ConfService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
     ], ConfService);
     return ConfService;
 }());
@@ -717,18 +336,156 @@ var ConfService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/events/event.service.ts":
+/***/ "./src/app/events/event-filter/event-filter.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<input\n    [(ngModel)]=\"filter\"\n    (ngModelChange)=\"updateEvents(filter)\"\n    placeholder=\"Search...\" />"
+
+/***/ }),
+
+/***/ "./src/app/events/event-filter/event-filter.component.scss":
+/***/ (function(module, exports) {
+
+module.exports = "input {\n  width: 200px; }\n"
+
+/***/ }),
+
+/***/ "./src/app/events/event-filter/event-filter.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventFilterComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__event_service__ = __webpack_require__("./src/app/events/event.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var EventFilterComponent = /** @class */ (function () {
+    function EventFilterComponent(eService) {
+        this.eService = eService;
+        this.filter = '';
+    }
+    EventFilterComponent.prototype.ngOnInit = function () {
+    };
+    EventFilterComponent.prototype.updateEvents = function (filter) {
+        this.eService.getFilteredEvents(filter);
+    };
+    EventFilterComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'shakemap-view-event-filter',
+            template: __webpack_require__("./src/app/events/event-filter/event-filter.component.html"),
+            styles: [__webpack_require__("./src/app/events/event-filter/event-filter.component.scss")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__event_service__["a" /* EventService */]])
+    ], EventFilterComponent);
+    return EventFilterComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/events/event-list/event-list.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\" *ngIf=\"eventData.length > 0\">\n  <div class=\"event-list\">\n    <div class=\"event\" *ngFor=\"let event of eventData\">\n      <shakemap-view-event\n          [event]=\"event\"\n          (click)=\"plot(event)\">\n      </shakemap-view-event>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/events/event-list/event-list.component.scss":
+/***/ (function(module, exports) {
+
+module.exports = ".event {\n  display: inline-block;\n  margin: 5px; }\n"
+
+/***/ }),
+
+/***/ "./src/app/events/event-list/event-list.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventListComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subscription__ = __webpack_require__("./node_modules/rxjs/Subscription.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subscription___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Subscription__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__event_service__ = __webpack_require__("./src/app/events/event.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var EventListComponent = /** @class */ (function () {
+    function EventListComponent(eventService) {
+        this.eventService = eventService;
+        this.eventData = [];
+        this.init = false;
+        this.subs = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subscription__["Subscription"]();
+    }
+    EventListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.subs.add(this.eventService.events.subscribe(function (data) {
+            _this.onEvents(data);
+        }));
+    };
+    EventListComponent.prototype.onEvents = function (events) {
+        if (events == null) {
+            this.eventData = [];
+            return;
+        }
+        this.eventData = events;
+        if ((events.length) > 0 && !this.init) {
+            this.plot(events[0]);
+            this.init = true;
+        }
+    };
+    EventListComponent.prototype.plot = function (event) {
+        this.eventService.selectEvent(event);
+    };
+    EventListComponent.prototype.ngOnDestroy = function () {
+        this.subs.unsubscribe();
+    };
+    EventListComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'shakemap-view-event-list',
+            template: __webpack_require__("./src/app/events/event-list/event-list.component.html"),
+            styles: [__webpack_require__("./src/app/events/event-list/event-list.component.scss")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__event_service__["a" /* EventService */]])
+    ], EventListComponent);
+    return EventListComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/events/event.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_replaysubject__ = __webpack_require__("../../../../rxjs/replaysubject.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_replaysubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_replaysubject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__map_map_service__ = __webpack_require__("../../../../../src/app/map/map.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__bottom_panel_info_info_service__ = __webpack_require__("../../../../../src/app/bottom-panel/info/info.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__bottom_panel_station_list_station_service__ = __webpack_require__("../../../../../src/app/bottom-panel/station-list/station.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject__ = __webpack_require__("./node_modules/rxjs/BehaviorSubject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__map_map_service__ = __webpack_require__("./src/app/map/map.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_earthquake_eventpages__ = __webpack_require__("./node_modules/earthquake-eventpages/index.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_underscore__ = __webpack_require__("./node_modules/underscore/underscore.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_underscore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_underscore__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -745,35 +502,97 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var EventService = /** @class */ (function () {
-    function EventService(http, mapService, infoService, stationService) {
+    function EventService(http, mapService, eventControl) {
         this.http = http;
         this.mapService = mapService;
-        this.infoService = infoService;
-        this.stationService = stationService;
-        this.selectedEvent = new __WEBPACK_IMPORTED_MODULE_2_rxjs_replaysubject__["ReplaySubject"](1);
-        this.events = new __WEBPACK_IMPORTED_MODULE_2_rxjs_replaysubject__["ReplaySubject"](1);
+        this.eventControl = eventControl;
+        this.selectedEvent = new __WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject__["BehaviorSubject"](null);
+        this.events = new __WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject__["BehaviorSubject"](null);
         this.manualEntry = null;
+        this.allEvents = [];
     }
     EventService.prototype.getEventFeed = function () {
         var _this = this;
-        this.http.get('products.json').subscribe(function (data) {
-            _this.events.next(data);
+        this.http.get('products.json').subscribe(function (events) {
+            _this.onEvents(events);
         }, function (error) {
         });
     };
-    EventService.prototype.parseFromEventJson = function (event) {
+    EventService.prototype.onEvents = function (events) {
+        this.allEvents = events;
+        this.events.next(events);
+    };
+    EventService.prototype.getFilteredEvents = function (filter) {
+        if (!filter) {
+            this.events.next(this.allEvents);
+            return;
+        }
+        filter = this.parseFilter(filter);
+        // make a copy of all events to be filtered
+        var filtered = [];
+        for (var _i = 0, _a = this.allEvents; _i < _a.length; _i++) {
+            var event_ = _a[_i];
+            /* check for known commands or match properties */
+            var include = true;
+            for (var command in filter.commands) {
+                if (command == 'minMag') {
+                    if (event_.shakemap[0].properties.magnitude <
+                        filter.commands['minMag']) {
+                        include = false;
+                        break;
+                    }
+                } // else if match properties
+            }
+            if (include) {
+                for (var _b = 0, _c = filter.search; _b < _c.length; _b++) {
+                    var search = _c[_b];
+                    if (JSON.stringify(event_)
+                        .toLowerCase()
+                        .indexOf(search.toLowerCase()) < 0) {
+                        include = false;
+                        break;
+                    }
+                }
+            }
+            if (include) {
+                filtered.push(event_);
+            }
+        }
+        if (!__WEBPACK_IMPORTED_MODULE_5_underscore__["isEqual"](this.events.getValue(), filtered)) {
+            this.events.next(filtered);
+        }
+    };
+    EventService.prototype.parseFilter = function (filter) {
+        // break up filter
+        var filterArr = filter.match(/(?:[^\s"]+|"[^"]*")+/g);
+        var commands = {};
+        var search = [];
+        if (filterArr) {
+            for (var _i = 0, filterArr_1 = filterArr; _i < filterArr_1.length; _i++) {
+                var fil = filterArr_1[_i];
+                // check for commands
+                if (fil.indexOf(':') > 0) {
+                    fil = fil.split(/:(.+)/);
+                    commands[fil[0]] = fil[1];
+                }
+                else {
+                    // trim parenthesis
+                    fil = fil.replace(/"/g, '');
+                    search.push(fil);
+                }
+            }
+        }
+        return { commands: commands, search: search };
     };
     EventService.prototype.selectEvent = function (event) {
         this.mapService.plotEvent.next(event);
-        this.infoService.getInfo(event);
-        this.stationService.getInfo(event);
+        this.eventControl.product$.next(event.shakemap[0]);
     };
     EventService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */],
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */],
             __WEBPACK_IMPORTED_MODULE_3__map_map_service__["a" /* MapService */],
-            __WEBPACK_IMPORTED_MODULE_4__bottom_panel_info_info_service__["a" /* InfoService */],
-            __WEBPACK_IMPORTED_MODULE_5__bottom_panel_station_list_station_service__["a" /* StationService */]])
+            __WEBPACK_IMPORTED_MODULE_4_earthquake_eventpages__["a" /* EventService */]])
     ], EventService);
     return EventService;
 }());
@@ -782,38 +601,83 @@ var EventService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/events/events.component.html":
+/***/ "./src/app/events/event/event.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" *ngIf=\"eventData.length > 1\">\n  <div class=\"event-list\">\n    <div class=\"event\" *ngFor=\"let event of eventData\">\n      <h1 (click)=\"plot(event)\">{{ event.id }}</h1>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<ng-container *ngIf=\"event as event\">\n  <mat-card>\n    <mat-card-header>\n      <mat-card-title>\n        {{ event.id }}\n      </mat-card-title>\n\n      <mat-card-subtitle>\n        {{ event.shakemap[0].properties.event_description }}\n      </mat-card-subtitle>\n    </mat-card-header>\n\n    <mat-card-content>\n      <dl class=\"description-table\">\n        <dt>\n          Magnitude\n        </dt>\n        <dd>\n          {{ event.shakemap[0].properties.magnitude }}\n        </dd>\n        <dt>\n          Depth\n        </dt>\n        <dd>\n          {{ event.shakemap[0].properties.depth }}\n        </dd>\n      </dl>\n    </mat-card-content>\n  </mat-card>\n</ng-container>"
 
 /***/ }),
 
-/***/ "../../../../../src/app/events/events.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./src/app/events/event/event.component.scss":
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".container {\n  position: fixed;\n  top: 0;\n  border: 2px black dashed;\n  background-color: white;\n  z-index: 500; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
+module.exports = ""
 
 /***/ }),
 
-/***/ "../../../../../src/app/events/events.component.ts":
+/***/ "./src/app/events/event/event.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var EventComponent = /** @class */ (function () {
+    function EventComponent() {
+        this.event = null;
+    }
+    EventComponent.prototype.ngOnInit = function () {
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+        __metadata("design:type", Object)
+    ], EventComponent.prototype, "event", void 0);
+    EventComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'shakemap-view-event',
+            template: __webpack_require__("./src/app/events/event/event.component.html"),
+            styles: [__webpack_require__("./src/app/events/event/event.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], EventComponent);
+    return EventComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/events/events.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"filter\">\n  <shakemap-view-event-filter (click)=\"setFocus(true)\">\n  </shakemap-view-event-filter>\n\n  <div class=\"close\" *ngIf=\"focus\">\n    <mat-icon (click)=\"setFocus(false)\">close</mat-icon>\n  </div>\n</div>\n\n<div class=\"event-list\" [hidden]=\"!focus\">\n  <shakemap-view-event-list>\n  </shakemap-view-event-list>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/events/events.component.scss":
+/***/ (function(module, exports) {
+
+module.exports = ".filter {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 15px; }\n\n.close {\n  cursor: pointer; }\n\n.event-list {\n  max-width: 90vw;\n  overflow-x: auto; }\n"
+
+/***/ }),
+
+/***/ "./src/app/events/events.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventsComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__event_service__ = __webpack_require__("../../../../../src/app/events/event.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subscription__ = __webpack_require__("./node_modules/rxjs/Subscription.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subscription___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Subscription__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -826,36 +690,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var EventsComponent = /** @class */ (function () {
-    function EventsComponent(eventService) {
-        this.eventService = eventService;
-        this.eventData = [];
-        this.subs = [];
+    function EventsComponent() {
+        this.sub = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subscription__["Subscription"]();
+        this.focus = false;
     }
     EventsComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.subs.push(this.eventService.events.subscribe(function (data) {
-            _this.eventData = data;
-            if (data.length > 0) {
-                _this.plot(data[0]);
-            }
-        }));
     };
-    EventsComponent.prototype.plot = function (event) {
-        this.eventService.selectEvent(event);
-    };
-    EventsComponent.prototype.ngOnDestroy = function () {
-        for (var _i = 0, _a = this.subs; _i < _a.length; _i++) {
-            var sub = _a[_i];
-            sub.unsubscribe();
-        }
+    EventsComponent.prototype.setFocus = function (focus) {
+        this.focus = focus;
     };
     EventsComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'shakemap-view-events',
-            template: __webpack_require__("../../../../../src/app/events/events.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/events/events.component.scss")]
+            template: __webpack_require__("./src/app/events/events.component.html"),
+            styles: [__webpack_require__("./src/app/events/events.component.scss")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__event_service__["a" /* EventService */]])
+        __metadata("design:paramtypes", [])
     ], EventsComponent);
     return EventsComponent;
 }());
@@ -864,13 +714,26 @@ var EventsComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/http-interceptor.ts":
+/***/ "./src/app/header/header.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n\n    <div class=\"name-container\">\n        <div class=\"logo\">\n            <img src=\"favicon.ico\">\n        </div>\n        <h1>ShakeMap</h1>\n    </div>\n\n    <shakemap-view-events></shakemap-view-events>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/header/header.component.scss":
+/***/ (function(module, exports) {
+
+module.exports = ".container {\n  position: absolute;\n  z-index: 1000;\n  left: 10%; }\n\n.name-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center; }\n\nimg {\n  height: 50px; }\n"
+
+/***/ }),
+
+/***/ "./src/app/header/header.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HttpHostNameInterceptor; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__conf_service__ = __webpack_require__("../../../../../src/app/conf.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -881,44 +744,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-
-var HttpHostNameInterceptor = /** @class */ (function () {
-    function HttpHostNameInterceptor(confService) {
-        this.confService = confService;
+var HeaderComponent = /** @class */ (function () {
+    function HeaderComponent() {
     }
-    HttpHostNameInterceptor.prototype.intercept = function (req, next) {
-        var host = window.location.hostname;
-        if (req.url.indexOf(host) > 0) {
-            // we're getting data from our current host, let's remove
-            // the hardcoded host name
-            var split_url = req.url.split('/');
-            split_url[0] = '';
-            var new_url = split_url.join('/');
-            var req = req.clone({ url: new_url });
-        }
-        //const authReq = req.clone({headers: req.headers.set("headerName", "headerValue")});
-        //send the newly created request
-        return next.handle(req);
+    HeaderComponent.prototype.ngOnInit = function () {
     };
-    HttpHostNameInterceptor = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__conf_service__["a" /* ConfService */]])
-    ], HttpHostNameInterceptor);
-    return HttpHostNameInterceptor;
+    HeaderComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'shakemap-view-header',
+            template: __webpack_require__("./src/app/header/header.component.html"),
+            styles: [__webpack_require__("./src/app/header/header.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], HeaderComponent);
+    return HeaderComponent;
 }());
 
 
 
 /***/ }),
 
-/***/ "../../../../../src/app/map/layers/cont_mi.ts":
+/***/ "./src/app/map/layers/cont_mi.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return miLayer; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet__ = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet__ = __webpack_require__("./node_modules/leaflet/dist/leaflet-src.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_leaflet__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_mmi_roman__ = __webpack_require__("../../../../../src/app/util/mmi_roman.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_mmi_roman__ = __webpack_require__("./src/app/util/mmi_roman.ts");
 
 
 var lineStyle = {
@@ -967,15 +820,15 @@ var miLayer = {
 
 /***/ }),
 
-/***/ "../../../../../src/app/map/layers/cont_mmi.ts":
+/***/ "./src/app/map/layers/cont_mmi.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return mmiLayer; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet__ = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet__ = __webpack_require__("./node_modules/leaflet/dist/leaflet-src.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_leaflet__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_mmi_colors__ = __webpack_require__("../../../../../src/app/util/mmi_colors.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_mmi_roman__ = __webpack_require__("../../../../../src/app/util/mmi_roman.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_mmi_colors__ = __webpack_require__("./src/app/util/mmi_colors.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_mmi_roman__ = __webpack_require__("./src/app/util/mmi_roman.ts");
 
 
 
@@ -1022,12 +875,12 @@ var mmiLayer = {
 
 /***/ }),
 
-/***/ "../../../../../src/app/map/layers/cont_pga.ts":
+/***/ "./src/app/map/layers/cont_pga.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return pgaLayer; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet__ = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet__ = __webpack_require__("./node_modules/leaflet/dist/leaflet-src.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_leaflet__);
 
 var lineStyle = {
@@ -1065,12 +918,12 @@ var pgaLayer = {
 
 /***/ }),
 
-/***/ "../../../../../src/app/map/layers/cont_pgv.ts":
+/***/ "./src/app/map/layers/cont_pgv.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return pgvLayer; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet__ = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet__ = __webpack_require__("./node_modules/leaflet/dist/leaflet-src.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_leaflet__);
 
 var lineStyle = {
@@ -1108,12 +961,12 @@ var pgvLayer = {
 
 /***/ }),
 
-/***/ "../../../../../src/app/map/layers/epicenter.ts":
+/***/ "./src/app/map/layers/epicenter.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return epicenterLayer; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet__ = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet__ = __webpack_require__("./node_modules/leaflet/dist/leaflet-src.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_leaflet__);
 
 var epiIcon = __WEBPACK_IMPORTED_MODULE_0_leaflet__["icon"]({
@@ -1145,20 +998,21 @@ var epicenterLayer = {
 
 /***/ }),
 
-/***/ "../../../../../src/app/map/layers/layer.service.ts":
+/***/ "./src/app/map/layers/layer.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LayerService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__ = __webpack_require__("../../../../rxjs/_esm5/ReplaySubject.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cont_mmi__ = __webpack_require__("../../../../../src/app/map/layers/cont_mmi.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cont_mi__ = __webpack_require__("../../../../../src/app/map/layers/cont_mi.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__cont_pga__ = __webpack_require__("../../../../../src/app/map/layers/cont_pga.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__cont_pgv__ = __webpack_require__("../../../../../src/app/map/layers/cont_pgv.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__epicenter__ = __webpack_require__("../../../../../src/app/map/layers/epicenter.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__stations__ = __webpack_require__("../../../../../src/app/map/layers/stations.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__ = __webpack_require__("./node_modules/rxjs/ReplaySubject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cont_mmi__ = __webpack_require__("./src/app/map/layers/cont_mmi.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cont_mi__ = __webpack_require__("./src/app/map/layers/cont_mi.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__cont_pga__ = __webpack_require__("./src/app/map/layers/cont_pga.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__cont_pgv__ = __webpack_require__("./src/app/map/layers/cont_pgv.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__epicenter__ = __webpack_require__("./src/app/map/layers/epicenter.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__stations__ = __webpack_require__("./src/app/map/layers/stations.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1181,7 +1035,7 @@ var layers = [__WEBPACK_IMPORTED_MODULE_7__epicenter__["a" /* epicenterLayer */]
 var LayerService = /** @class */ (function () {
     function LayerService(http) {
         this.http = http;
-        this.nextLayer = new __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__["a" /* ReplaySubject */](1);
+        this.nextLayer = new __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__["ReplaySubject"](1);
         this.data = {};
         this.waiting = [];
     }
@@ -1221,8 +1075,8 @@ var LayerService = /** @class */ (function () {
         }
     };
     LayerService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_common_http__["b" /* HttpClient */]])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]])
     ], LayerService);
     return LayerService;
 }());
@@ -1231,16 +1085,16 @@ var LayerService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/map/layers/stations.ts":
+/***/ "./src/app/map/layers/stations.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return stationLayer; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet__ = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet__ = __webpack_require__("./node_modules/leaflet/dist/leaflet-src.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_leaflet__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_leaflet_svg_shape_markers__ = __webpack_require__("../../../../../src/app/util/leaflet-svg-shape-markers.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_mmi_colors__ = __webpack_require__("../../../../../src/app/util/mmi_colors.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_mmi_roman__ = __webpack_require__("../../../../../src/app/util/mmi_roman.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_leaflet_svg_shape_markers__ = __webpack_require__("./src/app/util/leaflet-svg-shape-markers.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_mmi_colors__ = __webpack_require__("./src/app/util/mmi_colors.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_mmi_roman__ = __webpack_require__("./src/app/util/mmi_roman.ts");
 
 
 
@@ -1297,43 +1151,34 @@ var stationLayer = {
 
 /***/ }),
 
-/***/ "../../../../../src/app/map/map-control/map-control.component.html":
+/***/ "./src/app/map/map-control/map-control.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"container\" *ngIf=\"!confService.conf?.display || confService.conf?.display !== 'static'\">\n  <div class=\"control\" \n        [ngClass]=\"{'collapsed': controlCollapsed}\" \n        (dblclick)=\"$event.stopPropagation();\">\n\n    <div class=\"collapsed-control\" *ngIf=\"controlCollapsed\" (click)=\"controlCollapsed=false\">\n      <div class=\"control-image\">\n        <img src=\"{{ layersImg }}\">\n      </div>\n    </div>\n\n    <div class=\"open\" *ngIf=\"!controlCollapsed\">\n      <div class=\"close\">\n        <div class=\"close-icon\" (click)=\"controlCollapsed=true\">\n          <mat-icon>close</mat-icon>\n        </div>\n      </div>\n\n      <div class=\"items\">\n        <p *ngFor=\"let item of control\" \n            (click)=\"toggleLayer(item);\"\n            class=\"layer-item\">\n          <input type=\"checkbox\" [checked]=\"plotting.indexOf(item.id) > -1\">\n          {{ item.name }}\n        </p>\n      </div>\n    </div>\n\n  </div>\n\n  <!-- Clear the float to let legend sit under control -->\n  <br style=\"clear:both\" />\n\n  <div class=\"legend control\" \n          [ngClass]=\"{'collapsed': legendCollapsed}\" \n          (dblclick)=\"$event.stopPropagation();\">\n\n    <div class=\"collapsed-control\" *ngIf=\"legendCollapsed\" (click)=\"toggleLegend()\">\n      <div class=\"control-image\">\n        <mat-icon class=\"key\">vpn_key</mat-icon>\n      </div>\n    </div>\n    <div class=\"open\" *ngIf=\"!legendCollapsed\">\n      <div class=\"close\">\n        <div class=\"close-icon\" (click)=\"toggleLegend()\">\n          <mat-icon>close</mat-icon>\n        </div>\n      </div>\n\n      <div class=\"items\">\n        <div class=\"image\" *ngFor=\"let image of objKeys(legend)\">\n          <img *ngIf=\"legend[image].count>0\" class=\"legend-image\" src=\"{{ legend[image].url }}\">\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/map/map-control/map-control.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./src/app/map/map-control/map-control.component.scss":
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".container {\n  z-index: 501;\n  text-align: center;\n  position: fixed;\n  top: 5px;\n  right: 5px; }\n\n.control {\n  border: 2px solid #aaaaaa;\n  background-color: white;\n  display: block;\n  border-radius: 5px;\n  margin: 5px;\n  max-width: -webkit-max-content;\n  max-width: -moz-max-content;\n  max-width: max-content;\n  position: relative;\n  float: right;\n  cursor: auto; }\n\n.control.collapsed {\n  min-width: 45px;\n  height: 45px;\n  cursor: pointer; }\n\n.control.collapsed:hover {\n  border: 2px solid #0099FF; }\n\n.control .collapsed-control {\n  height: 100%;\n  width: 100%; }\n\n.control-image {\n  position: relative;\n  top: 50%;\n  -webkit-transform: translateY(-50%);\n          transform: translateY(-50%);\n  color: #454545;\n  font-size: 18px; }\n\n.close {\n  text-align: right;\n  padding-right: 5px; }\n\n.close-icon {\n  display: inline-block;\n  cursor: pointer; }\n\n.layer-item {\n  margin: 0 0 0 5px;\n  padding: 5px 5px; }\n\n.items {\n  text-align: left; }\n\n.legend-image {\n  max-width: 200px; }\n\n.key {\n  vertical-align: top; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
+module.exports = ".container {\n  z-index: 501;\n  text-align: center;\n  position: fixed;\n  top: 5px;\n  right: 5px; }\n\n.control {\n  border: 2px solid #aaaaaa;\n  background-color: white;\n  display: block;\n  border-radius: 5px;\n  margin: 5px;\n  max-width: -webkit-max-content;\n  max-width: -moz-max-content;\n  max-width: max-content;\n  position: relative;\n  float: right;\n  cursor: auto; }\n\n.control.collapsed {\n  min-width: 45px;\n  height: 45px;\n  cursor: pointer; }\n\n.control.collapsed:hover {\n  border: 2px solid #0099FF; }\n\n.control .collapsed-control {\n  height: 100%;\n  width: 100%; }\n\n.control-image {\n  position: relative;\n  top: 50%;\n  -webkit-transform: translateY(-50%);\n          transform: translateY(-50%);\n  color: #454545;\n  font-size: 18px; }\n\n.close {\n  text-align: right;\n  padding-right: 5px; }\n\n.close-icon {\n  display: inline-block;\n  cursor: pointer; }\n\n.layer-item {\n  margin: 0 0 0 5px;\n  padding: 5px 5px; }\n\n.items {\n  text-align: left; }\n\n.legend-image {\n  max-width: 200px; }\n\n.key {\n  vertical-align: top; }\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/map/map-control/map-control.component.ts":
+/***/ "./src/app/map/map-control/map-control.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapControlComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__map_control_service__ = __webpack_require__("../../../../../src/app/map/map-control/map-control.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__map_service__ = __webpack_require__("../../../../../src/app/map/map.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__conf_service__ = __webpack_require__("../../../../../src/app/conf.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_TimerObservable__ = __webpack_require__("../../../../rxjs/_esm5/observable/TimerObservable.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_take__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/take.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_leaflet__ = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__map_control_service__ = __webpack_require__("./src/app/map/map-control/map-control.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__map_service__ = __webpack_require__("./src/app/map/map.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__conf_service__ = __webpack_require__("./src/app/conf.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_TimerObservable__ = __webpack_require__("./node_modules/rxjs/observable/TimerObservable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_TimerObservable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_observable_TimerObservable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_take__ = __webpack_require__("./node_modules/rxjs/add/operator/take.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_take___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_take__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_leaflet__ = __webpack_require__("./node_modules/leaflet/dist/leaflet-src.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_leaflet__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1365,7 +1210,7 @@ var MapControlComponent = /** @class */ (function () {
         this.legend = {};
         this.onMap = {};
         this.objKeys = Object.keys;
-        this.layersImg = __webpack_require__("../../../../leaflet/dist/images/layers.png");
+        this.layersImg = __webpack_require__("./node_modules/leaflet/dist/images/layers.png");
         this.initLoading = true; // True after first map layers render
         this.timeoutTimer = null;
     }
@@ -1378,7 +1223,7 @@ var MapControlComponent = /** @class */ (function () {
             // remember which layers are plotted
             _this.clearAll();
         }));
-        this.timeoutTimer = __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_TimerObservable__["a" /* TimerObservable */].create(5000, 1000).subscribe(function (time) {
+        this.timeoutTimer = __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_TimerObservable__["TimerObservable"].create(5000, 1000).subscribe(function (time) {
             _this.initLoading = false;
             _this.timeoutTimer.unsubscribe();
         });
@@ -1487,10 +1332,10 @@ var MapControlComponent = /** @class */ (function () {
         }
     };
     MapControlComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'shakemap-view-map-control',
-            template: __webpack_require__("../../../../../src/app/map/map-control/map-control.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/map/map-control/map-control.component.scss")]
+            template: __webpack_require__("./src/app/map/map-control/map-control.component.html"),
+            styles: [__webpack_require__("./src/app/map/map-control/map-control.component.scss")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__map_control_service__["a" /* MapControlService */],
             __WEBPACK_IMPORTED_MODULE_2__map_service__["a" /* MapService */],
@@ -1503,13 +1348,14 @@ var MapControlComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/map/map-control/map-control.service.ts":
+/***/ "./src/app/map/map-control/map-control.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapControlService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__ = __webpack_require__("../../../../rxjs/_esm5/ReplaySubject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__ = __webpack_require__("./node_modules/rxjs/ReplaySubject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1523,8 +1369,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var MapControlService = /** @class */ (function () {
     function MapControlService() {
-        this.addOverlay_ = new __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__["a" /* ReplaySubject */](1);
-        this.clear_ = new __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__["a" /* ReplaySubject */](1);
+        this.addOverlay_ = new __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__["ReplaySubject"](1);
+        this.clear_ = new __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__["ReplaySubject"](1);
     }
     MapControlService.prototype.addOverlay = function (layer) {
         this.addOverlay_.next(layer);
@@ -1533,7 +1379,7 @@ var MapControlService = /** @class */ (function () {
         this.clear_.next(true);
     };
     MapControlService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
         __metadata("design:paramtypes", [])
     ], MapControlService);
     return MapControlService;
@@ -1543,43 +1389,32 @@ var MapControlService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/map/map.component.html":
+/***/ "./src/app/map/map.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "<div id=\"map\">\n    <shakemap-view-map-control></shakemap-view-map-control>\n</div>\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/map/map.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./src/app/map/map.component.scss":
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "#map {\n  height: 100%;\n  min-height: 220px;\n  min-width: 200px; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
+module.exports = "#map {\n  height: 100%;\n  min-height: 220px;\n  min-width: 200px; }\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/map/map.component.ts":
+/***/ "./src/app/map/map.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_leaflet__ = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_leaflet__ = __webpack_require__("./node_modules/leaflet/dist/leaflet-src.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_leaflet__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__map_service__ = __webpack_require__("../../../../../src/app/map/map.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__layers_layer_service__ = __webpack_require__("../../../../../src/app/map/layers/layer.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__map_control_map_control_service__ = __webpack_require__("../../../../../src/app/map/map-control/map-control.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__conf_service__ = __webpack_require__("../../../../../src/app/conf.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__map_service__ = __webpack_require__("./src/app/map/map.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__layers_layer_service__ = __webpack_require__("./src/app/map/layers/layer.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__map_control_map_control_service__ = __webpack_require__("./src/app/map/map-control/map-control.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__conf_service__ = __webpack_require__("./src/app/conf.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1624,9 +1459,9 @@ var MapComponent = /** @class */ (function () {
         delete __WEBPACK_IMPORTED_MODULE_1_leaflet__["Icon"].Default.prototype._getIconUrl;
         // eslint-disable-next-line  
         __WEBPACK_IMPORTED_MODULE_1_leaflet__["Icon"].Default.mergeOptions({
-            iconRetinaUrl: __webpack_require__("../../../../leaflet/dist/images/marker-icon-2x.png"),
-            iconUrl: __webpack_require__("../../../../leaflet/dist/images/marker-icon.png"),
-            shadowUrl: __webpack_require__("../../../../leaflet/dist/images/marker-shadow.png")
+            iconRetinaUrl: __webpack_require__("./node_modules/leaflet/dist/images/marker-icon-2x.png"),
+            iconUrl: __webpack_require__("./node_modules/leaflet/dist/images/marker-icon.png"),
+            shadowUrl: __webpack_require__("./node_modules/leaflet/dist/images/marker-shadow.png")
         });
         this.genBasemap();
         var mapControls = {};
@@ -1686,10 +1521,10 @@ var MapComponent = /** @class */ (function () {
         }
     };
     MapComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'shakemap-view-map',
-            template: __webpack_require__("../../../../../src/app/map/map.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/map/map.component.scss")]
+            template: __webpack_require__("./src/app/map/map.component.html"),
+            styles: [__webpack_require__("./src/app/map/map.component.scss")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__map_service__["a" /* MapService */],
             __WEBPACK_IMPORTED_MODULE_3__layers_layer_service__["a" /* LayerService */],
@@ -1703,13 +1538,14 @@ var MapComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/map/map.service.ts":
+/***/ "./src/app/map/map.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__ = __webpack_require__("../../../../rxjs/_esm5/ReplaySubject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__ = __webpack_require__("./node_modules/rxjs/ReplaySubject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1723,13 +1559,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var MapService = /** @class */ (function () {
     function MapService() {
-        this.plotEvent = new __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__["a" /* ReplaySubject */](1);
-        this.setBounds = new __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__["a" /* ReplaySubject */](1);
+        this.plotEvent = new __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__["ReplaySubject"](1);
+        this.setBounds = new __WEBPACK_IMPORTED_MODULE_1_rxjs_ReplaySubject__["ReplaySubject"](1);
         this.mapKey = 'pk.eyJ1IjoiZHNsb3NreSIsImEiOiJjaXR1aHJnY3EwMDFoMnRxZWVtcm9laWJmIn0.1C3GE0kHPGOpbVV9kTxBlQ';
         this.map = null;
     }
     MapService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
         __metadata("design:paramtypes", [])
     ], MapService);
     return MapService;
@@ -1739,11 +1575,11 @@ var MapService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/util/leaflet-svg-shape-markers.ts":
+/***/ "./src/app/util/leaflet-svg-shape-markers.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet__ = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet__ = __webpack_require__("./node_modules/leaflet/dist/leaflet-src.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_leaflet__);
 
 /* Modified from leaflet-svg-shape-markers
@@ -1854,7 +1690,7 @@ __WEBPACK_IMPORTED_MODULE_0_leaflet__["shapeMarker"] = function (latlng, options
 
 /***/ }),
 
-/***/ "../../../../../src/app/util/mmi_colors.ts":
+/***/ "./src/app/util/mmi_colors.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1914,7 +1750,7 @@ DEFAULT COLOR MAP
 
 /***/ }),
 
-/***/ "../../../../../src/app/util/mmi_roman.ts":
+/***/ "./src/app/util/mmi_roman.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1980,7 +1816,7 @@ function getRomanFromMmi(mmiIn) {
 
 /***/ }),
 
-/***/ "../../../../../src/environments/environment.ts":
+/***/ "./src/environments/environment.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1996,21 +1832,21 @@ var environment = {
 
 /***/ }),
 
-/***/ "../../../../../src/main.ts":
+/***/ "./src/main.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/esm5/platform-browser-dynamic.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("./node_modules/@angular/platform-browser-dynamic/esm5/platform-browser-dynamic.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("./src/app/app.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
 
 
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* enableProdMode */])();
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_17" /* enableProdMode */])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
     .catch(function (err) { return console.log(err); });
@@ -2021,7 +1857,7 @@ Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* pl
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("../../../../../src/main.ts");
+module.exports = __webpack_require__("./src/main.ts");
 
 
 /***/ })
