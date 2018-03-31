@@ -611,7 +611,7 @@ module.exports = "<ng-container *ngIf=\"event as event\">\n  <mat-card>\n    <ma
 /***/ "./src/app/events/event/event.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "/* default doesn't fit... */\ndl.description-table > dt {\n  -webkit-box-flex: 1;\n  -ms-flex: 1 30%;\n  flex: 1 30%;\n  padding: 16px 12px 16px 24px; }\n"
 
 /***/ }),
 
