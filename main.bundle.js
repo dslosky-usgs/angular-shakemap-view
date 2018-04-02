@@ -207,7 +207,7 @@ var AppModule = /** @class */ (function () {
 /***/ "./src/app/bottom-panel/bottom-panel.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" [@panelState]='panelState'>\n    <div class=\"state-toggle\" (click)=\"toggleState()\">\n      <div class=\"arrow\">\n        <div class=\"up\" *ngIf=\"panelState === 'inactive'\">\n          <mat-icon class=\"md-32\">keyboard_arrow_up</mat-icon>\n        </div>\n        <div class=\"down\" *ngIf=\"panelState === 'active'\">\n          <mat-icon class=\"md-32\">keyboard_arrow_down</mat-icon>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"content-container\">\n      \n      <div class=\"tabs\">\n\n        <h3 class=\"tab\" *ngIf=\"metadataService.metadata$.value != null\" (click)=\"selected='metadata'\">Metadata</h3>\n\n        <h3 class=\"tab\" *ngIf=\"stationService.stationsJson$.value != null && stationService.stationsJson$.value?.features?.length > 0\" (click)=\"selected='stations'\">Station List</h3>\n\n        <h3 class=\"tab\" (click)=\"selected='uncertainty'\">Uncertainty</h3>\n\n      </div>\n\n      <div class=\"exit\" *ngIf=\"selected\">\n        <mat-icon (click)=\"selected=null\">close</mat-icon>\n      </div>\n\n      <div class=\"data-container\">\n        <shakemap-metadata [hidden]=\"selected!='metadata'\"></shakemap-metadata>\n        <shakemap-station-list [hidden]=\"selected!='stations'\"></shakemap-station-list>\n\n        <shakemap-uncertainty [hidden]=\"selected!='uncertainty'\"></shakemap-uncertainty>\n      </div>\n\n    </div>\n</div>\n"
+module.exports = "<div class=\"container\" [@panelState]='panelState'>\n    <div class=\"state-toggle\" (click)=\"toggleState()\">\n      <div class=\"arrow\">\n        <div class=\"up\" *ngIf=\"panelState === 'inactive'\">\n          <mat-icon class=\"md-32\">keyboard_arrow_up</mat-icon>\n        </div>\n        <div class=\"down\" *ngIf=\"panelState === 'active'\">\n          <mat-icon class=\"md-32\">keyboard_arrow_down</mat-icon>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"content-container\">\n      \n      <div class=\"tabs\">\n\n        <h3 class=\"tab\" *ngIf=\"metadataService.metadata$.value != null\" (click)=\"selected='metadata'\">Metadata</h3>\n\n        <h3 class=\"tab\" *ngIf=\"stationService.stationsJson$.value != null && stationService.stationsJson$.value?.features?.length > 0\" (click)=\"selected='stations'\">Station List</h3>\n\n        <h3 class=\"tab\" (click)=\"selected='uncertainty'\">Uncertainty</h3>\n\n      </div>\n\n      <div class=\"exit\" *ngIf=\"selected\">\n        <mat-icon (click)=\"selected=null\">close</mat-icon>\n      </div>\n\n      <div class=\"data-container\">\n        <shakemap-metadata [hidden]=\"selected!='metadata'\"></shakemap-metadata>\n        <shakemap-station-list [hidden]=\"selected!='stations'\"></shakemap-station-list>\n\n        <app-uncertainty [hidden]=\"selected!='uncertainty'\"></app-uncertainty>\n      </div>\n\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -247,7 +247,6 @@ var BottomPanelComponent = /** @class */ (function () {
         this.selected = null;
     }
     BottomPanelComponent.prototype.ngOnInit = function () {
-        this.panelState = 'active';
     };
     BottomPanelComponent.prototype.select = function (tab) {
         if (tab === this.selected) {
@@ -403,7 +402,7 @@ module.exports = "<div class=\"container\" *ngIf=\"eventData.length > 0\">\n  <d
 /***/ "./src/app/events/event-list/event-list.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".event {\n  display: inline-block;\n  margin: 5px; }\n"
+module.exports = ".event {\n  display: inline-block;\n  margin: 5px;\n  cursor: pointer;\n  border: 2px solid transparent; }\n\n.event:hover {\n  border: 2px solid #0099FF; }\n"
 
 /***/ }),
 
@@ -666,7 +665,7 @@ module.exports = "<div class=\"filter\">\n  <shakemap-view-event-filter (click)=
 /***/ "./src/app/events/events.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".filter {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 15px; }\n\n.close {\n  cursor: pointer; }\n\n.event-list {\n  max-width: 90vw;\n  overflow-x: auto;\n  white-space: nowrap; }\n"
+module.exports = ".filter {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 15px; }\n\n.close {\n  cursor: pointer; }\n\n.event-list {\n  max-width: 90vw;\n  overflow-x: auto;\n  white-space: nowrap;\n  opacity: .9; }\n"
 
 /***/ }),
 
@@ -724,7 +723,7 @@ module.exports = "<div class=\"container\">\n\n    <div class=\"name-container\"
 /***/ "./src/app/header/header.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".container {\n  position: absolute;\n  z-index: 1000;\n  left: 10%; }\n\n.name-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center; }\n\nimg {\n  height: 50px; }\n"
+module.exports = ".container {\n  position: absolute;\n  z-index: 1000;\n  left: 20px; }\n\n.name-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center; }\n\nimg {\n  height: 50px; }\n"
 
 /***/ }),
 
@@ -1464,30 +1463,14 @@ var MapComponent = /** @class */ (function () {
             shadowUrl: __webpack_require__("./node_modules/leaflet/dist/images/marker-shadow.png")
         });
         this.genBasemap();
-        var mapControls = {};
-        if (this.c.conf['display'] === 'static') {
-            mapControls = {
-                boxZoom: false,
-                center: [0, 0],
-                zoom: 0,
-                doubleClickZoom: false,
-                dragging: false,
-                fadeAnimation: false,
-                keyboard: false,
-                markerZoomAnimation: false,
-                scrollWheelZoom: false,
-                tap: false,
-                touchZoom: false,
-                zoomAnimation: false,
-                zoomControl: false
-            };
-        }
-        else {
-            mapControls = {
-                scrollWheelZoom: false
-            };
-        }
+        var mapControls = {
+            scrollWheelZoom: false,
+            zoomControl: false
+        };
         this.map = __WEBPACK_IMPORTED_MODULE_1_leaflet__["map"]('map', mapControls).setView([51.505, -0.09], 13);
+        __WEBPACK_IMPORTED_MODULE_1_leaflet__["control"].zoom({
+            position: 'bottomleft'
+        }).addTo(this.map);
         this.basemap.addTo(this.map);
         this.layersControl = __WEBPACK_IMPORTED_MODULE_1_leaflet__["control"].layers({ 'Basemap': this.basemap });
         this.mapService.map = this.map;
