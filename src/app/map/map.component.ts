@@ -53,30 +53,17 @@ export class MapComponent implements OnInit, OnDestroy {
 
     this.genBasemap();
 
-    let mapControls = {};
-    if (this.c.conf['display'] === 'static') {
-      mapControls = {
-        boxZoom: false,
-        center: [0, 0],
-        zoom: 0,
-        doubleClickZoom: false,
-        dragging: false,
-        fadeAnimation: false,
-        keyboard: false,
-        markerZoomAnimation: false,
+    const mapControls = {
         scrollWheelZoom: false,
-        tap: false,
-        touchZoom: false,
-        zoomAnimation: false,
         zoomControl: false
       }
-    } else {
-      mapControls = {
-        scrollWheelZoom: false
-      }
-    }
 
     this.map = L.map('map', mapControls).setView([51.505, -0.09], 13);
+    
+    L.control.zoom({
+      position: 'bottomleft'
+    }).addTo(this.map);
+
     this.basemap.addTo(this.map);
     this.layersControl = L.control.layers({'Basemap': this.basemap});
 

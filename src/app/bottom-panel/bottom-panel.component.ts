@@ -35,7 +35,6 @@ export class BottomPanelComponent implements OnInit {
               public stationService: StationService) { }
 
   ngOnInit() {
-    this.panelState = 'active';
   }
 
   select(tab:string) {
